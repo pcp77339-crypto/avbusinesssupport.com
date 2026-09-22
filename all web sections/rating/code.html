@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="en" style=""><head></head><body class="min-h-screen relative flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 select-none bg-[#070114]"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Performance at a Glance</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans / Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#ffb900',
+              purple: '#b153ff',
+              neon: '#8b3dff',
+            }
+          }
+        }
+      }
+    };
+  </script>
+<!-- BEGIN: Stylesheets -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #060112;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+<style data-purpose="ambient-lighting">
+    /* Deep glowing cosmic ambient lighting sweeps */
+    .glow-curve-top-left {
+      position: absolute;
+      width: 750px;
+      height: 750px;
+      left: -280px;
+      top: -260px;
+      border-radius: 50%;
+      border: 3px solid rgba(168, 85, 247, 0.4);
+      box-shadow: 
+        0 0 120px 40px rgba(126, 34, 206, 0.35),
+        inset 0 0 90px 30px rgba(234, 179, 8, 0.2);
+      pointer-events: none;
+      filter: blur(1px);
+    }
+    
+    .glow-curve-top-outer {
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      left: -320px;
+      top: -300px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(234, 179, 8, 0.3);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .glow-curve-bottom-right {
+      position: absolute;
+      width: 850px;
+      height: 850px;
+      right: -250px;
+      bottom: -400px;
+      border-radius: 50%;
+      border: 2px solid rgba(234, 179, 8, 0.45);
+      box-shadow: 
+        0 0 140px 60px rgba(147, 51, 234, 0.4),
+        inset 0 0 80px 20px rgba(234, 179, 8, 0.25);
+      pointer-events: none;
+    }
+
+    .glow-curve-bottom-outer {
+      position: absolute;
+      width: 980px;
+      height: 980px;
+      right: -300px;
+      bottom: -460px;
+      border-radius: 50%;
+      border: 2px solid rgba(168, 85, 247, 0.5);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+  </style>
+<style data-purpose="glass-cards">
+    /* Glassmorphism card container with glowing neon outline & specular highlights */
+    .metric-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(20, 11, 46, 0.65) 0%, rgba(10, 5, 25, 0.75) 100%);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 28px;
+      border: 1.5px solid rgba(138, 75, 255, 0.45);
+      box-shadow: 
+        0 20px 45px -10px rgba(0, 0, 0, 0.8),
+        0 0 25px 2px rgba(140, 60, 255, 0.15),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 20px rgba(110, 30, 250, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 
+        0 25px 50px -5px rgba(0, 0, 0, 0.85),
+        0 0 35px 6px rgba(168, 85, 247, 0.3),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    /* Top glowing flare on cards */
+    .card-top-flare {
+      position: absolute;
+      top: -1.5px;
+      left: 35%;
+      width: 30%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ffe072, #ffffff, #ffe072, transparent);
+      box-shadow: 0 0 12px 2px rgba(254, 215, 64, 0.9);
+      border-radius: 9999px;
+    }
+
+    .card-top-purple-flare {
+      position: absolute;
+      top: -1.5px;
+      left: 20%;
+      width: 25%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d988ff, #ffffff, #d988ff, transparent);
+      box-shadow: 0 0 12px 2px rgba(217, 136, 255, 0.8);
+      border-radius: 9999px;
+    }
+
+    /* Bottom purple edge ambient glow */
+    .card-bottom-glow {
+      position: absolute;
+      bottom: -1px;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), transparent);
+      box-shadow: 0 0 16px 4px rgba(168, 85, 247, 0.6);
+    }
+  </style>
+<style data-purpose="typography-and-decorations">
+    .title-gradient {
+      background: linear-gradient(180deg, #d896ff 0%, #a855f7 40%, #8b2df0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title-underline-glow {
+      height: 3px;
+      width: 72px;
+      background: linear-gradient(90deg, #b046ff 0%, #ffc837 100%);
+      box-shadow: 0 0 14px 2px rgba(192, 100, 255, 0.8);
+      border-radius: 9999px;
+    }
+  </style>
+<!-- END: Stylesheets -->
+
+
+<!-- BEGIN: Ambient Background Glowing Arcs -->
+<div aria-hidden="true" class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<!-- Top-Left Luminous Arcs -->
+<div class="glow-curve-top-left"></div>
+<div class="glow-curve-top-outer"></div>
+<div class="absolute top-10 left-12 w-96 h-96 bg-purple-700/20 rounded-full blur-[110px]"></div>
+<!-- Center Deep Nebula -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-indigo-900/15 rounded-full blur-[140px]"></div>
+<!-- Bottom-Right Gold & Violet Swirls -->
+<div class="glow-curve-bottom-right"></div>
+<div class="glow-curve-bottom-outer"></div>
+<div class="absolute bottom-6 right-8 w-80 h-80 bg-amber-500/15 rounded-full blur-[100px]"></div>
+</div>
+<!-- END: Ambient Background Glowing Arcs -->
+<!-- BEGIN: Main Showcase Container -->
+<main class="relative z-10 w-full max-w-[1480px] mx-auto flex flex-col items-center justify-center">
+<!-- BEGIN: Header Section -->
+<header class="text-center mb-12 sm:mb-16 flex flex-col items-center">
+<h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-3">
+<span class="title-gradient drop-shadow-[0_4px_16px_rgba(168,85,247,0.35)]">Performance</span>
+</h1>
+<div class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white flex items-center justify-center gap-3">
+<span class="text-white/95">at a</span>
+<span class="text-[#fdc500] drop-shadow-[0_0_20px_rgba(253,197,0,0.55)]">Glance</span>
+</div>
+<!-- Accent Underline -->
+<div class="title-underline-glow mt-4" role="presentation"></div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Metric Cards Grid -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 xl:gap-6 px-2">
+<!-- ================= CARD 1: Customer Rating ================= -->
+<section class="metric-card h-[430px] flex flex-col items-center justify-between p-7" data-purpose="metric-card-rating">
+<!-- Top Glow Flare -->
+<div aria-hidden="true" class="card-top-purple-flare"></div>
+<div aria-hidden="true" class="card-bottom-glow"></div>
+<!-- Metric Donut Chart -->
+<div class="relative w-44 h-44 flex items-center justify-center my-auto">
+<svg class="w-full h-full -rotate-90 transform" viewBox="0 0 140 140">
+<defs>
+<linearGradient id="ratingRingGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#fdc500"></stop>
+<stop offset="35%" stop-color="#ff9a00"></stop>
+<stop offset="70%" stop-color="#ba38f7"></stop>
+<stop offset="100%" stop-color="#6922d1"></stop>
+</linearGradient>
+<filter height="140%" id="glowFilter1" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="3.5"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Background Track (gap segment) -->
+<circle cx="70" cy="70" fill="none" r="54" stroke="#251b3d" stroke-opacity="0.6" stroke-width="14"></circle>
+<!-- Highlight Active Arc: 4.8 out of 5 is 96% of circle -->
+<circle cx="70" cy="70" fill="none" filter="url(#glowFilter1)" r="54" stroke="url(#ratingRingGrad)" stroke-dasharray="339.29" stroke-dashoffset="40" stroke-linecap="round" stroke-width="13"></circle>
+</svg>
+<!-- Inside Center Label -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-4xl font-extrabold text-white tracking-tight leading-none">4.8</span>
+<span class="text-xs font-semibold text-slate-400 mt-1">/ 5</span>
+</div>
+</div>
+<!-- Smooth Wave Line Chart Accent at bottom of visual -->
+
+<!-- Card Bottom Title -->
+<p class="text-sm font-semibold text-gray-200 tracking-wide text-center">Customer Rating</p>
+</section>
+<!-- ================= END CARD 1 ================= -->
+<!-- ================= CARD 2: Websites Delivered ================= -->
+<section class="metric-card h-[430px] flex flex-col items-center justify-between p-7" data-purpose="metric-card-websites">
+<!-- Top Glow Flare -->
+<div aria-hidden="true" class="card-top-flare"></div>
+<div aria-hidden="true" class="card-bottom-glow"></div>
+<!-- Metric Counter -->
+<div class="w-full text-left pt-2">
+<h2 class="text-5xl font-extrabold text-white tracking-tight leading-none">30+</h2>
+</div>
+<!-- Vertical Bar Chart with 7 Ascending Bars -->
+<div class="w-full h-48 flex flex-col justify-end relative my-auto">
+<!-- Subtle Horizontal Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full border-b border-purple-300"></div>
+<div class="w-full border-b border-purple-300"></div>
+<div class="w-full border-b border-purple-300"></div>
+<div class="w-full border-b border-purple-300"></div>
+</div>
+<!-- Ascending Bar Columns -->
+<div class="relative z-10 w-full flex items-end justify-between gap-2 h-40 pb-1">
+<!-- Bar 1 -->
+<div class="flex-1 h-[24%] rounded-t-sm" style="background: linear-gradient(180deg, #9d4edd 0%, #5a189a 100%);"></div>
+<!-- Bar 2 -->
+<div class="flex-1 h-[36%] rounded-t-sm" style="background: linear-gradient(180deg, #a755e6 0%, #681ebb 100%);"></div>
+<!-- Bar 3 -->
+<div class="flex-1 h-[48%] rounded-t-sm" style="background: linear-gradient(180deg, #b562e8 0%, #7425c2 100%);"></div>
+<!-- Bar 4 -->
+<div class="flex-1 h-[62%] rounded-t-sm" style="background: linear-gradient(180deg, #c772e0 0%, #7c2cc7 100%);"></div>
+<!-- Bar 5 -->
+<div class="flex-1 h-[76%] rounded-t-sm" style="background: linear-gradient(180deg, #e4918e 0%, #8735ce 100%);"></div>
+<!-- Bar 6 -->
+<div class="flex-1 h-[90%] rounded-t-sm" style="background: linear-gradient(180deg, #f7b744 0%, #9540d5 100%);"></div>
+<!-- Bar 7 -->
+<div class="flex-1 h-[100%] rounded-t-sm shadow-[0_0_12px_rgba(253,197,0,0.5)]" style="background: linear-gradient(180deg, #ffd000 0%, #e8a20e 45%, #9b42dc 100%);"></div>
+</div>
+</div>
+<!-- Card Bottom Title -->
+<p class="text-sm font-semibold text-gray-200 tracking-wide text-center">Websites Delivered</p>
+</section>
+<!-- ================= END CARD 2 ================= -->
+<!-- ================= CARD 3: Happy Clients (Team Icon) ================= -->
+<section class="metric-card h-[430px] flex flex-col items-center justify-between p-7" data-purpose="metric-card-clients-team">
+<!-- Top Glow Flare -->
+<div aria-hidden="true" class="card-top-purple-flare"></div>
+<div aria-hidden="true" class="card-bottom-glow"></div>
+<!-- Metric Counter -->
+<div class="w-full text-left pt-2">
+<h2 class="text-5xl font-extrabold text-white tracking-tight leading-none">29+</h2>
+</div>
+<!-- Glowing Circular Donut Gauge with Team Icon inside -->
+<div class="relative w-44 h-44 flex items-center justify-center my-auto">
+<svg class="w-full h-full -rotate-90 transform" viewBox="0 0 140 140">
+<defs>
+<linearGradient id="teamRingGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#fdc500"></stop>
+<stop offset="35%" stop-color="#ff9214"></stop>
+<stop offset="70%" stop-color="#ba38f7"></stop>
+<stop offset="100%" stop-color="#5b1ec4"></stop>
+</linearGradient>
+<filter height="140%" id="glowFilter3" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="3.5"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Dim Ring Background Track -->
+<circle cx="70" cy="70" fill="none" r="54" stroke="#251b3d" stroke-opacity="0.5" stroke-width="14"></circle>
+<!-- Active Gradient Arc -->
+<circle cx="70" cy="70" fill="none" filter="url(#glowFilter3)" r="54" stroke="url(#teamRingGrad)" stroke-dasharray="339.29" stroke-dashoffset="65" stroke-linecap="round" stroke-width="13"></circle>
+</svg>
+<!-- Inside Team Icon (3 people outline) -->
+<div class="absolute inset-0 flex items-center justify-center text-purple-200">
+<svg class="w-12 h-12 stroke-purple-200 drop-shadow-[0_0_8px_rgba(216,150,255,0.7)]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<!-- Center Person -->
+<path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="10" cy="7" r="3.2"></circle>
+<!-- Right Person -->
+<path d="M20 21v-2a3.5 3.5 0 0 0-2.5-3.3"></path>
+<path d="M15.5 3.5a3.2 3.2 0 0 1 0 6.2"></path>
+</svg>
+</div>
+</div>
+<!-- Card Bottom Title -->
+<p class="text-sm font-semibold text-gray-200 tracking-wide text-center">Happy Clients</p>
+</section>
+<!-- ================= END CARD 3 ================= -->
+<!-- ================= CARD 4: Overall Work Delivered ================= -->
+<section class="metric-card h-[430px] flex flex-col items-center justify-between p-7" data-purpose="metric-card-overall-work">
+<!-- Top Glow Flare -->
+<div aria-hidden="true" class="card-top-flare"></div>
+<div aria-hidden="true" class="card-bottom-glow"></div>
+<!-- Metric Counter -->
+<div class="w-full text-left pt-2">
+<h2 class="text-5xl font-extrabold text-white tracking-tight leading-none">70+</h2>
+</div>
+<!-- Spline Area Wave Chart -->
+<div class="w-full h-44 flex items-center justify-center relative my-auto">
+<!-- Background Chart Grid -->
+<div class="absolute inset-0 grid grid-cols-4 grid-rows-3 pointer-events-none opacity-15 border border-purple-500/20">
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-purple-300"></div>
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-r border-purple-300"></div>
+<div class="border-b border-purple-300"></div>
+<div class="border-r border-purple-300"></div>
+<div class="border-r border-purple-300"></div>
+<div class="border-r border-purple-300"></div>
+<div></div>
+</div>
+<!-- Spline Area Wave SVG -->
+<svg class="w-full h-full overflow-visible relative z-10" preserveAspectRatio="none" viewBox="0 0 200 130">
+<defs>
+<linearGradient id="areaFillGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#b442ff" stop-opacity="0.8"></stop>
+<stop offset="60%" stop-color="#731cc9" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#3c0b78" stop-opacity="0.02"></stop>
+</linearGradient>
+<linearGradient id="splineStrokeGrad" x1="0%" x2="100%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#aa41ff"></stop>
+<stop offset="45%" stop-color="#cf74ff"></stop>
+<stop offset="85%" stop-color="#ffb703"></stop>
+<stop offset="100%" stop-color="#ffea00"></stop>
+</linearGradient>
+<filter id="glowLine">
+<feGaussianBlur result="coloredBlur" stdDeviation="2.5"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="coloredBlur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Gradient Area Fill -->
+<path d="M 0,92 
+                 C 20,86 28,104 46,95 
+                 C 64,86 70,68 90,66 
+                 C 110,64 122,88 140,55 
+                 C 158,22 176,32 195,12 
+                 L 195,130 L 0,130 Z" fill="url(#areaFillGrad)"></path>
+<!-- Top Glowing Line Curve -->
+<path d="M 0,92 
+                 C 20,86 28,104 46,95 
+                 C 64,86 70,68 90,66 
+                 C 110,64 122,88 140,55 
+                 C 158,22 176,32 195,12" fill="none" filter="url(#glowLine)" stroke="url(#splineStrokeGrad)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- Peak Apex Glowing Indicator -->
+<circle cx="195" cy="12" fill="#ffea00" r="5"></circle>
+<circle cx="195" cy="12" fill="#ffea00" opacity="0.4" r="9"></circle>
+</svg>
+</div>
+<!-- Card Bottom Title -->
+<p class="text-sm font-semibold text-gray-200 tracking-wide text-center">Overall Work Delivered</p>
+</section>
+<!-- ================= END CARD 4 ================= -->
+<!-- ================= CARD 5: Happy Clients (Heart Icon) ================= -->
+<section class="metric-card h-[430px] flex flex-col items-center justify-between p-7" data-purpose="metric-card-clients-heart">
+<!-- Top Glow Flare -->
+<div aria-hidden="true" class="card-top-flare"></div>
+<div aria-hidden="true" class="card-bottom-glow"></div>
+<!-- Metric Counter -->
+<div class="w-full text-left pt-2">
+<h2 class="text-5xl font-extrabold text-white tracking-tight leading-none">69+</h2>
+</div>
+<!-- Glowing Donut Gauge with Heart Outline Inside -->
+<div class="relative w-44 h-44 flex items-center justify-center my-auto">
+<svg class="w-full h-full -rotate-90 transform" viewBox="0 0 140 140">
+<defs>
+<linearGradient id="heartRingGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffd000"></stop>
+<stop offset="40%" stop-color="#ff7b00"></stop>
+<stop offset="70%" stop-color="#c438f7"></stop>
+<stop offset="100%" stop-color="#551bc2"></stop>
+</linearGradient>
+<filter height="140%" id="glowFilter5" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="3.5"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Dim Ring Background Track -->
+<circle cx="70" cy="70" fill="none" r="54" stroke="#251b3d" stroke-opacity="0.5" stroke-width="14"></circle>
+<!-- Active Gradient Arc -->
+<circle cx="70" cy="70" fill="none" filter="url(#glowFilter5)" r="54" stroke="url(#heartRingGrad)" stroke-dasharray="339.29" stroke-dashoffset="60" stroke-linecap="round" stroke-width="13"></circle>
+</svg>
+<!-- Inside Heart Icon -->
+<div class="absolute inset-0 flex items-center justify-center">
+<svg class="w-12 h-12 stroke-purple-200 drop-shadow-[0_0_8px_rgba(235,160,255,0.7)]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+</svg>
+</div>
+</div>
+<!-- Card Bottom Title -->
+<p class="text-sm font-semibold text-gray-200 tracking-wide text-center">Happy Clients</p>
+</section>
+<!-- ================= END CARD 5 ================= -->
+</div>
+<!-- END: Metric Cards Grid -->
+</main>
+<!-- END: Main Showcase Container -->
+
+
+
+
+</body></html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Pricing | Aetherial Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414755",
+                        "tertiary": "#00dbe9",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-highest": "#31353c",
+                        "on-surface": "#e0e2eb",
+                        "tertiary-container": "#00a0aa",
+                        "surface-bright": "#363940",
+                        "surface-container": "#1c2026",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#ecb2ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "error-container": "#93000a",
+                        "secondary": "#ecb2ff",
+                        "primary-container": "#4b8eff",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-tint": "#adc6ff",
+                        "surface-variant": "#31353c",
+                        "on-secondary": "#520071",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "inverse-on-surface": "#2d3137",
+                        "on-secondary-container": "#480063",
+                        "secondary-fixed": "#f8d8ff",
+                        "background": "#101419",
+                        "inverse-surface": "#e0e2eb",
+                        "on-primary-container": "#00285c",
+                        "primary": "#adc6ff",
+                        "secondary-container": "#cf5cff",
+                        "surface-dim": "#101419",
+                        "on-primary": "#002e69",
+                        "surface-container-low": "#181c22",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "on-tertiary": "#00363a",
+                        "outline": "#8b90a0",
+                        "on-secondary-fixed": "#320047",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-primary-fixed": "#001a41",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004493",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#005bc1",
+                        "surface-container-high": "#262a31",
+                        "on-tertiary-container": "#002f33",
+                        "on-background": "#e0e2eb",
+                        "surface": "#101419"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #101419;
+            color: #e0e2eb;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow Background */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(173, 198, 255, 0.08), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(236, 178, 255, 0.08), transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(0, 219, 233, 0.05), transparent 60%);
+            animation: pulse-glow 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Floating Animation Elements */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            mix-blend-mode: screen;
+            animation: float-orb 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes float-orb {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+            50% { transform: translate(50px, -50px) scale(1.1); opacity: 0.7; }
+            100% { transform: translate(-50px, 50px) scale(0.9); opacity: 0.4; }
+        }
+
+        /* Deeper Glass Card Base */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(60px);
+            -webkit-backdrop-filter: blur(60px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Aspect Ratio Enforcement (approx 9:16) */
+        .aspect-9-16 {
+            aspect-ratio: 9 / 16;
+        }
+
+        /* Hover State Depth */
+        .glass-card:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 
+                        0 0 50px rgba(173, 198, 255, 0.15);
+        }
+
+        /* Highlighted Card (Ultra Premium) */
+        .glass-card-highlight {
+            background: linear-gradient(135deg, rgba(173, 198, 255, 0.08) 0%, rgba(236, 178, 255, 0.02) 100%);
+            border: 1px solid rgba(173, 198, 255, 0.3);
+            border-top: 1px solid rgba(173, 198, 255, 0.5);
+            border-left: 1px solid rgba(173, 198, 255, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(173, 198, 255, 0.1);
+        }
+
+        .glass-card-highlight:hover {
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 
+                        0 0 80px rgba(173, 198, 255, 0.3);
+            border: 1px solid rgba(173, 198, 255, 0.4);
+            border-top: 1px solid rgba(173, 198, 255, 0.7);
+            border-left: 1px solid rgba(173, 198, 255, 0.5);
+        }
+
+        /* Micro-interactions */
+        .list-icon {
+            transition: transform 0.3s ease;
+        }
+        .glass-card:hover .list-icon {
+            transform: scale(1.2);
+            color: #ecb2ff; 
+        }
+
+        /* Continuous Floating Animation for Cards */
+        @keyframes floating-card {
+            0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+            50% { transform: translateY(-15px) rotate(calc(var(--rot) + 1deg)); }
+        }
+        
+        .anim-float {
+            animation: floating-card var(--duration) ease-in-out infinite var(--delay);
+        }
+        
+        .glass-card-wrapper:hover .anim-float {
+            animation-play-state: paused;
+            transform: translateY(-20px) rotate(0deg) scale(1.02) !important;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Background Elements -->
+<div class="ambient-glow"></div>
+<div class="glow-orb w-[40vw] h-[40vw] bg-primary/20 top-[-10%] left-[-10%] rounded-full" style="animation-delay: 0s;"></div>
+<div class="glow-orb w-[50vw] h-[50vw] bg-secondary/15 bottom-[-20%] right-[-10%] rounded-full" style="animation-delay: -5s;"></div>
+<div class="glow-orb w-[30vw] h-[30vw] bg-tertiary/20 top-[40%] left-[60%] rounded-full" style="animation-delay: -10s;"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-3xl border-b border-white/5 shadow-none backdrop-saturate-150">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">
+                Aetherial Agency
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors duration-300" href="#">Services</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors duration-300" href="#">Showcase</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md hover:text-tertiary transition-colors duration-300" href="#">Pricing</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors duration-300" href="#">Process</a>
+</div>
+<button class="hidden md:block bg-gradient-to-r from-primary to-tertiary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:opacity-90 transition-all shadow-[0_0_20px_rgba(173,198,255,0.4)]">
+                Enquire Now
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-40 px-gutter md:px-margin-desktop max-w-container-max mx-auto min-h-screen flex flex-col justify-center relative z-10">
+<header class="text-center mb-32 max-w-3xl mx-auto">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-tertiary pb-2 drop-shadow-2xl">Plans &amp; Pricing Info</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant/90">
+                Investment tiers for bespoke digital craftsmanship. We engineer experiences that transcend the ordinary, tailored to your brand's ambition.
+            </p>
+</header>
+<!-- Pricing Grid - Staggered Asymmetrical Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-center">
+<!-- Card 1: Basic -->
+<div class="glass-card-wrapper relative z-10 lg:translate-y-12 transition-all duration-700">
+<div class="glass-card anim-float rounded-2xl p-8 flex flex-col aspect-9-16 justify-between group" style="--rot: -3deg; --duration: 8s; --delay: 0s;">
+<div>
+<h3 class="font-label-caps text-label-caps text-tertiary mb-2 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(0,219,233,0.5)]">Basic</h3>
+<div class="flex items-baseline mb-6">
+<span class="font-headline-md text-headline-md text-on-surface-variant mr-1">$</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">7,999</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
+                            Essential digital presence with focus on core functionality.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-tertiary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">2 Changes</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-tertiary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Responsive Design</span>
+</li>
+<li class="flex items-start opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-3 mt-1">remove</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Zero Animation</span>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- Card 2: Premium -->
+<div class="glass-card-wrapper relative z-20 lg:-translate-y-4 transition-all duration-700">
+<div class="glass-card anim-float rounded-2xl p-8 flex flex-col aspect-9-16 justify-between group" style="--rot: 2deg; --duration: 9s; --delay: 1.5s;">
+<div>
+<h3 class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(236,178,255,0.5)]">Premium</h3>
+<div class="flex items-baseline mb-6">
+<span class="font-headline-md text-headline-md text-on-surface-variant mr-1">$</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">11,999</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
+                            Elevated experience with dynamic entrance and professional polish.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">4 Changes</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Responsive Design</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Professional Layout</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Animated Hero Section</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 mt-8 border border-white/20 rounded-xl font-label-caps text-label-caps text-on-surface hover:bg-white/10 hover:border-white/40 transition-all duration-300">
+                        Select Premium
+                    </button>
+</div>
+</div>
+<!-- Card 3: Medium Premium -->
+<div class="glass-card-wrapper relative z-30 lg:translate-y-6 transition-all duration-700">
+<div class="glass-card anim-float rounded-2xl p-8 flex flex-col aspect-9-16 justify-between group" style="--rot: -1.5deg; --duration: 7s; --delay: 0.8s;">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(173,198,255,0.5)]">Medium Premium</h3>
+<div class="flex items-baseline mb-6">
+<span class="font-headline-md text-headline-md text-on-surface-variant mr-1">$</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">15,999</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">This is the very experience you are currently navigating. This is Medium Premium.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-primary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">6 Changes</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-primary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Responsive Design</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-primary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Professional UI</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-primary text-sm mr-3 mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Full-Site Animations</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 mt-8 border border-white/20 rounded-xl font-label-caps text-label-caps text-on-surface hover:bg-white/10 hover:border-white/40 transition-all duration-300">
+                        Select Medium Premium
+                    </button>
+</div>
+</div>
+<!-- Card 4: Ultra Premium -->
+<div class="glass-card-wrapper relative z-40 lg:-translate-y-16 transition-all duration-700">
+<div class="glass-card glass-card-highlight anim-float rounded-2xl p-8 flex flex-col aspect-9-16 justify-between group relative overflow-visible" style="--rot: 3deg; --duration: 8.5s; --delay: 2.2s;">
+<!-- Glimmer Chip -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-on-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-widest uppercase shadow-[0_0_20px_rgba(173,198,255,0.8)] animate-pulse z-50">
+                        The Pinnacle
+                    </div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2 uppercase tracking-widest drop-shadow-[0_0_12px_rgba(173,198,255,0.6)]">Ultra Premium</h3>
+<div class="flex items-baseline mb-6">
+<span class="font-headline-md text-headline-md text-primary/70 mr-1">$</span>
+<span class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_10px_rgba(173,198,255,0.4)]">24,999</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
+                            The pinnacle of digital excellence and custom craftsmanship.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">diamond</span>
+<span class="font-body-md text-body-md text-on-surface font-bold text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">9 Changes</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">support_agent</span>
+<span class="font-body-md text-body-md text-on-surface">Priority Support</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">strategy</span>
+<span class="font-body-md text-body-md text-on-surface">Bespoke Strategy</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined list-icon text-secondary text-sm mr-3 mt-1" data-weight="fill">view_in_ar</span>
+<span class="font-body-md text-body-md text-on-surface">Advanced Motion &amp; 3D</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 flex flex-col gap-3 relative z-10">
+<button class="w-full py-4 bg-gradient-to-r from-primary via-secondary to-tertiary bg-size-200 bg-pos-0 hover:bg-pos-100 text-on-primary rounded-xl font-label-caps text-label-caps transition-all duration-500 shadow-[0_0_25px_rgba(173,198,255,0.4)] hover:shadow-[0_0_35px_rgba(236,178,255,0.6)] border border-white/20">
+                            Select Ultra
+                        </button>
+<button class="w-full py-3 border-none text-tertiary rounded-xl font-label-caps text-label-caps hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group/btn">
+                            View Full Details
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container-lowest bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col items-center gap-unit px-margin-desktop relative z-10">
+<div class="font-headline-md text-headline-md text-on-surface mb-6 opacity-80">
+            Aetherial Agency
+        </div>
+<div class="flex gap-6 mb-8 flex-wrap justify-center">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#">Twitter</a>
+</div>
+<div class="text-on-surface-variant font-body-md text-body-md opacity-60">
+            © 2024 Aetherial Agency. Crafting Digital Excellence.
+        </div>
+</footer>
+
+
+</body></html>

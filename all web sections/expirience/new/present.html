@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>My Experience Timeline</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Fredoka / Plus Jakarta Sans / Poppins -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-typography">
+    .font-chunky {
+      font-family: 'Fredoka', cursive, system-ui, sans-serif;
+      letter-spacing: 0.03em;
+    }
+    .font-body {
+      font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Chunky title 3D embossed pop-out effect fitting vibrant pink palette */
+    .hero-title-shadow {
+      text-shadow: 
+        0 2px 0 #f43f5e,
+        0 4px 0 #be185d,
+        0 6px 14px rgba(131, 24, 67, 0.45);
+    }
+    
+    .title-accent-glow {
+      filter: drop-shadow(0 2px 5px rgba(255, 255, 255, 0.9));
+    }
+  </style>
+<style data-purpose="glow-effects">
+    /* High Pop-out Timeline Badge Shadows & Rings using Vibrant Pink Palette */
+    .bubble-pop-side {
+      box-shadow: 
+        0 12px 24px -4px rgba(251, 111, 146, 0.45),
+        0 6px 10px rgba(0, 0, 0, 0.06),
+        inset 0 2px 4px rgba(255, 255, 255, 0.95);
+      border: 3px solid #fb6f92;
+    }
+
+    .bubble-pop-center {
+      box-shadow: 
+        0 18px 36px -4px rgba(251, 111, 146, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.08),
+        0 0 0 4px #ff8fab,
+        inset 0 3px 6px rgba(255, 255, 255, 1);
+      border: 3.5px solid #fb6f92;
+    }
+
+    /* Vibrant Pink Dynamic Gradient */
+    .pink-arc-gradient {
+      background: linear-gradient(180deg, #fb6f92 0%, #ff8fab 50%, #ffb3c6 85%, #ffe5ec 100%);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-[#ffffff] text-[#2E294E] antialiased min-h-screen flex flex-col m-0 p-0 font-body">
+<!-- BEGIN: HeroBannerSection -->
+<section class="relative w-full overflow-hidden select-none bg-[#ffffff]" data-purpose="experience-hero-banner">
+<!-- Vibrant Pink Gradient Curve Area -->
+<div class="pink-arc-gradient pt-6 md:pt-9 pb-24 sm:pb-28 md:pb-32 px-4 relative z-0 flex flex-col items-center">
+<!-- Soft Ambient Light Accents in Pastel Pink/Lilac -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#ffffff]/30 blur-3xl rounded-full pointer-events-none"></div>
+<div class="absolute top-10 left-1/4 w-[300px] h-[200px] bg-[#ffc2d1]/40 blur-2xl rounded-full pointer-events-none"></div>
+<div class="absolute top-10 right-1/4 w-[300px] h-[200px] bg-[#ffffff]/40 blur-2xl rounded-full pointer-events-none"></div>
+<!-- Title Section: Bold, Friendly, White with Subtle 3D Shadow and Playful Sparks -->
+<div class="flex items-center justify-center gap-2.5 md:gap-3.5 mb-7 md:mb-8 relative z-10">
+<!-- Left Spark Lines -->
+<svg class="w-5 h-5 md:w-6 md:h-6 text-[#ffffff] title-accent-glow -rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+<line x1="10" x2="28" y1="12" y2="8"></line>
+<line x1="8" x2="24" y1="23" y2="23"></line>
+<line x1="12" x2="26" y1="33" y2="37"></line>
+</svg>
+<h1 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-white font-black tracking-wider uppercase leading-none hero-title-shadow drop-shadow-sm">
+        MY EXPERIENCE
+      </h1>
+<!-- Right Spark Lines -->
+<svg class="w-5 h-5 md:w-6 md:h-6 text-[#ffffff] title-accent-glow rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+<line x1="12" x2="30" y1="8" y2="12"></line>
+<line x1="16" x2="32" y1="23" y2="23"></line>
+<line x1="14" x2="28" y1="37" y2="33"></line>
+</svg>
+</div>
+<!-- Timeline Pop-out Circles & Connectors -->
+<div class="w-full max-w-2xl mx-auto flex items-center justify-center relative z-10 px-3"><!-- Left Circle (2025): Elevated White Card with Vibrant Rose Pink Border -->
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white bubble-pop-side flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
+<span class="font-chunky text-[#831843] text-base sm:text-lg md:text-xl font-bold tracking-wide">2026</span>
+</div>
+</div>
+<!-- Connecting Dashed Line 1: Soft pink/white with glowing pink dot -->
+<div class="flex-1 max-w-[70px] sm:max-w-[100px] md:max-w-[130px] mx-1.5 sm:mx-2 relative flex items-center justify-center">
+<div class="w-full border-t-[3px] sm:border-t-[3.5px] border-dashed border-white/80"></div>
+<div class="absolute w-2.5 h-2.5 rounded-full bg-[#fb6f92] border border-white shadow-[0_0_8px_#fb6f92] left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Center Hero Bubble (2026): Large Prominent Size with Laptop Icon and Playful Ticks -->
+<div class="flex flex-col items-center relative flex-shrink-0">
+<div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white flex flex-col items-center justify-center bubble-pop-center group cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+<!-- Playful Pastel Ticks Around Center Bubble -->
+<div class="absolute top-2.5 right-4 w-1 h-3 sm:h-3.5 bg-[#fb6f92] rounded-full rotate-45 shadow-[0_0_4px_#fb6f92]"></div>
+<div class="absolute top-7 right-1.5 w-1 h-2.5 sm:h-3 bg-[#ff8fab] rounded-full rotate-90 shadow-[0_0_4px_#ff8fab]"></div>
+<div class="absolute top-7 left-1.5 w-1 h-2.5 sm:h-3 bg-[#ff8fab] rounded-full -rotate-90 shadow-[0_0_4px_#ff8fab]"></div>
+<div class="absolute bottom-4 left-3.5 w-1 h-3 sm:h-3.5 bg-[#fb6f92] rounded-full -rotate-45 shadow-[0_0_4px_#fb6f92]"></div>
+<!-- Laptop Device Icon -->
+<svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-[#831843] mb-0.5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<rect height="12" rx="2" width="18" x="3" y="4"></rect>
+<line x1="2" x2="22" y1="20" y2="20"></line>
+</svg>
+<span class="font-chunky text-[#831843] text-base sm:text-lg md:text-xl font-bold tracking-wide leading-none select-none">Present</span>
+</div>
+<!-- Subtle grounding pill beneath center bubble -->
+<div class="mt-2.5 flex flex-col items-center">
+<div class="w-7 sm:w-8 h-1.5 bg-white/90 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.9)]"></div>
+</div>
+</div>
+<!-- Connecting Dashed Line 2: Soft pink/white with glowing pink dot -->
+<div class="flex-1 max-w-[70px] sm:max-w-[100px] md:max-w-[130px] mx-1.5 sm:mx-2 relative flex items-center justify-center">
+<div class="w-full border-t-[3px] sm:border-t-[3.5px] border-dashed border-white/80"></div>
+<div class="absolute w-2.5 h-2.5 rounded-full bg-[#fb6f92] border border-white shadow-[0_0_8px_#fb6f92] left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Right Circle (Present): Elevated White Card with Vibrant Pink Border -->
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white bubble-pop-side flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
+<span class="font-chunky text-[#831843] text-base sm:text-lg md:text-xl font-bold tracking-wide">2023</span>
+</div>
+</div></div>
+</div>
+<!-- Smooth Curved Arc Slicing into Light Content Area -->
+<div class="absolute inset-0 w-full h-full overflow-hidden leading-none pointer-events-none z-10">
+<svg class="w-full h-full text-[#ffffff]" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 600">
+<path d="M0,0 C380,600 1060,600 1440,0 L1440,600 L0,600 Z"></path>
+</svg>
+</div>
+</section>
+<!-- END: HeroBannerSection -->
+<!-- BEGIN: ExpandedContentArea -->
+<main class="flex-grow bg-[#ffffff] pt-3 md:pt-7 pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full" data-purpose="extended-content-space">
+<!-- Clean Text Showcase Container: Readable Berry & Plum Palette -->
+<div class="max-w-4xl mx-auto text-center mt-2"><h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#831843] font-bold mb-4 sm:mb-5 tracking-wide">AV Business Support</h2>
+<p class="text-base sm:text-lg md:text-xl text-[#4b1b2d] leading-relaxed max-w-3xl mx-auto text-center font-medium">Through AV Business Support, I bring my graphic design and web development skills together to provide businesses with the digital solutions they need — from professional branding and creative designs to modern websites and complete online presence.</p></div>
+</main>
+<!-- END: ExpandedContentArea -->
+
+
+</body></html>

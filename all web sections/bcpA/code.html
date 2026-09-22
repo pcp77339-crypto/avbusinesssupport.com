@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptual Ad Poster Gallery</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0A0A0B; color: white; }
+        
+        #lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #lightbox-img {
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #lightbox.active #lightbox-img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#C9A24D]/30 selection:text-white">
+
+    <!-- Navbar / Header -->
+    <nav class="fixed top-0 inset-x-0 h-20 bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-[#C9A24D]/15 z-40 flex items-center px-6 lg:px-12">
+        <a href="../../index.html" class="flex items-center gap-2.5 text-[#6B7C96] hover:text-[#C9A24D] transition-colors group">
+            <div class="w-10 h-10 rounded-full border border-[#C9A24D]/20 bg-[#C9A24D]/5 flex items-center justify-center group-hover:border-[#C9A24D]/50 group-hover:bg-[#C9A24D]/10 transition-colors">
+                <span class="material-symbols-outlined text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            </div>
+            <span class="text-sm font-semibold tracking-wide uppercase">Back to Portfolio</span>
+        </a>
+        <div class="ml-auto text-sm font-mono text-[#C9A24D]/70 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#C9A24D] animate-pulse"></span>
+            13 MASTERPIECES
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
+        <!-- Header Text -->
+        <header class="mb-16 text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C9A24D]/10 border border-[#C9A24D]/20 text-[#C9A24D] text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-widest mb-6">
+                <span class="material-symbols-outlined text-sm">diamond</span>
+                Luxury Ad Concepts
+            </div>
+            <h1 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.2] mb-6">
+                Conceptual <span class="italic text-[#C9A24D]">Ad Posters</span>
+            </h1>
+            <p class="text-[#6B7C96] text-lg leading-relaxed font-light">
+                High-end visual communication and luxury advertising designs engineered for premium brand positioning and maximum aesthetic impact.
+            </p>
+        </header>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('310903.jpg.jpeg')">
+                <img src="./310903.jpg.jpeg" alt="Conceptual Ad 1" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('310905.jpg.jpeg')">
+                <img src="./310905.jpg.jpeg" alt="Conceptual Ad 2" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('310918.png')">
+                <img src="./310918.png" alt="Conceptual Ad 3" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('310919.png')">
+                <img src="./310919.png" alt="Conceptual Ad 4" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311231.jpg.jpeg')">
+                <img src="./311231.jpg.jpeg" alt="Conceptual Ad 5" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311232.jpg.jpeg')">
+                <img src="./311232.jpg.jpeg" alt="Conceptual Ad 6" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311233.jpg.jpeg')">
+                <img src="./311233.jpg.jpeg" alt="Conceptual Ad 7" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311234.jpg.jpeg')">
+                <img src="./311234.jpg.jpeg" alt="Conceptual Ad 8" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311235.jpg.jpeg')">
+                <img src="./311235.jpg.jpeg" alt="Conceptual Ad 9" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311795.jpg.jpeg')">
+                <img src="./311795.jpg.jpeg" alt="Conceptual Ad 10" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311796.jpg.jpeg')">
+                <img src="./311796.jpg.jpeg" alt="Conceptual Ad 11" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311798.jpg.jpeg')">
+                <img src="./311798.jpg.jpeg" alt="Conceptual Ad 12" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-xl overflow-hidden bg-[#0A0A0B] border border-[#C9A24D]/20 shadow-xl hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.3)] hover:border-[#C9A24D]/60 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311799.jpg.jpeg')">
+                <img src="./311799.jpg.jpeg" alt="Conceptual Ad 13" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/90 backdrop-blur-md text-[#F3E5C8] text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full border border-[#C9A24D]/40 flex items-center gap-1.5 whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4 text-[#C9A24D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View High-Res
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md" onclick="closeLightbox()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 lg:top-8 lg:right-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-[#C9A24D]/20 text-white border border-white/10 hover:border-[#C9A24D]/50 transition-colors z-50">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        
+        <!-- Image Container -->
+        <div class="relative max-w-7xl max-h-[90vh] mx-4 p-2 bg-[#0A0A0B] rounded-xl border border-[#C9A24D]/20 shadow-2xl shadow-[#C9A24D]/10" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Full Resolution" class="max-w-full max-h-[85vh] object-contain rounded-lg">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = './' + src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => { lightboxImg.src = ''; }, 300);
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

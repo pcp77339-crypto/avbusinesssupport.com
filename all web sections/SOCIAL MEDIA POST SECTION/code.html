@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Gallery</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        headline: ['"Space Grotesk"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; }
+        
+        /* Smooth Lightbox Transitions */
+        #lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #lightbox-img {
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #lightbox.active #lightbox-img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-red-500/30 selection:text-white">
+
+    <!-- Navbar / Header -->
+    <nav class="fixed top-0 inset-x-0 h-20 bg-black/50 backdrop-blur-xl border-b border-white/5 z-40 flex items-center px-6 lg:px-12">
+        <a href="../../index.html" class="flex items-center gap-2.5 text-zinc-400 hover:text-white transition-colors group">
+            <div class="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-red-500/30 group-hover:bg-red-500/10 transition-colors">
+                <span class="material-symbols-outlined text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            </div>
+            <span class="text-sm font-semibold tracking-wide uppercase">Back to Portfolio</span>
+        </a>
+        <div class="ml-auto text-sm font-mono text-zinc-500 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            54 WORKS ARCHIVED
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
+        <!-- Header Text -->
+        <header class="mb-16 text-center lg:text-left max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-widest mb-6">
+                <span class="material-symbols-outlined text-sm">share</span>
+                Social Media Arsenal
+            </div>
+            <h1 class="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-6">
+                Scroll-Stopping <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-[#ff1e42] to-rose-300">Campaign Creatives.</span>
+            </h1>
+            <p class="text-zinc-400 text-lg leading-relaxed font-light">
+                A massive archive of high-performing, attention-grabbing social media posts tailored for Instagram, LinkedIn, and Twitter. Designed to drive clicks, engagement, and authority.
+            </p>
+        </header>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252297.jpg.jpeg')">
+                <img src="./252297.jpg.jpeg" alt="Social Media Post 1" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252300.jpg.jpeg')">
+                <img src="./252300.jpg.jpeg" alt="Social Media Post 2" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252303.jpg.jpeg')">
+                <img src="./252303.jpg.jpeg" alt="Social Media Post 3" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252534.jpg.jpeg')">
+                <img src="./252534.jpg.jpeg" alt="Social Media Post 4" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252535.jpg.jpeg')">
+                <img src="./252535.jpg.jpeg" alt="Social Media Post 5" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252536.jpg.jpeg')">
+                <img src="./252536.jpg.jpeg" alt="Social Media Post 6" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252542.jpg.jpeg')">
+                <img src="./252542.jpg.jpeg" alt="Social Media Post 7" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252545.jpg.jpeg')">
+                <img src="./252545.jpg.jpeg" alt="Social Media Post 8" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252558.jpg.jpeg')">
+                <img src="./252558.jpg.jpeg" alt="Social Media Post 9" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252559.jpg.jpeg')">
+                <img src="./252559.jpg.jpeg" alt="Social Media Post 10" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252563.jpg.jpeg')">
+                <img src="./252563.jpg.jpeg" alt="Social Media Post 11" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('252571.jpg.jpeg')">
+                <img src="./252571.jpg.jpeg" alt="Social Media Post 12" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('257445.jpg.jpeg')">
+                <img src="./257445.jpg.jpeg" alt="Social Media Post 13" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('260687.jpg.jpeg')">
+                <img src="./260687.jpg.jpeg" alt="Social Media Post 14" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309654.jpg.jpeg')">
+                <img src="./309654.jpg.jpeg" alt="Social Media Post 15" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309653.jpg.jpeg')">
+                <img src="./309653.jpg.jpeg" alt="Social Media Post 16" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309652.jpg.jpeg')">
+                <img src="./309652.jpg.jpeg" alt="Social Media Post 17" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309651.jpg.jpeg')">
+                <img src="./309651.jpg.jpeg" alt="Social Media Post 18" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309650.jpg.jpeg')">
+                <img src="./309650.jpg.jpeg" alt="Social Media Post 19" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309649.jpg.jpeg')">
+                <img src="./309649.jpg.jpeg" alt="Social Media Post 20" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309648.jpg.jpeg')">
+                <img src="./309648.jpg.jpeg" alt="Social Media Post 21" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('263906.jpg.jpeg')">
+                <img src="./263906.jpg.jpeg" alt="Social Media Post 22" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('263905.jpg.jpeg')">
+                <img src="./263905.jpg.jpeg" alt="Social Media Post 23" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('263904.jpg.jpeg')">
+                <img src="./263904.jpg.jpeg" alt="Social Media Post 24" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('263584.jpg.jpeg')">
+                <img src="./263584.jpg.jpeg" alt="Social Media Post 25" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('263536.jpg.jpeg')">
+                <img src="./263536.jpg.jpeg" alt="Social Media Post 26" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('260690.png')">
+                <img src="./260690.png" alt="Social Media Post 27" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('260688.jpg.jpeg')">
+                <img src="./260688.jpg.jpeg" alt="Social Media Post 28" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309655.jpg.jpeg')">
+                <img src="./309655.jpg.jpeg" alt="Social Media Post 29" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309656.jpg.jpeg')">
+                <img src="./309656.jpg.jpeg" alt="Social Media Post 30" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309657.jpg.jpeg')">
+                <img src="./309657.jpg.jpeg" alt="Social Media Post 31" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309658.jpg.jpeg')">
+                <img src="./309658.jpg.jpeg" alt="Social Media Post 32" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309659.jpg.jpeg')">
+                <img src="./309659.jpg.jpeg" alt="Social Media Post 33" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309660.jpg.jpeg')">
+                <img src="./309660.jpg.jpeg" alt="Social Media Post 34" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('309662.jpg.jpeg')">
+                <img src="./309662.jpg.jpeg" alt="Social Media Post 35" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311584.png')">
+                <img src="./311584.png" alt="Social Media Post 36" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311743.jpg.jpeg')">
+                <img src="./311743.jpg.jpeg" alt="Social Media Post 37" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311744.jpg.jpeg')">
+                <img src="./311744.jpg.jpeg" alt="Social Media Post 38" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311745.jpg.jpeg')">
+                <img src="./311745.jpg.jpeg" alt="Social Media Post 39" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311746.jpg.jpeg')">
+                <img src="./311746.jpg.jpeg" alt="Social Media Post 40" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311747.jpg.jpeg')">
+                <img src="./311747.jpg.jpeg" alt="Social Media Post 41" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311828.jpg.jpeg')">
+                <img src="./311828.jpg.jpeg" alt="Social Media Post 42" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311829.jpg.jpeg')">
+                <img src="./311829.jpg.jpeg" alt="Social Media Post 43" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311830.jpg.jpeg')">
+                <img src="./311830.jpg.jpeg" alt="Social Media Post 44" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311831.jpg.jpeg')">
+                <img src="./311831.jpg.jpeg" alt="Social Media Post 45" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311832.jpg.jpeg')">
+                <img src="./311832.jpg.jpeg" alt="Social Media Post 46" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311838.jpg.jpeg')">
+                <img src="./311838.jpg.jpeg" alt="Social Media Post 47" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311839.jpg.jpeg')">
+                <img src="./311839.jpg.jpeg" alt="Social Media Post 48" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311840.jpg.jpeg')">
+                <img src="./311840.jpg.jpeg" alt="Social Media Post 49" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311841.jpg.jpeg')">
+                <img src="./311841.jpg.jpeg" alt="Social Media Post 50" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311842.jpg.jpeg')">
+                <img src="./311842.jpg.jpeg" alt="Social Media Post 51" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311843.jpg.jpeg')">
+                <img src="./311843.jpg.jpeg" alt="Social Media Post 52" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311844.jpg.jpeg')">
+                <img src="./311844.jpg.jpeg" alt="Social Media Post 53" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden bg-[#161c27] border border-white/5 shadow-xl hover:shadow-[0_10px_30px_-10px_rgba(255,30,66,0.3)] hover:border-red-500/30 transition-all duration-300 cursor-zoom-in" onclick="openLightbox('311845.jpg.jpeg')">
+                <img src="./311845.jpg.jpeg" alt="Social Media Post 54" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span class="bg-black/80 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        View Full
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm" onclick="closeLightbox()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 lg:top-8 lg:right-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-colors z-50">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        
+        <!-- Image Container -->
+        <div class="relative max-w-7xl max-h-[90vh] mx-4 p-2 bg-[#111] rounded-xl border border-white/10 shadow-2xl" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Full Resolution" class="max-w-full max-h-[85vh] object-contain rounded-lg">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = './' + src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => { lightboxImg.src = ''; }, 300); // Clear after fade out
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

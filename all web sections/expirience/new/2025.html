@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>My Experience Timeline</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Fredoka / Poppins for playful bold typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;800;900&amp;family=Poppins:wght@500;600;700;800&amp;family=Fira+Code:wght@700&amp;display=swap" rel="stylesheet">
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-typography">
+    .font-chunky {
+      font-family: 'Fredoka', cursive, system-ui, sans-serif;
+      letter-spacing: 0.03em;
+    }
+    .font-body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .font-code {
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Chunky title 3D embossed earth pop-out effect */
+    .hero-title-shadow {
+      text-shadow: 
+        0 2px 0 #bc6c25,
+        0 4px 0 #78350f,
+        0 6px 1px rgba(20, 32, 5, 0.4),
+        0 10px 24px rgba(40, 54, 24, 0.6);
+    }
+    
+    .title-accent-glow {
+      filter: drop-shadow(0 2px 6px rgba(40, 54, 24, 0.6));
+    }
+  </style>
+<style data-purpose="glow-effects">
+    /* 2023 Crisp Cornsilk Badge with Moss Green Contrast */
+    .badge-2023-earth {
+      box-shadow: 
+        0 0 20px rgba(254, 250, 224, 0.6),
+        inset 0 0 12px rgba(221, 161, 94, 0.25),
+        0 10px 25px rgba(20, 32, 5, 0.5);
+      border: 3.5px solid #606c38;
+    }
+
+    /* 2024 Center Laptop & Experience Bubble - Radiant Cornsilk & Warm Ochre Pop */
+    .badge-center-earth {
+      box-shadow: 
+        0 0 30px rgba(221, 161, 94, 0.5),
+        0 14px 35px rgba(20, 32, 5, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        0 0 0 3px rgba(221, 161, 94, 0.85);
+    }
+
+    /* 2025 Warm Ochre Badge with Glowing Cream Rim */
+    .badge-2025-earth {
+      box-shadow: 
+        0 0 22px rgba(221, 161, 94, 0.75),
+        inset 0 0 12px rgba(188, 108, 37, 0.4),
+        0 10px 25px rgba(20, 32, 5, 0.5);
+      border: 3.5px solid #fefae0;
+    }
+  </style>
+<style data-purpose="banner-gradient">
+    .earth-gradient {
+      background: radial-gradient(circle at 50% 15%, #bc6c25 0%, #8f4f14 38%, #3e4a21 75%, #283618 100%);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-[#fefae0] text-[#283618] antialiased min-h-screen flex flex-col m-0 p-0 font-body">
+<!-- BEGIN: HeroBannerSection -->
+<section class="relative w-full overflow-hidden select-none" data-purpose="experience-hero-banner">
+<!-- Rich Brown / Earth Tone Main Container -->
+<div class="earth-gradient pt-5 md:pt-7 pb-20 sm:pb-24 md:pb-28 px-4 relative z-0 flex flex-col items-center">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[750px] h-[350px] bg-[#dda15e]/20 blur-3xl rounded-full pointer-events-none"></div>
+<!-- Title Section -->
+<div class="flex items-center justify-center gap-2 md:gap-3 mb-5 md:mb-6 relative z-10 scale-100">
+<svg class="w-5 h-5 md:w-6 md:h-6 text-[#dda15e] title-accent-glow -rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+<line x1="10" x2="28" y1="12" y2="8"></line>
+<line x1="8" x2="24" y1="23" y2="23"></line>
+<line x1="12" x2="26" y1="33" y2="37"></line>
+</svg>
+<h1 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#fefae0] font-black tracking-wider uppercase leading-none hero-title-shadow">MY EXPERIENCE</h1>
+<svg class="w-5 h-5 md:w-6 md:h-6 text-[#dda15e] title-accent-glow rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+<line x1="12" x2="30" y1="8" y2="12"></line>
+<line x1="16" x2="32" y1="23" y2="23"></line>
+<line x1="14" x2="28" y1="37" y2="33"></line>
+</svg>
+</div>
+<!-- Timeline Circles (High Contrast & Distinct from Brown Background) -->
+<div class="w-full max-w-2xl mx-auto flex items-center justify-center relative z-10 px-2">
+<!-- 2023 Circle: Bright Cornsilk Background with Moss Green Border & Deep Forest Green Text -->
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#fefae0] badge-2023-earth flex items-center justify-center transition-transform duration-300 hover:scale-105">
+<span class="font-chunky text-[#283618] text-base sm:text-lg md:text-xl font-black tracking-wide">2024</span>
+</div>
+</div>
+<!-- Connecting Dashed Line 1 -->
+<div class="flex-1 max-w-[70px] sm:max-w-[100px] md:max-w-[130px] mx-1.5 sm:mx-2 relative flex items-center justify-center">
+<div class="w-full border-t-[2.5px] sm:border-t-[3px] border-dashed border-[#dda15e]/80"></div>
+<div class="absolute w-2 h-2 rounded-full bg-[#dda15e] shadow-[0_0_8px_#dda15e] left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Center Bubble: 2024 / Laptop Badge in Radiant Cream & Warm Ochre -->
+<div class="flex flex-col items-center relative flex-shrink-0">
+<div class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-b from-[#fefae0] to-[#faedcd] flex flex-col items-center justify-center badge-center-earth group cursor-default transition-transform duration-300 hover:scale-105">
+<!-- Playful Spark Detailing in Tiger's Eye / Ochre -->
+<div class="absolute top-3 right-4 w-1 h-3 md:h-3.5 bg-[#bc6c25] rounded-full rotate-45 shadow-[0_0_6px_#dda15e]"></div>
+<div class="absolute top-8 right-1.5 w-1 h-2.5 md:h-3 bg-[#bc6c25] rounded-full rotate-90 shadow-[0_0_6px_#dda15e]"></div>
+<div class="absolute top-8 left-1.5 w-1 h-2.5 md:h-3 bg-[#bc6c25] rounded-full -rotate-90 shadow-[0_0_6px_#dda15e]"></div>
+<div class="absolute bottom-5 left-3 w-1 h-3 md:h-3.5 bg-[#bc6c25] rounded-full -rotate-45 shadow-[0_0_6px_#dda15e]"></div>
+<!-- Laptop Icon -->
+<svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-[#bc6c25] mb-0.5 transform group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<rect height="12" rx="2" width="18" x="3" y="4"></rect>
+<line x1="2" x2="22" y1="20" y2="20"></line>
+</svg>
+<span class="font-chunky text-[#283618] text-base sm:text-lg md:text-xl font-black tracking-wide leading-none select-none">2025</span>
+</div>
+<div class="mt-2 flex flex-col items-center">
+<div class="w-6 sm:w-7 h-1 bg-[#dda15e] rounded-full mt-1 shadow-[0_0_8px_rgba(221,161,94,0.8)]"></div>
+</div>
+</div>
+<!-- Connecting Dashed Line 2 -->
+<div class="flex-1 max-w-[70px] sm:max-w-[100px] md:max-w-[130px] mx-1.5 sm:mx-2 relative flex items-center justify-center">
+<div class="w-full border-t-[2.5px] sm:border-t-[3px] border-dashed border-[#dda15e]/80"></div>
+<div class="absolute w-2 h-2 rounded-full bg-[#dda15e] shadow-[0_0_8px_#dda15e] left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- 2025 Circle: Vibrant Warm Ochre with Bright Cream Glow Rim & Deep Brown Text -->
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#dda15e] badge-2025-earth flex items-center justify-center transition-transform duration-300 hover:scale-105">
+<span class="font-chunky text-[#283618] text-base sm:text-lg md:text-xl font-black tracking-wide drop-shadow-sm">2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Curved Transition Arc directly slicing into #fefae0 background, preserving corner-to-corner (0,0) to (1440,0) -->
+<div class="absolute inset-0 w-full h-full overflow-hidden leading-none pointer-events-none z-10">
+<svg class="w-full h-full text-[#fefae0]" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 600">
+<path d="M0,0 C380,600 1060,600 1440,0 L1440,600 L0,600 Z"></path>
+</svg>
+</div>
+</section>
+<!-- END: HeroBannerSection -->
+<!-- BEGIN: ExpandedWhiteContentArea -->
+<!-- Soft warm cornsilk (#fefae0) canvas section below the curved earth arc -->
+<main class="flex-grow bg-[#fefae0] pt-4 md:pt-8 pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full" data-purpose="extended-content-space">
+<!-- Clean Text Showcase Container: No boxes or borders, deep forest green text -->
+<div class="max-w-4xl mx-auto text-center mt-2"><h2 class="font-chunky text-xl sm:text-2xl md:text-3xl text-[#283618] font-bold mb-4 tracking-wide">Entered Web Design &amp; Development</h2>
+<p class="text-base sm:text-lg md:text-xl text-[#283618] leading-relaxed max-w-3xl mx-auto text-center font-medium">Expanded my skills from graphic design into Web Design and Development. Started creating modern, responsive websites while continuing graphic design projects. Worked across UI/UX, responsive layouts, landing pages, interactive sections, animations, visual design and complete website experiences, combining my graphic design background with web technologies.</p></div>
+</main>
+<!-- END: ExpandedWhiteContentArea -->
+
+
+</body></html>

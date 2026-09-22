@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Hero Section Portfolio">
+    <title>Stunning Hero Section</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind & Fonts for About Section -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&family=Caveat:wght@600;700&family=Fredoka:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for Smooth Scroll Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ec5b13",
+                "background-light": "#f8f6f6",
+                "background-dark": "#07090e",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"],
+                "signature": ["Caveat", "Dancing Script", "cursive"]
+              },
+            },
+          },
+        }
+    </script>
+    <style>
+        .text-gradient-iridescent {
+          background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 55%, #38bdf8 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .metallic-bevel {
+          filter: drop-shadow(0 0 35px rgba(99, 102, 241, 0.35)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
+        }
+        .subtle-grid {
+          background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+          background-size: 32px 32px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+<style data-purpose="card-geometry">
+    .paper-curl-yellow {
+      position: relative;
+      background: linear-gradient(145deg, #fff9dc 0%, #faeab1 100%);
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+    }
+    .paper-curl-yellow::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, transparent 50%, #ecd07a 50%);
+      border-top-left-radius: 4px;
+      box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.15);
+    }
+    .paper-curl-pink {
+      position: relative;
+      background: linear-gradient(145deg, #fce4ec 0%, #f8c9d4 100%);
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+    }
+    .paper-curl-pink::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, transparent 50%, #e69ab0 50%);
+      border-top-left-radius: 4px;
+      box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.15);
+    }
+    .glass-neon-card {
+      background: radial-gradient(120% 120% at 50% 10%, #152226 0%, #0c1418 60%, #070c0e 100%);
+      box-shadow: 0 0 45px -5px rgba(16, 185, 129, 0.3), 0 0 0 1.5px #10b981;
+    }
+  </style>
+<style data-purpose="brush-strokes">
+    .highlight-brush-yellow {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+    .highlight-brush-yellow::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      right: -10px;
+      top: 15%;
+      bottom: 5%;
+      background: #fbe068;
+      border-radius: 35px 8px 25px 4px;
+      transform: rotate(-1.5deg);
+      z-index: -1;
+      opacity: 0.9;
+    }
+    .highlight-brush-emerald {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+    .highlight-brush-emerald::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      right: -14px;
+      top: 10%;
+      bottom: 5%;
+      background: #10b981;
+      border-radius: 20px 6px 16px 4px;
+      transform: rotate(-1.2deg);
+      z-index: -1;
+    }
+    .highlight-brush-pink {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+    .highlight-brush-pink::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: 15%;
+      bottom: 5%;
+      background: #f1a9bc;
+      border-radius: 28px 6px 20px 4px;
+      transform: rotate(-1.5deg);
+      z-index: -1;
+      opacity: 0.8;
+    }
+  </style>
+<style data-purpose="custom-decorations">
+    .prism-polyhedron {
+      background: linear-gradient(135deg, rgba(255,255,255,0.45) 0%, rgba(200,225,255,0.1) 40%, rgba(0,0,0,0.6) 100%);
+      backdrop-filter: blur(12px);
+      clip-path: polygon(50% 0%, 100% 25%, 85% 85%, 50% 100%, 15% 85%, 0% 25%);
+      box-shadow: 0 0 35px rgba(180, 220, 255, 0.35);
+    }
+    .grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+    }
+  </style>
+
+<style id="why-choose-styles">
+/* Upgraded Premium Sticky Note Styles */
+.sticky-note {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 
+        0 25px 35px -10px rgba(0, 0, 0, 0.4), 
+        0 10px 15px -5px rgba(0, 0, 0, 0.2),
+        inset 0 -3px 10px rgba(0,0,0,0.05),
+        inset 2px 2px 12px rgba(255,255,255,0.5);
+    isolation: isolate;
+    will-change: transform, opacity;
+    /* Realistic irregular edges */
+    border-bottom-right-radius: 40px 10px;
+    border-bottom-left-radius: 10px 5px;
+    border-top-right-radius: 5px 15px;
+}
+.sticky-note::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* High quality paper texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+}
+.sticky-note::after {
+    /* Bottom curl shadow */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 20%, rgba(0,0,0,0.12) 100%);
+    border-bottom-right-radius: 40px 10px;
+    pointer-events: none;
+}
+/* Tape & Pins */
+.tape {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 130px;
+    height: 34px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 0 10px rgba(255,255,255,0.4);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    border-radius: 2px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+.tape-pos { transform: translateX(-50%) rotate(4deg); width: 110px; }
+.push-pin {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 
+        inset -4px -4px 6px rgba(0,0,0,0.3), 
+        inset 4px 4px 8px rgba(255,255,255,0.8), 
+        6px 10px 15px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+.push-pin::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(to right, #222, #666, #222);
+    z-index: -1;
+    box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+    border-radius: 0 0 3px 3px;
+    transform: rotate(15deg);
+}
+.pin-green { background: radial-gradient(circle at 35% 35%, #86efac, #15803d); }
+.pin-red { background: radial-gradient(circle at 35% 35%, #fca5a5, #b91c1c); }
+
+/* Premium Icon Container */
+.icon-holder {
+    background: linear-gradient(145deg, #2a2d35, #14161a);
+    box-shadow: 
+        inset 0 2px 4px rgba(255,255,255,0.15), 
+        inset 0 -4px 8px rgba(0,0,0,0.6),
+        0 15px 25px -5px rgba(0,0,0,0.6),
+        0 8px 10px -5px rgba(0,0,0,0.4);
+    border-radius: 20px;
+    position: relative;
+}
+.icon-holder::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(0,0,0,0.8));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+/* Hand drawn details */
+.drawn-stroke {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke-width: 2.5;
+}
+.drawn-spark {
+    stroke-linecap: round;
+    stroke-width: 3;
+    fill: none;
+}
+.icon-glow-amber { filter: drop-shadow(0 0 8px rgba(252,211,77,0.4)); }
+.icon-glow-emerald { filter: drop-shadow(0 0 8px rgba(52,211,153,0.4)); }
+.icon-glow-slate { filter: drop-shadow(0 0 8px rgba(203,213,225,0.4)); }
+.icon-glow-pink { filter: drop-shadow(0 0 8px rgba(244,114,182,0.4)); }
+</style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="personal-brand">
+            <span class="greeting">Hey,</span> It's Ved Here
+        </div>
+        <div class="video-container">
+            <!-- Background Video -->
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="hero_section/VIDEO_5b061002-9659-49c5-8e39-0d364c46cadd.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Premium About Me Section -->
+    <section id="about" class="relative z-20 mt-[100vh] py-32 md:py-48 px-6 lg:px-16 overflow-hidden flex items-center min-h-[90vh]">
+        <!-- Premium Background Image with Parallax & Overlays -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/premium_about_bg.jpg" alt="Premium Abstract Background" class="w-full h-full object-cover object-center scale-105" />
+            <!-- Gradient Overlay for readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/80 to-transparent"></div>
+            <!-- Vignette -->
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent to-[#07090e]/90"></div>
+        </div>
+
+        <!-- Animated Glowing Orbs (Subtle) -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+        <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+        <!-- Content Container -->
+        <div class="about-content-wrapper relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            
+            <!-- Left Side: Typography & Story (Glassmorphism Card) -->
+            <div class="w-full lg:w-7/12 relative group">
+                <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 md:p-14 shadow-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+                    <!-- Subtle Glass Shine -->
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <header class="mb-8">
+                            <div class="inline-flex items-center gap-4 mb-4">
+                                <span class="h-px w-12 bg-gradient-to-r from-emerald-400 to-transparent"></span>
+                                <span class="text-emerald-400 font-bold tracking-[0.4em] text-xs uppercase drop-shadow-md">Get to know</span>
+                            </div>
+                            <h2 class="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-4 tracking-tighter drop-shadow-lg">
+                                About <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-500 italic font-['Playfair_Display',serif] pr-2">Me</span>
+                            </h2>
+                            <p class="text-lg sm:text-xl text-slate-200 font-light leading-relaxed">
+                                Hi, I'm <span class="text-white font-semibold drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">Ved</span> — transforming abstract ideas into visually stunning, high-performance digital realities.
+                            </p>
+                        </header>
+                        
+                        <div class="space-y-6 text-sm sm:text-base leading-loose text-slate-300 font-light">
+                            <p>
+                                My journey began with a passion for aesthetics — providing graphic design and marketing services that elevated brands through bespoke logos, vivid social media creatives, targeted marketing campaigns, and striking promotional materials.
+                            </p>
+                            <p>
+                                Driven by a desire to create immersive interactive experiences, I evolved into Web Design and Development. Today, I fuse high-end visual design with cutting-edge web technologies, delivering complete digital solutions.
+                            </p>
+                            <p class="text-white font-medium italic border-l-4 border-emerald-500/60 pl-5 py-2 bg-white/5 backdrop-blur-sm rounded-r-lg">
+                                Through AV Business Support, my mission is simple: architect digital presences that look uncompromisingly professional and perform brilliantly.
+                            </p>
+                        </div>
+
+                        <!-- Bottom Accent -->
+                        <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                            <div class="flex gap-6">
+                                <div class="flex flex-col">
+                                    <span class="text-4xl font-black text-white drop-shadow-[0_0_15px_rgba(16,185,129,0.4)]">3+</span>
+                                    <span class="text-xs text-emerald-200/70 uppercase tracking-widest font-bold mt-1">Years Exp.</span>
+                                </div>
+                                <div class="w-px h-14 bg-white/10 mx-2"></div>
+                                <div class="flex flex-col">
+                                    <span class="text-4xl font-black text-white drop-shadow-[0_0_15px_rgba(99,102,241,0.4)]">70+</span>
+                                    <span class="text-xs text-indigo-200/70 uppercase tracking-widest font-bold mt-1">Projects</span>
+                                </div>
+                            </div>
+                            <div class="text-right hidden sm:block">
+                                <span class="font-['Dancing_Script',cursive] text-5xl text-white/90 drop-shadow-xl -rotate-3 inline-block">Ved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Floating Visual Elements / Skills Matrix -->
+            <div class="w-full lg:w-5/12 flex flex-col justify-center relative h-full">
+                <!-- Floating Glass Badges -->
+                <div class="flex flex-col gap-6 relative">
+                    <!-- Vertical Line connecting them -->
+                    <div class="absolute left-[39px] top-10 bottom-10 w-px bg-gradient-to-b from-fuchsia-500/0 via-indigo-500/50 to-emerald-500/0 z-0 hidden lg:block"></div>
+
+                    <!-- Skill 1 -->
+                    <div class="relative z-10 flex items-center gap-6 group transform transition-transform duration-500 hover:translate-x-4">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-900/80 to-[#0a0f16] border border-indigo-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.2)] group-hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] backdrop-blur-md shrink-0 transition-shadow duration-500">
+                            <span class="material-symbols-outlined text-4xl text-indigo-400">palette</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white tracking-wide mb-1">Graphic Design</h3>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Branding • UI • Visuals</p>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="relative z-10 flex items-center gap-6 group transform transition-transform duration-500 hover:translate-x-4 lg:ml-12">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-900/80 to-[#0a0f16] border border-emerald-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.2)] group-hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] backdrop-blur-md shrink-0 transition-shadow duration-500">
+                            <span class="material-symbols-outlined text-4xl text-emerald-400">code</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white tracking-wide mb-1">Web Design</h3>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Frontend • Experiences</p>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="relative z-10 flex items-center gap-6 group transform transition-transform duration-500 hover:translate-x-4 lg:ml-6">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-fuchsia-900/80 to-[#0a0f16] border border-fuchsia-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(217,70,239,0.2)] group-hover:shadow-[0_0_40px_rgba(217,70,239,0.4)] backdrop-blur-md shrink-0 transition-shadow duration-500">
+                            <span class="material-symbols-outlined text-4xl text-fuchsia-400">rocket_launch</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white tracking-wide mb-1">Digital Solutions</h3>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Strategy • Growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Experience Timeline Carousel -->
+    <section id="experience-section" class="relative w-full z-40">
+        <!-- Top SVG Curve Overlay for Seamless Transition -->
+        <div class="absolute top-0 left-0 w-full transform -translate-y-[99%] pointer-events-none z-[60]">
+            <svg viewBox="0 0 1440 120" class="w-full h-auto block" preserveAspectRatio="none" fill="#d00000">
+                <path d="M0,120 Q720,0 1440,120 Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Pinned Container (Main Theme Background) -->
+        <div class="exp-pin-container w-full h-screen overflow-hidden flex flex-col bg-[#d00000]">
+
+            <!-- Dynamic Background Curves/Blobs -->
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <div class="exp-ambient-1 absolute top-48 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-white/10 blur-3xl rounded-full"></div>
+                <div class="exp-ambient-2 absolute top-64 left-1/4 w-[300px] h-[200px] bg-black/10 blur-2xl rounded-full"></div>
+            </div>
+
+            <!-- TRACK LAYER (z-10): Sits behind the TINT overlay so circles slide 'under' the curve boundary -->
+            <div class="relative z-10 w-full flex flex-col pointer-events-none">
+                
+                <!-- Title Section -->
+                <div class="flex items-center justify-center gap-2.5 md:gap-3.5 mt-8 md:mt-12 mb-4 pointer-events-auto">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-white title-accent-glow -rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+                        <line x1="10" x2="28" y1="12" y2="8"></line>
+                        <line x1="8" x2="24" y1="23" y2="23"></line>
+                        <line x1="12" x2="26" y1="33" y2="37"></line>
+                    </svg>
+                    <h1 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-white font-black tracking-wider uppercase leading-none hero-title-shadow drop-shadow-sm">
+                        MY EXPERIENCE
+                    </h1>
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-white title-accent-glow rotate-12 transform -translate-y-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4.5" viewBox="0 0 40 40">
+                        <line x1="12" x2="30" y1="8" y2="12"></line>
+                        <line x1="16" x2="32" y1="23" y2="23"></line>
+                        <line x1="14" x2="28" y1="37" y2="33"></line>
+                    </svg>
+                </div>
+
+                <!-- Timeline Track Wrapper -->
+                <div class="exp-track-wrapper relative w-full h-[180px] mt-4 flex items-center overflow-hidden pointer-events-auto" style="-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+                    <!-- Center Guide / Crosshair (Invisible, for alignment) -->
+                    <div class="absolute left-1/2 w-px h-full bg-transparent z-0 -translate-x-1/2"></div>
+                    
+                    <!-- The Scrollable Track -->
+                    <div class="exp-track absolute left-1/2 flex items-center gap-12 sm:gap-20" style="transform: translateX(0px);">
+                        
+                        <!-- Item: 2023 -->
+                        <div class="exp-item flex flex-col items-center relative" data-index="0">
+                            <div class="exp-circle relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white flex flex-col items-center justify-center border-4 border-[#d00000] shadow-[0_15px_30px_rgba(208,0,0,0.5)]">
+                                <span class="font-chunky text-[#370617] text-base sm:text-lg md:text-xl font-bold tracking-wide">2023</span>
+                            </div>
+                        </div>
+                        <!-- Connector -->
+                        <div class="exp-connector w-12 sm:w-20 border-t-4 border-dashed border-white/50"></div>
+                        
+                        <!-- Item: 2024 -->
+                        <div class="exp-item flex flex-col items-center relative" data-index="1">
+                            <div class="exp-circle relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-b from-[#81c0fc] to-[#60a8f8] flex flex-col items-center justify-center shadow-[0_15px_30px_rgba(13,50,140,0.45)] border border-white/30">
+                                <span class="font-chunky text-white text-base sm:text-lg md:text-xl font-bold tracking-wide">2024</span>
+                            </div>
+                        </div>
+                        <!-- Connector -->
+                        <div class="exp-connector w-12 sm:w-20 border-t-4 border-dashed border-white/50"></div>
+                        
+                        <!-- Item: 2025 -->
+                        <div class="exp-item flex flex-col items-center relative" data-index="2">
+                            <div class="exp-circle relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-b from-[#fefae0] to-[#faedcd] flex flex-col items-center justify-center shadow-[0_15px_30px_rgba(221,161,94,0.5)] border-[3px] border-[#dda15e]">
+                                <span class="font-chunky text-[#283618] text-base sm:text-lg md:text-xl font-bold tracking-wide">2025</span>
+                            </div>
+                        </div>
+                        <!-- Connector -->
+                        <div class="exp-connector w-12 sm:w-20 border-t-4 border-dashed border-white/50"></div>
+                        
+                        <!-- Item: 2026 -->
+                        <div class="exp-item flex flex-col items-center relative" data-index="3">
+                            <div class="exp-circle relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white flex flex-col items-center justify-center border-4 border-[#fb6f92] shadow-[0_15px_30px_rgba(251,111,146,0.5)]">
+                                <span class="font-chunky text-[#4a044e] text-base sm:text-lg md:text-xl font-bold tracking-wide">2026</span>
+                            </div>
+                        </div>
+                        <!-- Connector -->
+                        <div class="exp-connector w-12 sm:w-20 border-t-4 border-dashed border-white/50"></div>
+                        
+                        <!-- Item: Present -->
+                        <div class="exp-item flex flex-col items-center relative" data-index="4">
+                            <div class="exp-circle relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white flex flex-col items-center justify-center border-4 border-[#ff8fab] shadow-[0_15px_30px_rgba(251,111,146,0.5)]">
+                                <span class="font-chunky text-[#831843] text-base sm:text-lg md:text-xl font-bold tracking-wide">Present</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- TINT OVERLAY (z-20): Acts as a mask covering the track layer so circles disappear under the curve edge -->
+            <div class="absolute inset-0 pointer-events-none z-20 flex flex-col">
+                <!-- Curve Part: Starts at top corners (0,0), dips down gently to hold the circles -->
+                <div class="w-full h-[320px] md:h-[350px] relative">
+                    <svg class="exp-tint-bg w-full h-full" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 350">
+                        <path d="M0,0 Q720,660 1440,0 L1440,350 L0,350 Z"></path>
+                    </svg>
+                </div>
+                <!-- Solid TINT Part for the text area below -->
+                <div class="exp-tint-bg flex-grow w-full bg-current"></div>
+            </div>
+
+            <!-- TEXT LAYER (z-30): Sits on top of the TINT overlay -->
+            <div class="relative z-30 flex-grow mt-2 w-full flex flex-col pointer-events-none">
+                <!-- Text area background is handled by the TINT overlay above, so this is transparent -->
+                <div class="exp-content-area flex-grow pt-10 md:pt-16 px-4 sm:px-6 w-full relative bg-transparent pointer-events-auto">
+                    
+                    <!-- Text Stack (Absolute Positioning for Crossfade) -->
+                    <div class="relative w-4xl mx-auto h-[200px]">
+                        
+                        <!-- Text 2023 -->
+                        <div class="exp-text absolute inset-0 text-center opacity-100" data-index="0">
+                            <h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#9d0208] font-bold mb-4 tracking-wide drop-shadow-sm">Started My Freelance Journey</h2>
+                            <p class="font-body text-base sm:text-lg text-[#03071e] leading-relaxed max-w-3xl mx-auto font-medium">Began my professional journey as a Freelance Graphic Designer, crafting creative design solutions for businesses and individuals. From logos and branding to posters, banners, social media creatives, advertisements, thumbnails, menus, and promotional designs — I built a strong foundation through real client projects.</p>
+                        </div>
+                        
+                        <!-- Text 2024 -->
+                        <div class="exp-text absolute inset-0 text-center opacity-0 pointer-events-none" data-index="1">
+                            <h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#0d42ba] font-bold mb-4 tracking-wide drop-shadow-sm">Expanding Graphic Design &amp; Marketing Experience</h2>
+                            <p class="font-body text-base sm:text-lg text-[#0a1e52] leading-relaxed max-w-3xl mx-auto font-medium">Continued working as a Freelance Graphic Designer, taking on a wider range of creative projects for multiple clients. Alongside design, I began offering marketing support — planning content and running campaigns to help clients grow their brand presence — while enhancing my workflow and client communication.</p>
+                        </div>
+                        
+                        <!-- Text 2025 -->
+                        <div class="exp-text absolute inset-0 text-center opacity-0 pointer-events-none" data-index="2">
+                            <h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#283618] font-bold mb-4 tracking-wide drop-shadow-sm">Web Design + Graphic Design</h2>
+                            <p class="font-body text-base sm:text-lg text-[#131a0b] leading-relaxed max-w-3xl mx-auto font-medium">Expanded my expertise into Website Development, adding web design to my freelance services. I began crafting responsive, engaging websites while continuing to deliver high-quality graphic design and marketing support — offering clients a more complete digital package.</p>
+                        </div>
+                        
+                        <!-- Text 2026 -->
+                        <div class="exp-text absolute inset-0 text-center opacity-0 pointer-events-none" data-index="3">
+                            <h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#0284c7] font-bold mb-4 tracking-wide drop-shadow-sm">Advanced Web Solutions</h2>
+                            <p class="font-body text-base sm:text-lg text-[#082f49] leading-relaxed max-w-3xl mx-auto font-medium">Focused deeply on Web Designing and Development, building dynamic, user-friendly, and modern websites. Continued improving my coding skills and UI/UX understanding, providing clients with professional web solutions that effectively represent their businesses online.</p>
+                        </div>
+                        
+                        <!-- Text Present -->
+                        <div class="exp-text absolute inset-0 text-center opacity-0 pointer-events-none" data-index="4">
+                            <h2 class="font-chunky text-2xl sm:text-3xl md:text-4xl text-[#be185d] font-bold mb-4 tracking-wide drop-shadow-sm">AV Business Support</h2>
+                            <p class="font-body text-base sm:text-lg text-[#4b1b2d] leading-relaxed max-w-3xl mx-auto font-medium">Through AV Business Support, I bring together graphic design, web development, and marketing expertise to deliver complete digital solutions — from professional branding and creative designs to modern websites, marketing support, and a strong, cohesive online presence.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Bottom SVG Curve Overlay (Dynamic Color) -->
+        <div class="absolute bottom-0 left-0 w-full transform translate-y-[99%] pointer-events-none z-[60]">
+            <svg viewBox="0 0 1440 120" class="w-full h-auto block" preserveAspectRatio="none">
+                <path class="exp-bottom-curve-path" d="M0,0 Q720,120 1440,0 Z" fill="#d00000"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Metrics / Proven Results Section -->
+    <section id="metrics-section" class="relative min-h-screen w-full pt-48 pb-24 md:pt-64 md:pb-36 flex items-center justify-center overflow-hidden z-30">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="new bg video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-[#03071e]/85 z-10 backdrop-blur-[2px]"></div>
+        
+        <!-- Content Container -->
+        <div class="relative z-20 w-full max-w-5xl mx-auto px-4 sm:px-6">
+            <header class="text-center mb-16 md:mb-24">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-chunky font-black text-white tracking-wide uppercase drop-shadow-xl">
+                    PROVEN <span class="text-sky-400">RESULTS</span>
+                </h2>
+                <p class="text-slate-400 mt-4 font-body text-base sm:text-lg max-w-2xl mx-auto">Delivering high-quality digital experiences optimized for speed, search, and return on investment.</p>
+            </header>
+            
+            <!-- 2x2 Grid for Speedometers -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-20">
+                
+                <!-- Metric 1: PERFORMANCE -->
+                <div class="metrics-item flex flex-col items-center justify-center relative group">
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+                        <!-- Premium Boundary Glow/Ring -->
+                        <div class="absolute inset-0 rounded-full border border-sky-400/20 shadow-[0_0_40px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_50px_rgba(56,189,248,0.3)] transition-shadow duration-700"></div>
+                        
+                        <!-- Circular Gauge -->
+                        <svg class="w-full h-full transform -rotate-90 drop-shadow-lg" viewBox="0 0 100 100">
+                            <!-- Background Track -->
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6" />
+                            <!-- Progress Bar (283 = 2*pi*r, target 90% = 35 offset for visible gap) -->
+                            <circle class="metric-circle" cx="50" cy="50" r="45" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" data-target-offset="35" />
+                        </svg>
+                        
+                        <!-- Number in center -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="flex items-start">
+                                <span class="text-4xl md:text-5xl font-black text-white metric-number font-chunky tracking-tight" data-val="90">0</span>
+                                <span class="text-sky-400 font-bold text-2xl md:text-3xl">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mt-6 text-lg md:text-xl font-bold tracking-[0.2em] text-slate-300 uppercase">PERFORMANCE</h3>
+                </div>
+
+                <!-- Metric 2: BEST PRACTICES -->
+                <div class="metrics-item flex flex-col items-center justify-center relative group">
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+                        <div class="absolute inset-0 rounded-full border border-sky-400/20 shadow-[0_0_40px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_50px_rgba(56,189,248,0.3)] transition-shadow duration-700"></div>
+                        <svg class="w-full h-full transform -rotate-90 drop-shadow-lg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6" />
+                            <!-- 99% gap -->
+                            <circle class="metric-circle" cx="50" cy="50" r="45" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" data-target-offset="15" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="flex items-start">
+                                <span class="text-4xl md:text-5xl font-black text-white metric-number font-chunky tracking-tight" data-val="99">0</span>
+                                <span class="text-sky-400 font-bold text-2xl md:text-3xl">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mt-6 text-lg md:text-xl font-bold tracking-[0.2em] text-slate-300 uppercase">BEST PRACTICES</h3>
+                </div>
+
+                <!-- Metric 3: SEO -->
+                <div class="metrics-item flex flex-col items-center justify-center relative group">
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+                        <div class="absolute inset-0 rounded-full border border-sky-400/20 shadow-[0_0_40px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_50px_rgba(56,189,248,0.3)] transition-shadow duration-700"></div>
+                        <svg class="w-full h-full transform -rotate-90 drop-shadow-lg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6" />
+                            <!-- 99% gap -->
+                            <circle class="metric-circle" cx="50" cy="50" r="45" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" data-target-offset="15" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="flex items-start">
+                                <span class="text-4xl md:text-5xl font-black text-white metric-number font-chunky tracking-tight" data-val="99">0</span>
+                                <span class="text-sky-400 font-bold text-2xl md:text-3xl">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mt-6 text-lg md:text-xl font-bold tracking-[0.2em] text-slate-300 uppercase">SEO</h3>
+                </div>
+
+                <!-- Metric 4: ROI -->
+                <div class="metrics-item flex flex-col items-center justify-center relative group">
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+                        <div class="absolute inset-0 rounded-full border border-sky-400/20 shadow-[0_0_40px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_50px_rgba(56,189,248,0.3)] transition-shadow duration-700"></div>
+                        <svg class="w-full h-full transform -rotate-90 drop-shadow-lg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6" />
+                            <!-- 99% gap -->
+                            <circle class="metric-circle" cx="50" cy="50" r="45" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" data-target-offset="15" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="flex items-start">
+                                <span class="text-4xl md:text-5xl font-black text-white metric-number font-chunky tracking-tight" data-val="99">0</span>
+                                <span class="text-sky-400 font-bold text-2xl md:text-3xl">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mt-6 text-lg md:text-xl font-bold tracking-[0.2em] text-slate-300 uppercase">ROI</h3>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- BEGIN: Pricing Section -->
+<section id="pricing-section" class="relative z-50 min-h-screen w-full flex flex-col justify-between items-center py-10 px-4 lg:px-12 overflow-hidden bg-gradient-to-b from-[#06080d] via-[#090d14] to-[#05070a]" style="background-image: linear-gradient(rgba(6, 8, 13, 0.72), rgba(9, 13, 20, 0.75), rgba(5, 7, 10, 0.85)), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuATkIgfIYg7epULnmA_rwDB5qW5Yn6D5gIqMauupPr4fbYHV9r8V1SsEW2nuFNoByNiCqUqG9QPj2dBM5Qiy391Pn8gipD_gKJwmsK0FRmO1PAteL77aj_X3wIPSqDlrjKzrWACVsCLxCa1Kpaui_Qtb7aEquPXPaqr5EbaiEMS_fuvOkrKd3UpCnUk-ONgsraXfmXlm696ktfOD1KTrIGaSb3Vm_FVq8t71o9Zb4n0ELvGucRap0GuRixoxCLMDCyp-A&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+<!-- BEGIN: Atmospheric Background Effects -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
+<!-- Upper Left Golden Glow -->
+<div class="absolute -top-36 -left-36 w-[550px] height-[550px] rounded-full bg-gradient-to-br from-amber-500/20 via-yellow-600/10 to-transparent blur-[110px]"></div>
+<!-- Golden Orbit Rings Left -->
+<div class="absolute -top-12 -left-20 w-96 h-96 rounded-full border border-amber-400/20 rotate-12"></div>
+<div class="absolute top-2 -left-10 w-[420px] h-[420px] rounded-full border border-amber-300/15 -rotate-45"></div>
+<!-- Center Teal/Emerald Glow -->
+<div class="absolute top-48 left-1/2 -translate-x-1/2 w-[650px] h-[500px] rounded-full bg-emerald-500/15 blur-[130px]"></div>
+<!-- Upper Right Gold/Amber Glow & Curves -->
+<div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-amber-500/15 blur-[120px]"></div>
+<div class="absolute -top-10 -right-20 w-[440px] h-[440px] rounded-full border border-amber-400/20 rotate-45"></div>
+<!-- Upper Right Prism Polyhedron Simulation -->
+<div class="hidden xl:block absolute top-28 right-14 w-28 h-48 prism-polyhedron rotate-[18deg] opacity-75 animate-pulse duration-1000"></div>
+<!-- Bottom Right Dark Chrome Sphere -->
+<div class="hidden lg:block absolute bottom-8 right-10 w-28 h-28 rounded-full bg-gradient-to-br from-slate-400/30 via-slate-800 to-black shadow-[0_10px_35px_rgba(0,0,0,0.8)] border border-slate-700/30"></div>
+<!-- Bottom Left Rocky Chiseled Cliff Graphic Silhouette -->
+<div class="hidden md:block absolute -bottom-10 -left-12 w-80 h-72 opacity-40 mix-blend-screen bg-gradient-to-tr from-stone-900 via-neutral-800 to-transparent rounded-tr-[140px] shadow-[inset_2px_4px_12px_rgba(255,215,0,0.15)]"></div>
+<!-- Subtle Dot Matrix Floating Patches -->
+<div class="absolute top-16 right-12 w-28 h-20 grid-pattern opacity-40"></div>
+<div class="absolute bottom-28 left-20 w-32 h-16 grid-pattern opacity-30"></div>
+</div>
+<!-- END: Atmospheric Background Effects -->
+<!-- BEGIN: Header Section -->
+<header class="pricing-content-fade opacity-0 translate-y-12 relative z-10 text-center max-w-4xl mx-auto pt-2 pb-6 px-4">
+<div class="inline-flex items-center justify-center gap-3 mb-2.5">
+<span class="h-[1px] w-6 bg-gradient-to-r from-transparent to-amber-300/60"></span>
+<span class="text-[11px] font-semibold tracking-[0.28em] text-slate-300 uppercase">OUR PRICING PLANS</span>
+<span class="h-[1px] w-6 bg-gradient-to-l from-transparent to-amber-300/60"></span>
+</div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+        Choose the Perfect Website for 
+        <span class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-300">
+          Your Business
+          <!-- Hand-drawn style decorative underline -->
+<svg class="absolute left-0 -bottom-2.5 w-full h-3 text-emerald-400" fill="none" viewBox="0 0 250 14" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 8.5C50 3.5 130 3.5 246 9" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</span>
+</h1>
+<div class="flex items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium text-slate-400 mt-5">
+<span class="hover:text-slate-200 transition-colors">Modern Websites</span>
+<span class="text-slate-600 font-light">|</span>
+<span class="hover:text-slate-200 transition-colors">Stunning Animations</span>
+<span class="text-slate-600 font-light">|</span>
+<span class="hover:text-slate-200 transition-colors">Better Customers</span>
+</div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Pricing Cards Container -->
+<section class="pricing-content-fade opacity-0 translate-y-12 relative z-10 w-full max-w-6xl mx-auto mt-4 mb-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
+<!-- CARD 1: Technical (Left, Pale Yellow Card) -->
+<article class="paper-curl-yellow rounded-2xl p-6 text-slate-900 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between min-h-[470px]">
+<!-- Card Top Bar & Icon -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded-xl bg-[#111620] text-white flex items-center justify-center shadow-md">
+<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Paper Pin/Ribbon Accent -->
+<span class="text-amber-500/70">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+</div>
+<div class="mb-3">
+<h2 class="text-2xl font-bold tracking-tight text-slate-950">Technical</h2>
+<p class="text-xs font-semibold text-stone-600">Simple &amp; Professional</p>
+</div>
+<p class="text-xs text-stone-700 leading-relaxed min-h-[34px]">
+              A clean and modern single page website for your business.
+            </p>
+<!-- Price Block -->
+<div class="mt-4 mb-6 flex items-center justify-between">
+<div class="highlight-brush-yellow">
+<span class="text-3xl font-extrabold text-slate-950 tracking-tight">₹3,799</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-900/30 text-slate-900 text-xs font-semibold hover:bg-slate-900 hover:text-white transition-colors duration-200">
+                Single Page
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Feature Add-ons -->
+<div class="space-y-3 pt-4 border-t border-stone-300/80">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-stone-800 text-white flex items-center justify-center">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-900 leading-none">Web Animation</p>
+<p class="text-[10px] text-stone-500">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-slate-900 text-sm">₹5,799</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-stone-800 text-white flex items-center justify-center">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-900 leading-none">With 3D Animation</p>
+<p class="text-[10px] text-stone-500">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-slate-900 text-sm">₹8,799</span>
+</div>
+</div>
+</article>
+<!-- CARD 2: Technical Plus (Center, Neon Glow, Elevated) -->
+<article class="glass-neon-card rounded-2xl p-6 text-white transition-all duration-300 hover:-translate-y-2 relative shadow-2xl flex flex-col justify-between min-h-[515px] border border-emerald-400/90 z-20">
+<!-- Top Popular Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-[#3bf2a3] text-black shadow-lg shadow-emerald-500/40">
+<svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path></svg>
+              MOST POPULAR
+            </span>
+</div>
+<div>
+<div class="flex items-center justify-between mb-4 mt-2">
+<div class="w-12 h-12 rounded-xl bg-emerald-950/70 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shadow-inner">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-xs text-emerald-300/40">⭐ Recommended</span>
+</div>
+<div class="mb-3">
+<h2 class="text-2xl font-bold tracking-tight text-white">Technical Plus</h2>
+<p class="text-xs font-semibold text-emerald-400">Flexible &amp; Growth Ready</p>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed min-h-[34px]">
+              A multi-page website with powerful designing and more possibilities for your business.
+            </p>
+<!-- Price Block -->
+<div class="mt-4 mb-5 flex items-center justify-between">
+<div class="highlight-brush-emerald px-1">
+<span class="text-3xl font-extrabold text-black tracking-tight">₹4,999</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-emerald-400/80 bg-emerald-950/60 text-emerald-300 text-[11px] font-semibold hover:bg-emerald-500 hover:text-black transition-colors duration-200">
+                2 - 5 Pages (Recommended)
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Main Feature Add-ons -->
+<div class="space-y-2.5 pt-3 border-t border-slate-700/60">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-emerald-400 text-black flex items-center justify-center font-bold">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-100 leading-none">Web Animation</p>
+<p class="text-[10px] text-slate-400">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-white text-sm">₹6,999</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-emerald-400 text-black flex items-center justify-center font-bold">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-100 leading-none">With 3D Animation</p>
+<p class="text-[10px] text-slate-400">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-white text-sm">₹9,999</span>
+</div>
+</div>
+</div>
+<!-- Extended Tier Sub-Box (5-10 Pages) -->
+<div class="mt-4 p-2.5 rounded-xl border border-emerald-500/30 bg-emerald-950/20 text-xs">
+<p class="text-[11px] font-bold text-emerald-300 flex items-center gap-1 mb-2">
+<span class="">★</span> 5 - 10 Pages (Customizable With Listing)
+            </p>
+<div class="grid grid-cols-3 gap-2 text-center text-[10px]">
+<div class="bg-black/40 p-1.5 rounded-lg border border-emerald-500/20">
+<span class="text-slate-400 block truncate">No Animation</span>
+<span class="text-white font-bold text-xs mt-0.5 block">₹7,999</span>
+</div>
+<div class="bg-black/40 p-1.5 rounded-lg border border-emerald-500/20">
+<span class="text-slate-400 block truncate">With Animation</span>
+<span class="text-white font-bold text-xs mt-0.5 block">₹9,999</span>
+</div>
+<div class="bg-black/40 p-1.5 rounded-lg border border-emerald-500/20">
+<span class="text-slate-400 block truncate">With 3D + Anim.</span>
+<span class="text-white font-bold text-xs mt-0.5 block">₹13,999</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: E-Commerce (Right, Pastel Pink Card) -->
+<article class="paper-curl-pink rounded-2xl p-6 text-slate-900 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between min-h-[470px]">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded-xl bg-[#111620] text-white flex items-center justify-center shadow-md">
+<svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Paperclip Detail Top Right -->
+<span class="text-pink-600">
+<svg class="w-6 h-6 rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+</div>
+<div class="mb-3">
+<h2 class="text-2xl font-bold tracking-tight text-slate-950">E-Commerce</h2>
+<p class="text-xs font-semibold text-rose-800">Sell Without Limits</p>
+</div>
+<p class="text-xs text-stone-700 leading-relaxed min-h-[34px]">
+              A complete online store with unlimited products to grow your business bigger.
+            </p>
+<!-- Price Block -->
+<div class="mt-4 mb-6 flex items-center justify-between">
+<div class="highlight-brush-pink">
+<span class="text-3xl font-extrabold text-slate-950 tracking-tight">₹12,999</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-900/30 text-slate-900 text-xs font-semibold hover:bg-slate-900 hover:text-white transition-colors duration-200">
+                Unlimited Products
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Feature Add-ons -->
+<div class="space-y-3 pt-4 border-t border-rose-300/80">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-rose-900 text-white flex items-center justify-center">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-900 leading-none">Web Animation</p>
+<p class="text-[10px] text-rose-800">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-slate-900 text-sm">₹15,999</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-rose-900 text-white flex items-center justify-center">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<div>
+<p class="font-semibold text-slate-900 leading-none">With 3D Animation</p>
+<p class="text-[10px] text-rose-800">1 Page Only</p>
+</div>
+</div>
+<span class="font-bold text-slate-900 text-sm">₹24,999</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: Pricing Cards Container -->
+<!-- BEGIN: Floating Benefits Strip -->
+<section class="relative z-10 w-full max-w-5xl mx-auto mb-8">
+<div class="rounded-2xl bg-black/40 border border-slate-800/80 backdrop-blur-xl p-4 shadow-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+<!-- Benefit 1 -->
+<div class="flex items-center gap-3 px-2 pt-2 sm:pt-0">
+<div class="w-9 h-9 rounded-lg bg-slate-900/90 border border-slate-700/60 flex items-center justify-center text-emerald-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white">1 Year Hosting &amp; Domain Free</h3>
+<p class="text-[10px] text-slate-400">Complete website solution</p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="flex items-center gap-3 px-2 pt-2 sm:pt-0">
+<div class="w-9 h-9 rounded-lg bg-slate-900/90 border border-slate-700/60 flex items-center justify-center text-teal-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white">Modern &amp; Professional Design</h3>
+<p class="text-[10px] text-slate-400">Clean, Attractive, Responsive</p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="flex items-center gap-3 px-2 pt-2 sm:pt-0">
+<div class="w-9 h-9 rounded-lg bg-slate-900/90 border border-slate-700/60 flex items-center justify-center text-pink-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white">Attract More Customers</h3>
+<p class="text-[10px] text-slate-400">Better Engagement &amp; Reach</p>
+</div>
+</div>
+<!-- Benefit 4 -->
+<div class="flex items-center gap-3 px-2 pt-2 sm:pt-0">
+<div class="w-9 h-9 rounded-lg bg-slate-900/90 border border-slate-700/60 flex items-center justify-center text-purple-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white">Make Your Business Stand Out</h3>
+<p class="text-[10px] text-slate-400">Unique &amp; Memorable</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Floating Benefits Strip -->
+<!-- BEGIN: Samples Section -->
+<section class="relative z-10 w-full max-w-4xl mx-auto pb-4 text-center">
+<h2 class="text-sm font-bold tracking-[0.2em] text-white uppercase mb-1">SAMPLES</h2>
+<p class="text-[11px] text-slate-400 mb-5">Click any website and see what the difrance</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Sample Card 1: Warm Cream -->
+<a href="./simple sample and animation and 3d animation/simple/code.html" class="block group cursor-pointer rounded-xl p-3 bg-gradient-to-br from-[#fef5d1] to-[#f4e29c] text-slate-900 shadow-lg hover:scale-105 transition-all duration-200">
+<div class="flex items-center gap-2.5 text-left mb-2">
+<div class="w-8 h-8 rounded-lg bg-amber-200/80 text-amber-900 flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<p class="text-xs font-bold leading-tight">Simple</p>
+<p class="text-[9px] text-stone-600">Simple Business Website</p>
+</div>
+</div>
+<div class="text-[10px] font-bold text-slate-900 flex items-center justify-center gap-1 group-hover:underline">
+            Click to View →
+          </div>
+</a>
+<!-- Sample Card 2: Pink Motion -->
+<a href="./simple sample and animation and 3d animation/animation/code.html" class="block group cursor-pointer rounded-xl p-3 bg-gradient-to-br from-[#fce2e8] to-[#f8c5d1] text-slate-900 shadow-lg hover:scale-105 transition-all duration-200">
+<div class="flex items-center gap-2.5 text-left mb-2">
+<div class="w-8 h-8 rounded-lg bg-pink-200/80 text-pink-900 flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<p class="text-xs font-bold leading-tight">Animation</p>
+<p class="text-[9px] text-rose-800">Advanced Animated Website</p>
+</div>
+</div>
+<div class="text-[10px] font-bold text-slate-900 flex items-center justify-center gap-1 group-hover:underline">
+            Click to View →
+          </div>
+</a>
+<!-- Sample Card 3: Lavender 3D -->
+<div class="group cursor-pointer rounded-xl p-3 bg-gradient-to-br from-[#ebe6ff] to-[#d6ceff] text-slate-900 shadow-lg hover:scale-105 transition-all duration-200">
+<div class="flex items-center gap-2.5 text-left mb-2">
+<div class="w-8 h-8 rounded-lg bg-purple-200/80 text-purple-900 flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<p class="text-xs font-bold leading-tight">3D Animation</p>
+<p class="text-[9px] text-purple-900">Modern + 3D Designed Website</p>
+</div>
+</div>
+<div class="text-[10px] font-bold text-slate-900 flex items-center justify-center gap-1 group-hover:underline">
+            Click to View →
+          </div>
+</div>
+</div>
+</section>
+<!-- END: Samples Section -->
+</section>
+<!-- END: Pricing Section -->
+<script data-purpose="card-interactions">
+    document.querySelectorAll('button, .group').forEach((item) => {
+      item.addEventListener('click', (e) => {
+        const title = item.innerText.trim();
+        console.log(`User clicked plan action: ${title}`);
+      });
+    });
+  </script>
+
+    
+<!-- BEGIN: Why Choose Section -->
+<section id="why-choose" class="relative w-full h-screen flex flex-col justify-start bg-[#050608] py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden z-20" style="background-image: url('./assets/why-choose-bg.png'); background-size: cover; background-position: center;">
+    
+    <!-- Background Image Overlay for readability -->
+    <div class="absolute inset-0 z-0 bg-black/40 pointer-events-none why-bg-graphics"></div>
+
+    <div class="max-w-[1350px] mx-auto relative z-10 w-full flex-1 flex flex-col items-center">
+        <!-- Header -->
+        <div class="flex flex-col items-center justify-center text-center mb-8 why-header relative shrink-0 w-full">
+            <div class="flex items-center justify-center gap-4 mb-2 sm:mb-4">
+                <div class="w-12 sm:w-16 h-[2px] bg-gradient-to-r from-transparent to-emerald-400/60 rounded-full"></div>
+                <span class="font-signature text-3xl sm:text-4xl md:text-5xl text-white drop-shadow-md">Why Choose</span>
+                <div class="w-12 sm:w-16 h-[2px] bg-gradient-to-l from-transparent to-emerald-400/60 rounded-full"></div>
+            </div>
+            <h2 class="text-4xl sm:text-5xl md:text-[70px] leading-tight font-extrabold text-white tracking-tight font-display drop-shadow-2xl relative text-center">
+                Our <span class="text-emerald-400">AV</span> Business Support
+                <!-- Subtle hand-drawn underline -->
+                <svg class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-4 text-emerald-400/60" viewBox="0 0 200 20" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5,15 Q100,5 195,15" /></svg>
+            </h2>
+        </div>
+
+        <!-- Sticky Notes Stack Container -->
+        <div id="sticky-stack-container" class="relative w-full flex-1 flex justify-center items-center perspective-1000 mt-4 sm:mt-10">
+            
+            <!-- Final Message (z-index: 0) -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center z-0 text-center opacity-0 final-msg pointer-events-none">
+                <p class="font-signature text-4xl sm:text-5xl md:text-6xl text-emerald-400 mb-4 md:mb-6 drop-shadow-lg">There's more below</p>
+                <p class="text-3xl md:text-5xl text-white font-bold font-display flex items-center gap-4 drop-shadow-lg">
+                    Scroll down 
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10 animate-bounce text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </p>
+            </div>
+
+                        <!-- Card 4: Hosting (Pink) - BOTTOM -->
+            <div class="absolute why-note-wrapper w-full max-w-lg md:max-w-xl mx-auto flex justify-center items-center px-4" style="z-index: 1;">
+                <div class="sticky-note bg-[#fbcfe8] p-8 sm:p-10 md:p-12 flex flex-col origin-bottom w-full">
+                    <div class="push-pin pin-red"></div>
+                    <div class="flex items-start gap-5 sm:gap-7 mb-4 relative z-10">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[22px] icon-holder flex items-center justify-center shrink-0 relative">
+                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-pink-400 icon-glow-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <svg class="absolute -left-6 top-0 w-8 h-12 text-pink-600/60" viewBox="0 0 40 60"><path class="drawn-spark" d="M30,10 L15,5 M20,30 L5,25 M25,50 L10,55" stroke="currentColor"/></svg>
+                        <div class="pt-1">
+                            <h3 class="text-[26px] sm:text-[32px] font-black text-[#1a1c23] font-display leading-tight mb-2">1 Year Hosting + Domain Free</h3>
+                            <p class="text-[#3a3f50] font-medium text-lg sm:text-[20px] leading-snug">Get your website ready with no extra cost.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-8 relative z-10 pl-[80px] sm:pl-[110px]">
+                        <svg class="w-10 h-8 sm:w-12 sm:h-10 text-pink-500 shrink-0" viewBox="0 0 60 50">
+                            <path class="drawn-stroke" d="M10,10 Q20,40 50,40" stroke="currentColor"/>
+                            <path class="drawn-stroke" d="M40,30 L52,42 L35,45" stroke="currentColor"/>
+                        </svg>
+                        <p class="font-signature text-[24px] sm:text-[32px] text-[#2d3748]">Your Growth. Our Support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Responsive Design (Neutral) - THIRD -->
+            <div class="absolute why-note-wrapper w-full max-w-lg md:max-w-xl mx-auto flex justify-center items-center px-4" style="z-index: 2;">
+                <div class="sticky-note bg-[#f3f4f6] p-8 sm:p-10 md:p-12 flex flex-col origin-bottom w-full">
+                    <div class="tape tape-pos"></div>
+                    <div class="flex items-start gap-5 sm:gap-7 mb-4 relative z-10">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[22px] icon-holder flex items-center justify-center shrink-0 relative">
+                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-slate-300 icon-glow-slate" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <svg class="absolute -left-6 top-0 w-8 h-12 text-slate-400/60" viewBox="0 0 40 60"><path class="drawn-spark" d="M30,10 L15,5 M20,30 L5,25 M25,50 L10,55" stroke="currentColor"/></svg>
+                        <div class="pt-1">
+                            <h3 class="text-[28px] sm:text-[34px] font-black text-[#1a1c23] font-display leading-tight mb-2">Responsive Design</h3>
+                            <p class="text-[#3a3f50] font-medium text-lg sm:text-[20px] leading-snug">Perfectly adapted to every screen.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-8 relative z-10 pl-[80px] sm:pl-[110px]">
+                        <svg class="w-10 h-8 sm:w-12 sm:h-10 text-slate-400 shrink-0" viewBox="0 0 60 50">
+                            <path class="drawn-stroke" d="M10,10 Q20,40 50,40" stroke="currentColor"/>
+                            <path class="drawn-stroke" d="M40,30 L52,42 L35,45" stroke="currentColor"/>
+                        </svg>
+                        <p class="font-signature text-[24px] sm:text-[32px] text-[#2d3748]">Desktop | Tablet | Phone</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Fast Priority (Mint) - SECOND -->
+            <div class="absolute why-note-wrapper w-full max-w-lg md:max-w-xl mx-auto flex justify-center items-center px-4" style="z-index: 3;">
+                <div class="sticky-note bg-[#bbf7d0] p-8 sm:p-10 md:p-12 flex flex-col origin-bottom w-full">
+                    <div class="push-pin pin-green"></div>
+                    <div class="flex items-start gap-5 sm:gap-7 mb-4 relative z-10">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[22px] icon-holder flex items-center justify-center shrink-0 relative">
+                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-emerald-400 icon-glow-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <svg class="absolute -left-6 top-0 w-8 h-12 text-emerald-600/60" viewBox="0 0 40 60"><path class="drawn-spark" d="M30,10 L15,5 M20,30 L5,25 M25,50 L10,55" stroke="currentColor"/></svg>
+                        <div class="pt-1">
+                            <h3 class="text-[28px] sm:text-[34px] font-black text-[#1a1c23] font-display leading-tight mb-2">Fast Priority</h3>
+                            <p class="text-[#3a3f50] font-medium text-lg sm:text-[20px] leading-snug">Your satisfaction comes first.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-8 relative z-10 pl-[80px] sm:pl-[110px]">
+                        <svg class="w-10 h-8 sm:w-12 sm:h-10 text-emerald-500 shrink-0" viewBox="0 0 60 50">
+                            <path class="drawn-stroke" d="M10,10 Q20,40 50,40" stroke="currentColor"/>
+                            <path class="drawn-stroke" d="M40,30 L52,42 L35,45" stroke="currentColor"/>
+                        </svg>
+                        <p class="font-signature text-[24px] sm:text-[32px] text-[#2d3748]">Quick Support. Always.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 1: UI/UX (Yellow) - TOP -->
+            <div class="absolute why-note-wrapper w-full max-w-lg md:max-w-xl mx-auto flex justify-center items-center px-4" style="z-index: 4;">
+                <div class="sticky-note bg-[#fef08a] p-8 sm:p-10 md:p-12 flex flex-col origin-bottom w-full">
+                    <div class="tape"></div>
+                    <div class="absolute top-8 left-8 flex gap-2 opacity-60">
+                        <div class="w-1.5 h-4 sm:h-5 bg-black/80 rounded-full rotate-12"></div>
+                        <div class="w-1.5 h-6 sm:h-7 bg-black/80 rounded-full -rotate-12"></div>
+                    </div>
+                    <div class="flex items-start gap-5 sm:gap-7 mb-4 relative z-10">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[22px] icon-holder flex items-center justify-center shrink-0 relative">
+                            <!-- Premium Pen Tool Icon -->
+                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-amber-300 icon-glow-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                        </div>
+                        <svg class="absolute -left-6 top-0 w-8 h-12 text-amber-600/60" viewBox="0 0 40 60"><path class="drawn-spark" d="M30,10 L15,5 M20,30 L5,25 M25,50 L10,55" stroke="currentColor"/></svg>
+                        <div class="pt-1">
+                            <h3 class="text-[28px] sm:text-[34px] font-black text-[#1a1c23] font-display leading-tight mb-2">UI/UX Design</h3>
+                            <p class="text-[#3a3f50] font-medium text-lg sm:text-[20px] leading-snug">Best experience across all devices.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-8 relative z-10 pl-[80px] sm:pl-[110px]">
+                        <svg class="w-10 h-8 sm:w-12 sm:h-10 text-amber-500 shrink-0" viewBox="0 0 60 50">
+                            <path class="drawn-stroke" d="M10,10 Q20,40 50,40" stroke="currentColor"/>
+                            <path class="drawn-stroke" d="M40,30 L52,42 L35,45" stroke="currentColor"/>
+                        </svg>
+                        <p class="font-signature text-[24px] sm:text-[32px] text-[#2d3748]">Smooth. Modern. User-Friendly.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- END: Why Choose Section -->
+
+<!-- BEGIN: Wavy Banner Divider (Reference Match) -->
+<div class="w-full relative z-30 pointer-events-none flex items-center justify-center" style="height: 0;">
+    <div class="absolute top-1/2 left-0 w-full overflow-hidden -translate-y-1/2 flex items-center justify-center drop-shadow-xl" style="height: 100px;">
+        <style>
+            @keyframes wavy-banner-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-2400px); }
+            }
+            .animate-wavy-banner {
+                display: flex;
+                width: max-content;
+                animation: wavy-banner-left 15s linear infinite;
+            }
+        </style>
+        <div class="animate-wavy-banner">
+            <!-- Single Seamless SVG to eliminate all gaps/seams -->
+            <svg width="7200" height="100" viewBox="0 0 7200 100" class="shrink-0" xmlns="http://www.w3.org/2000/svg">
+                <!-- Adjusted amplitude (Q150,20) so y=50 is always safely inside the 40px stroke -->
+                <path id="banner-path-seamless" d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50 T1500,50 T1800,50 T2100,50 T2400,50 T2700,50 T3000,50 T3300,50 T3600,50 T3900,50 T4200,50 T4500,50 T4800,50 T5100,50 T5400,50 T5700,50 T6000,50 T6300,50 T6600,50 T6900,50 T7200,50" fill="none" stroke="#fbbf24" stroke-width="40" stroke-linecap="butt" />
+                <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#000" letter-spacing="4" textLength="7230" lengthAdjust="spacing" style="text-transform: uppercase;">
+                    <textPath href="#banner-path-seamless" startOffset="0" dominant-baseline="middle" text-anchor="start">
+                        GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • GREAT DESIGN • BUILDS STRONGER • CHOOSE YOUR SERVICE • 
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- END: Wavy Banner Divider (Reference Match) -->
+
+<!-- BEGIN: AV Services Section Native -->
+<section id="services-portfolio" class="w-full bg-[#050608] bg-[url('./assets/services-bg.jpg')] bg-cover bg-center bg-no-repeat py-24 px-4 sm:px-6 lg:px-8 relative z-20 border-t border-white/10 overflow-hidden">
+    
+    <!-- Abstract Background Glows -->
+    
+    
+
+    <div id="services-content-wrapper" class="max-w-[1350px] mx-auto relative z-10 w-full flex flex-col">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 relative w-full">
+            <div class="flex flex-col items-start gap-4 max-w-2xl w-full">
+                <!-- Pill -->
+                <div class="px-5 py-2 rounded-full border border-white/10 bg-white/5 flex items-center gap-3 backdrop-blur-md">
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.15)] animate-pulse"></div>
+                    <span class="text-white/90 text-xs sm:text-sm font-bold tracking-widest uppercase font-display">Our Design Services</span>
+                </div>
+                
+                <h2 class="text-4xl sm:text-5xl md:text-[64px] font-black text-white font-display leading-tight tracking-tight mt-2">
+                    What do you <span class="text-amber-400 relative inline-block">need?
+                        <!-- Subline -->
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-amber-400/60" viewBox="0 0 100 10" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M0,5 Q50,10 100,5" /></svg>
+                    </span>
+                </h2>
+                
+                <p class="text-[#a0a5b5] text-lg sm:text-xl font-medium mt-4 max-w-xl leading-relaxed">
+                    Choose a design service to get started.<br>
+                    We create visuals that make your brand look better, connect with your audience, and drive real results.
+                </p>
+            </div>
+
+            <!-- Handwritten text right side -->
+            <div class="hidden md:flex flex-col items-end rotate-[-4deg] mt-8 md:mt-0 relative mr-12 lg:mr-20 shrink-0">
+                <span class="font-signature text-[32px] text-white/90 whitespace-nowrap drop-shadow-md">Great Design</span>
+                <span class="font-signature text-[32px] text-white/90 whitespace-nowrap ml-8 drop-shadow-md">Builds Stronger</span>
+                <span class="font-signature text-[40px] text-amber-400 whitespace-nowrap ml-16 relative drop-shadow-lg">
+                    Brands
+                    <svg class="absolute -bottom-2 left-[-20px] w-[130%] h-5 text-amber-400" viewBox="0 0 100 20" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10,10 Q50,20 90,5" /></svg>
+                </span>
+                <!-- Crown icon -->
+                <svg class="absolute -right-10 top-0 w-10 h-10 text-amber-400/80 rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19L5 8L9 12L12 5L15 12L19 8L20 19H4Z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+            
+            <!-- Card 1: Logo Design -->
+            <a href="./all web sections/logo section/logo code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <!-- Icon -->
+                        <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                            <svg class="w-7 h-7 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.15)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                        </div>
+                        <!-- Arrow -->
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300">
+                            <svg class="w-5 h-5 text-white group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[26px] font-bold text-white font-display mb-3">Logo Design</h3>
+                    <p class="text-[#8a8f9d] text-[15px] leading-relaxed mb-4">A unique and memorable logo that represents your brand perfectly.</p>
+                </div>
+                <!-- Image -->
+                <div class="w-full h-48 sm:h-56 mt-auto overflow-hidden relative border-t border-white/10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050608]/90 via-transparent to-transparent z-10 h-16 bottom-0 pointer-events-none"></div>
+                    <img src="./what you want now photos/logo_design_mockup.jpg" alt="Logo Design Mockup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+            </a>
+
+            <!-- Card 2: Banner Design -->
+            <a href="./all web sections/banner section/baner code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                            <svg class="w-7 h-7 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.15)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300">
+                            <svg class="w-5 h-5 text-white group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[26px] font-bold text-white font-display mb-3">Banner Design</h3>
+                    <p class="text-[#8a8f9d] text-[15px] leading-relaxed mb-4">Eye-catching banners that grab attention and get your message across.</p>
+                </div>
+                <div class="w-full h-48 sm:h-56 mt-auto overflow-hidden relative border-t border-white/10">
+                    <img src="./what you want now photos/bqnneer.jpeg" alt="Banner Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+            </a>
+
+            <!-- Card 3: Restaurant Menu -->
+            <a href="./all web sections/manue/new/manue/code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                            <svg class="w-7 h-7 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.15)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                            </svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300">
+                            <svg class="w-5 h-5 text-white group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[26px] font-bold text-white font-display mb-3">Restaurant Menu</h3>
+                    <p class="text-[#8a8f9d] text-[15px] leading-relaxed mb-4">Beautiful and easy-to-read menus that make your food look even better.</p>
+                </div>
+                <div class="w-full h-48 sm:h-56 mt-auto overflow-hidden relative border-t border-white/10">
+                    <img src="./what you want now photos/restaurant_menu_mockup.jpg" alt="Restaurant Menu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+            </a>
+
+            <!-- Card 4: Thumbnail Design -->
+            <a href="./all%20web%20sections/THUMNAIL%20SAMPLE/code/stitch_editorial_youtube_thumbnail_showcase/code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                            <svg class="w-7 h-7 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.15)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                            </svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300">
+                            <svg class="w-5 h-5 text-white group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[26px] font-bold text-white font-display mb-3">Thumbnail Design</h3>
+                    <p class="text-[#8a8f9d] text-[15px] leading-relaxed mb-4">Scroll-stopping thumbnails that grab attention and boost your reach.</p>
+                </div>
+                <div class="w-full h-48 sm:h-56 mt-auto overflow-hidden relative border-t border-white/10">
+                    <img src="./what you want now photos/thumbnail.jpeg" alt="Thumbnail Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+            </a>
+            
+            <!-- Wide Card 5: Social Media Post & Advertisement Posters -->
+            <a href="./all%20web%20sections/banner%20thumnail%20and%20ad%20poster%20section/code.html" class="lg:col-span-4 flex flex-col lg:flex-row bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer mt-4 lg:mt-6 block">
+                
+                <!-- Text Area -->
+                <div class="p-8 lg:p-14 flex flex-col justify-center w-full lg:w-2/5 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10 bg-transparent">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 rounded-[20px] bg-[#161c27] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                            <svg class="w-8 h-8 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.15)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300">
+                            <svg class="w-6 h-6 text-white group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl lg:text-[34px] font-bold text-white font-display mb-4 leading-tight">Social Media Post &<br>Advertisement Posters</h3>
+                    <p class="text-[#8a8f9d] text-lg leading-relaxed">Engaging posts that grow your brand, increase engagement, and keep you connected with your audience.</p>
+                </div>
+
+                <!-- Images Area -->
+                <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-12 p-8 lg:p-14 relative overflow-hidden bg-gradient-to-br from-[#050608]/90 to-[#07090d]">
+                    <!-- Image 1 (Poster) -->
+                    <div class="w-full max-w-[280px] lg:max-w-[320px] rounded-xl overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7)] border border-white/10 transform sm:rotate-[-3deg] group-hover:rotate-[-1deg] group-hover:scale-[1.03] transition-all duration-500 z-10">
+                        <img src="./what you want now photos/poster.jpeg" alt="Poster Design" class="w-full h-auto object-cover">
+                    </div>
+                    <!-- Image 2 (Ad) -->
+                    <div class="w-full max-w-[280px] lg:max-w-[320px] rounded-xl overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7)] border border-white/10 transform sm:rotate-[3deg] group-hover:rotate-[1deg] group-hover:scale-[1.03] transition-all duration-500 sm:mt-12 lg:mt-16 z-20">
+                        <img src="./what you want now photos/adavartasiment.jpeg" alt="Advertisement Design" class="w-full h-auto object-cover">
+                    </div>
+                    
+                    <!-- Decorative Social Icons -->
+                    <div class="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 flex gap-4 z-30">
+                        <!-- Instagram -->
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white shadow-xl transform group-hover:scale-110 transition-transform duration-300 delay-100">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </div>
+                        <!-- Facebook -->
+                        <div class="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center text-white shadow-xl transform group-hover:scale-110 transition-transform duration-300 delay-150">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+<!-- END: AV Services Section Native -->
+<!-- BEGIN: Marketing Services Injected -->
+<style>
+
+    
+    .sky-gradient-bg {
+      background: linear-gradient(180deg, #DCEBFF 0%, #E8F2FF 45%, #FFFFFF 100%);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #B8892E 0%, #C9A24D 50%, #99733E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cloud-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 20px 40px -15px rgba(27, 60, 115, 0.08), 0 2px 6px rgba(47, 107, 255, 0.03);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cloud-card:hover {
+      border-color: rgba(201, 162, 77, 0.45);
+      box-shadow: 0 24px 48px -12px rgba(27, 60, 115, 0.12), 0 0 24px rgba(201, 162, 77, 0.1);
+      transform: translateY(-2px);
+    }
+    .gold-highlight-glow {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 250, 240, 0.88) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(201, 162, 77, 0.55);
+      box-shadow: 0 18px 40px -10px rgba(201, 162, 77, 0.22), 0 0 25px rgba(201, 162, 77, 0.12);
+    }
+    .gold-glow-btn {
+      background: linear-gradient(135deg, #0B1F3A 0%, #162E52 100%);
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px -4px rgba(11, 31, 58, 0.3);
+    }
+    .gold-glow-btn:hover {
+      background: linear-gradient(135deg, #132E54 0%, #1D3D6E 100%);
+      box-shadow: 0 12px 30px -4px rgba(11, 31, 58, 0.4);
+      transform: translateY(-1px);
+    }
+    .cloud-soft-orb {
+      filter: blur(70px);
+      pointer-events-none;
+      border-radius: 9999px;
+      position: absolute;
+    }
+  
+</style>
+<div class="marketing-services-wrapper relative z-30 bg-[#F4F9FF] text-[#4A5A72] antialiased shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+
+<section class="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-12 w-full max-w-[1440px] mx-auto sky-gradient-bg overflow-hidden" id="services-pricing">
+<!-- Realistic Ambient Sky Clouds & Sunlight Glow Layer -->
+<div class="cloud-soft-orb top-0 left-1/4 w-[520px] h-[520px] bg-white/80"></div>
+<div class="cloud-soft-orb top-20 right-10 w-[420px] h-[420px] bg-[#FFF8E7]/70"></div>
+<div class="cloud-soft-orb top-[40%] left-[-10%] w-[580px] h-[580px] bg-[#E1EFFF]/80"></div>
+<div class="cloud-soft-orb bottom-20 right-1/4 w-[600px] h-[600px] bg-white/90"></div>
+<div class="cloud-soft-orb bottom-[-5%] left-1/3 w-[500px] h-[500px] bg-[#FFF5DE]/60"></div>
+<!-- SECTION HEADING -->
+<div class="text-center max-w-3xl mx-auto mb-20 sm:mb-24 relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-[#2F6BFF]/20 shadow-sm mb-5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C9A24D] animate-pulse"></span>
+<span class="text-[11px] font-bold tracking-[0.25em] text-[#0B1F3A] uppercase">MY SERVICES</span>
+</div>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0B1F3A] font-normal tracking-tight leading-[1.15] mb-5">Mar<span class="italic font-light gold-gradient-text">keting</span></h2>
+<p class="text-[#4A5A72] text-sm sm:text-base font-normal max-w-xl mx-auto leading-relaxed">
+        Bespoke high-converting media crafted with cinematic precision, algorithmic understanding, and uncompromising artisanal craftsmanship.
+      </p>
+</div>
+<div class="space-y-36 relative z-10">
+<!-- ========================================================================= -->
+<!-- SERVICE 01: AI VIDEO GENERATION (Reels for Business Promotion) -->
+<!-- ========================================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: 9:16 Reel Mockup (lg:col-span-5) -->
+<div class="lg:col-span-5 flex justify-center sticky top-12">
+<div class="relative w-full max-w-[340px] group">
+<!-- Soft Sunlight Backlight Glow behind phone -->
+<div class="absolute -inset-4 bg-gradient-to-tr from-[#C9A24D]/25 via-white/50 to-[#2F6BFF]/20 rounded-[48px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<!-- Outer Phone Bezel with Luminous Pearl Accent -->
+<div class="relative rounded-[40px] p-3.5 bg-gradient-to-b from-white via-[#F6F9FF] to-[#E8F0FE] border border-white/90 shadow-2xl shadow-[#1B3C73]/15">
+<!-- Notch / Dynamic Island -->
+<div class="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#0B1F3A] rounded-full z-20 flex items-center justify-end px-2 shadow-inner">
+<div class="w-2 h-2 rounded-full bg-[#1A3359]"></div>
+</div>
+<!-- Screen Area 9:16 Container -->
+<div class="relative rounded-[32px] overflow-hidden aspect-[9/16] bg-[#0A0A0B]">
+<img alt="AI Video Generation Reel Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="all web sections/what you want now photos/user_reels_cover.jpg">
+<!-- Overlay Gradient & Reels UI Simulation -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30 pointer-events-none"></div>
+<!-- Interactive Play Trigger -->
+<div class="absolute inset-0 flex items-center justify-center">
+<a class="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md border border-[#C9A24D]/80 flex items-center justify-center text-[#0B1F3A] group-hover:scale-110 group-hover:bg-[#C9A24D] group-hover:text-white transition-all duration-300 shadow-xl cursor-pointer" href="javascript:alert('All these videos are available in the Reels section of my Instagram. Please visit my profile to watch them!')">
+<svg class="w-7 h-7 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</a>
+</div>
+<!-- Live Tag & Reel Meta -->
+<div class="absolute bottom-5 left-5 right-5 pointer-events-none">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#C9A24D] text-[#0B1F3A] uppercase tracking-wider shadow-sm">4K HDR</span>
+<span class="text-[11px] text-white/90 font-medium tracking-wide drop-shadow-sm">Human Voiced Dub</span>
+</div>
+<p class="text-xs text-white/95 font-light line-clamp-2 drop-shadow-sm">Lumière Or — Cinematic luxury commercial campaign generating 3.4x higher conversion.</p>
+</div>
+</div>
+</div>
+<!-- Decorative floating badge -->
+<div class="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-md border border-white/90 rounded-2xl py-2.5 px-4 shadow-xl shadow-[#1B3C73]/10 flex items-center gap-3">
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C9A24D] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C9A24D]"></span>
+</span>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-[#6B7C96] font-semibold">Render Quality</p>
+<p class="text-xs font-bold text-[#0B1F3A]">Hyper-Realistic 60 FPS</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Pricing (lg:col-span-7) -->
+<div class="lg:col-span-7 space-y-7">
+<!-- Header and Description -->
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-serif text-sm tracking-widest text-[#C9A24D] uppercase font-bold">SERVICE 01</span>
+<span class="h-px w-10 bg-[#C9A24D]/40"></span>
+</div>
+<h3 class="font-serif text-3xl sm:text-4xl text-[#0B1F3A] font-medium mb-3">
+              AI Video Generation
+              <span class="block text-xl sm:text-2xl font-sans font-light text-[#2F6BFF] mt-1">(Reels for Business Promotion)</span>
+</h3>
+<p class="text-[#4A5A72] text-base font-normal leading-relaxed">
+              Complete video promotion for your business. Only the video generation is done by AI. Everything else is made by real humans.
+            </p>
+</div>
+<!-- What's Included (all done by us, not by AI) - 5 Rows -->
+<div class="p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/90 shadow-sm space-y-4">
+<h4 class="text-xs font-bold tracking-[0.2em] text-[#0B1F3A] uppercase flex items-center gap-2 pb-2 border-b border-[#2F6BFF]/10">
+<span class="material-symbols-outlined text-[#C9A24D] text-sm">verified</span>
+              What's Included (all done by us, not by AI)
+            </h4>
+<div class="space-y-3">
+<!-- Item 1: Scripting -->
+<div class="flex items-start gap-3.5 p-3 rounded-xl bg-[#F6F9FF]/80 border border-[#DCEBFF] hover:border-[#C9A24D]/50 hover:bg-white transition-all">
+<div class="w-8 h-8 rounded-lg bg-[#2F6BFF]/10 border border-[#2F6BFF]/20 flex items-center justify-center shrink-0 text-[#2F6BFF] mt-0.5">
+<span class="material-symbols-outlined text-base">edit_note</span>
+</div>
+<div>
+<h5 class="text-xs font-bold text-[#0B1F3A]">Scripting</h5>
+<p class="text-xs text-[#4A5A72] font-normal mt-0.5">We write every script ourselves, tailored to your brand.</p>
+</div>
+</div>
+<!-- Item 2: Concept -->
+<div class="flex items-start gap-3.5 p-3 rounded-xl bg-[#F6F9FF]/80 border border-[#DCEBFF] hover:border-[#C9A24D]/50 hover:bg-white transition-all">
+<div class="w-8 h-8 rounded-lg bg-[#C9A24D]/15 border border-[#C9A24D]/30 flex items-center justify-center shrink-0 text-[#C9A24D] mt-0.5">
+<span class="material-symbols-outlined text-base">lightbulb</span>
+</div>
+<div>
+<h5 class="text-xs font-bold text-[#0B1F3A]">Concept</h5>
+<p class="text-xs text-[#4A5A72] font-normal mt-0.5">A unique creative concept for every video, never a copy-paste template.</p>
+</div>
+</div>
+<!-- Item 3: Marketing Idea -->
+<div class="flex items-start gap-3.5 p-3 rounded-xl bg-[#F6F9FF]/80 border border-[#DCEBFF] hover:border-[#C9A24D]/50 hover:bg-white transition-all">
+<div class="w-8 h-8 rounded-lg bg-[#2F6BFF]/10 border border-[#2F6BFF]/20 flex items-center justify-center shrink-0 text-[#2F6BFF] mt-0.5">
+<span class="material-symbols-outlined text-base">insights</span>
+</div>
+<div>
+<h5 class="text-xs font-bold text-[#0B1F3A]">Marketing Idea</h5>
+<p class="text-xs text-[#4A5A72] font-normal mt-0.5">We study your competitors, your area and city, your target audience and what attracts them. Then we build the marketing idea from that research.</p>
+</div>
+</div>
+<!-- Item 4: Dialogues -->
+<div class="flex items-start gap-3.5 p-3 rounded-xl bg-[#F6F9FF]/80 border border-[#DCEBFF] hover:border-[#C9A24D]/50 hover:bg-white transition-all">
+<div class="w-8 h-8 rounded-lg bg-[#C9A24D]/15 border border-[#C9A24D]/30 flex items-center justify-center shrink-0 text-[#C9A24D] mt-0.5">
+<span class="material-symbols-outlined text-base">chat_bubble_outline</span>
+</div>
+<div>
+<h5 class="text-xs font-bold text-[#0B1F3A]">Dialogues</h5>
+<p class="text-xs text-[#4A5A72] font-normal mt-0.5">Every dialogue is written by us. No AI-written lines.</p>
+</div>
+</div>
+<!-- Item 5: Editing -->
+<div class="flex items-start gap-3.5 p-3 rounded-xl bg-[#F6F9FF]/80 border border-[#DCEBFF] hover:border-[#C9A24D]/50 hover:bg-white transition-all">
+<div class="w-8 h-8 rounded-lg bg-[#2F6BFF]/10 border border-[#2F6BFF]/20 flex items-center justify-center shrink-0 text-[#2F6BFF] mt-0.5">
+<span class="material-symbols-outlined text-base">movie_edit</span>
+</div>
+<div>
+<h5 class="text-xs font-bold text-[#0B1F3A]">Editing</h5>
+<p class="text-xs text-[#4A5A72] font-normal mt-0.5">Every video is edited by us, by hand.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN HIGHLIGHT CARD (Real Human Dubbing) -->
+<div class="gold-highlight-glow rounded-2xl p-6 sm:p-7 relative overflow-hidden">
+<!-- Ambient corner light flare -->
+<div class="absolute -top-10 -right-10 w-36 h-36 bg-[#C9A24D]/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-3 relative z-10">
+<div class="w-10 h-10 rounded-xl bg-[#C9A24D]/20 border border-[#C9A24D] flex items-center justify-center text-[#C9A24D] shadow-sm">
+<span class="material-symbols-outlined text-xl">mic</span>
+</div>
+<span class="px-3.5 py-1 rounded-full text-[10px] font-extrabold tracking-widest uppercase bg-gradient-to-r from-[#C9A24D] to-[#B8892E] text-white shadow-sm">
+                ONLY WITH US
+              </span>
+</div>
+<h4 class="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-medium mb-2 relative z-10">
+              Real Human Dubbing. <span class="gold-gradient-text italic">No AI Voices.</span>
+</h4>
+<p class="text-[#4A5A72] text-sm sm:text-base font-normal leading-relaxed mb-3 relative z-10">
+              Most creators use robotic AI voices. We do not. We record real human dubbing for your videos, so your message feels natural, emotional and trustworthy.
+            </p>
+<div class="flex items-center gap-2 text-xs font-semibold text-[#0B1F3A] relative z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C9A24D]"></span>
+<p class="">AI generates the visuals. Humans create everything else.</p>
+</div>
+</div>
+<!-- Sub-heading: How we deliver -->
+<div class="pt-2">
+<div class="flex items-center gap-3 mb-4">
+<h4 class="font-serif text-2xl text-[#0B1F3A] font-medium">How we deliver</h4>
+<span class="h-px flex-1 bg-[#2F6BFF]/15"></span>
+</div>
+<!-- Two Pricing Cards Side by Side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card A: Standard Delivery -->
+<div class="cloud-card rounded-2xl p-6 flex flex-col justify-between relative">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-serif text-xl font-semibold text-[#0B1F3A]">Standard Delivery</h4>
+<span class="text-[10px] tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-[#2F6BFF]/10 text-[#2F6BFF] border border-[#2F6BFF]/20 font-semibold font-mono">Standard</span>
+</div>
+<p class="text-xs text-[#4A5A72] font-normal mb-6 min-h-[32px]">
+                    Delivered on our timeline (2 to 3 days per video)
+                  </p>
+<div class="mb-6 pb-5 border-b border-[#2F6BFF]/10">
+<div class="flex items-baseline gap-1.5">
+<span class="font-sans text-3xl font-bold text-[#0B1F3A] tracking-tight">₹500</span>
+<span class="text-xs text-[#6B7C96]">/ per reel</span>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<p class="text-[11px] uppercase tracking-wider text-[#C9A24D] font-bold">Bulk Packs</p>
+<div class="flex items-center justify-between py-2 px-3.5 rounded-xl bg-white/90 border border-[#DCEBFF] shadow-xs">
+<span class="text-xs text-[#4A5A72] font-medium">5 Reels</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹2,300</span>
+</div>
+<div class="flex items-center justify-between py-2 px-3.5 rounded-xl bg-white/90 border border-[#DCEBFF] shadow-xs">
+<span class="text-xs text-[#4A5A72] font-medium">10 Reels</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹4,500</span>
+</div>
+</div>
+</div>
+<div class="pt-2 text-[11px] text-[#4A5A72] font-medium flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-[#C9A24D] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                  Includes revisions &amp; source files
+                </div>
+</div>
+<!-- Card B: Priority Delivery (Gold Badge) -->
+<div class="cloud-card rounded-2xl p-6 border-[#C9A24D]/50 flex flex-col justify-between relative shadow-lg shadow-[#C9A24D]/10">
+<!-- Most Flexible Badge -->
+<div class="absolute -top-3 right-6">
+<span class="bg-gradient-to-r from-[#C9A24D] to-[#B8892E] text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                    Most Flexible
+                  </span>
+</div>
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-serif text-xl font-semibold text-[#0B1F3A]">Priority Delivery</h4>
+</div>
+<p class="text-xs text-[#2F6BFF] font-medium mb-4 min-h-[32px]">
+                    1 reel every day, on YOUR schedule
+                  </p>
+<div class="mb-4 pb-4 border-b border-[#2F6BFF]/10">
+<div class="flex items-baseline gap-1.5">
+<span class="font-sans text-3xl font-bold text-[#0B1F3A] tracking-tight">₹1,000</span>
+<span class="text-xs text-[#6B7C96]">/ per reel</span>
+</div>
+</div>
+<!-- 24-Hour Delivery Promise Box with Clock Icon -->
+<div class="mb-4 p-3.5 rounded-xl bg-[#FFF9ED] border border-[#C9A24D]/40 flex items-start gap-2.5 shadow-xs">
+<span class="material-symbols-outlined text-[#C9A24D] text-base shrink-0 mt-0.5">schedule</span>
+<div>
+<span class="text-xs font-bold text-[#0B1F3A] block">24-Hour Delivery Promise</span>
+<p class="text-[11px] text-[#4A5A72] font-normal leading-snug mt-0.5">
+                        Every reel is delivered within 24 hours. If we are late, you get ₹100 off that reel.
+                      </p>
+</div>
+</div>
+<div class="space-y-1.5 mb-6">
+<p class="text-[11px] uppercase tracking-wider text-[#C9A24D] font-bold">Contract Plans (1 reel / day)</p>
+<div class="grid grid-cols-1 gap-1.5">
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-white/90 border border-[#DCEBFF]">
+<span class="text-xs text-[#4A5A72]">5 Days</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹4,800</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-white/90 border border-[#DCEBFF]">
+<span class="text-xs text-[#4A5A72]">10 Days</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹9,400</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-white/90 border border-[#DCEBFF]">
+<span class="text-xs text-[#4A5A72]">15 Days</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹14,000</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-white/90 border border-[#DCEBFF]">
+<span class="text-xs text-[#4A5A72]">20 Days</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹18,800</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-white/90 border border-[#DCEBFF]">
+<span class="text-xs text-[#4A5A72]">25 Days</span>
+<span class="text-xs font-bold text-[#0B1F3A]">₹23,500</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-[#FFF9ED] border border-[#C9A24D]/40">
+<span class="text-xs text-[#0B1F3A] font-semibold">30 Days</span>
+<span class="text-xs font-bold text-[#C9A24D]">₹28,000</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2 text-[11px] text-[#0B1F3A] font-semibold flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-[#C9A24D] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" fill-rule="evenodd"></path>
+</svg>
+                  Guaranteed slot &amp; dedicated daily render queue
+                </div>
+</div>
+</div>
+</div>
+<!-- Helper Note Below Cards -->
+<div class="p-3.5 rounded-xl bg-white/70 border border-[#2F6BFF]/15 flex items-center gap-3 backdrop-blur-sm">
+<div class="w-5 h-5 rounded-full bg-[#2F6BFF]/10 flex items-center justify-center shrink-0 text-[#2F6BFF]">
+<span class="text-xs font-serif font-bold">i</span>
+</div>
+<p class="text-xs text-[#4A5A72] font-normal">
+<span class="text-[#0B1F3A] font-semibold">Standard</span> = we deliver when our schedule allows. <span class="text-[#2F6BFF] font-semibold">Priority</span> = you choose the day, we deliver on time, every day.
+            </p>
+</div>
+<!-- Action Button to open Video Samples screen -->
+<div>
+<a class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl font-semibold text-sm tracking-wide gold-glow-btn group cursor-pointer" href="javascript:alert('All these videos are available in the Reels section of my Instagram. Please visit my profile to watch them!')">
+<span class="">View Video Samples</span>
+<span class="transition-transform group-hover:translate-x-1 font-bold">→</span>
+</a>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- SERVICE 02: PRODUCT BENEFIT CONCEPTUAL AD POSTERS (PBCAP) -->
+<!-- Mirrored layout: details on the left, poster mockup on the right -->
+<!-- ========================================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: Details & Pricing (lg:col-span-7) -->
+<div class="lg:col-span-7 space-y-8 order-2 lg:order-1">
+<!-- Header and Description -->
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-serif text-sm tracking-widest text-[#C9A24D] uppercase font-bold">SERVICE 02</span>
+<span class="h-px w-10 bg-[#C9A24D]/40"></span>
+</div>
+<h3 class="font-serif text-3xl sm:text-4xl text-[#0B1F3A] font-medium mb-3">
+              Product Benefit Conceptual Ad Posters
+              <span class="block text-xl sm:text-2xl font-sans font-light text-[#2F6BFF] mt-1">(PBCAP)</span>
+</h3>
+<p class="text-[#4A5A72] text-base font-normal leading-relaxed">
+              Scroll-stopping ad posters that show your product's benefit through one powerful, unexpected visual idea. Concept, design and finishing by our team.
+            </p>
+</div>
+<!-- Base Price Card -->
+<div class="cloud-card rounded-2xl p-6 space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-xs uppercase tracking-widest text-[#6B7C96] font-bold mb-1">Single Asset Investment</p>
+<h4 class="font-serif text-2xl text-[#0B1F3A] font-medium">Per Poster: <span class="font-sans font-bold text-[#0B1F3A]">₹799</span></h4>
+</div>
+<span class="px-3 py-1 rounded-full bg-[#2F6BFF]/10 border border-[#2F6BFF]/25 text-[#2F6BFF] text-xs font-semibold">
+                Print &amp; Digital Ready (300 DPI)
+              </span>
+</div>
+<!-- Delivery Line with Clock Icon -->
+<div class="pt-3 border-t border-[#2F6BFF]/10 flex items-start sm:items-center gap-2.5 text-xs text-[#4A5A72] font-normal">
+<span class="material-symbols-outlined text-[#C9A24D] text-base shrink-0">schedule</span>
+<p class="">Single poster delivered within 10 to 16&nbsp; hours. Larger or more complex orders may take a little longer, and we always do our best to deliver on time.</p>
+</div>
+</div>
+<!-- Bulk Packs as 6 Elegant Tiles -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<p class="text-xs font-bold tracking-[0.2em] text-[#0B1F3A] uppercase">Volume Campaign Bundles</p>
+<span class="text-xs text-[#6B7C96] font-medium">Save up to 35% on multi-poster batches</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+<!-- Tile 1: 5 Posters -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center">
+<span class="text-xs text-[#4A5A72] font-semibold">5 Posters</span>
+<span class="text-lg font-bold text-[#0B1F3A] mt-1">₹3,800</span>
+<span class="text-[10px] text-[#6B7C96] mt-0.5">₹760 / each</span>
+</div>
+<!-- Tile 2: 10 Posters -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center">
+<span class="text-xs text-[#4A5A72] font-semibold">10 Posters</span>
+<span class="text-lg font-bold text-[#0B1F3A] mt-1">₹7,500</span>
+<span class="text-[10px] text-[#6B7C96] mt-0.5">₹750 / each</span>
+</div>
+<!-- Tile 3: 15 Posters -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center">
+<span class="text-xs text-[#4A5A72] font-semibold">15 Posters</span>
+<span class="text-lg font-bold text-[#0B1F3A] mt-1">₹11,200</span>
+<span class="text-[10px] text-[#6B7C96] mt-0.5">₹746 / each</span>
+</div>
+<!-- Tile 4: 20 Posters -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center">
+<span class="text-xs text-[#4A5A72] font-semibold">20 Posters</span>
+<span class="text-lg font-bold text-[#0B1F3A] mt-1">₹15,000</span>
+<span class="text-[10px] text-[#6B7C96] mt-0.5">₹750 / each</span>
+</div>
+<!-- Tile 5: 25 Posters -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center">
+<span class="text-xs text-[#4A5A72] font-semibold">25 Posters</span>
+<span class="text-lg font-bold text-[#0B1F3A] mt-1">₹18,800</span>
+<span class="text-[10px] text-[#6B7C96] mt-0.5">₹752 / each</span>
+</div>
+<!-- Tile 6: 30 Posters with "Best Value" Badge -->
+<div class="cloud-card rounded-xl p-4 text-center flex flex-col justify-center relative overflow-hidden border-[#C9A24D] bg-[#FFFBF0] shadow-md shadow-[#C9A24D]/10">
+<div class="absolute -top-1 -right-1 bg-gradient-to-l from-[#C9A24D] to-[#B8892E] text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-bl tracking-wider">
+                  Best Value
+                </div>
+<span class="text-xs text-[#0B1F3A] font-semibold">30 Posters</span>
+<span class="text-lg font-bold text-[#C9A24D] mt-1">₹22,500</span>
+<span class="text-[10px] text-[#99733E] font-medium mt-0.5">₹750 / each</span>
+</div>
+</div>
+</div>
+<!-- Creative Deliverables Specs Strip -->
+<div class="grid grid-cols-3 gap-3 text-center py-3.5 border-y border-[#2F6BFF]/15 bg-white/50 rounded-xl">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-[#6B7C96] font-bold">Resolution</p>
+<p class="text-xs font-bold text-[#0B1F3A]">Ultra-HD 8K / Print PDF</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-[#6B7C96] font-bold">Turnaround</p>
+<p class="text-xs font-bold text-[#0B1F3A]">24-48 Hours</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-[#6B7C96] font-bold">Ownership</p>
+<p class="text-xs font-bold text-[#0B1F3A]">100% Commercial Rights</p>
+</div>
+</div>
+<!-- Action Button to open Poster Samples screen -->
+<div>
+<a class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl font-semibold text-sm tracking-wide gold-glow-btn group cursor-pointer" href="all web sections/bcpA/code.html">
+<span class="">View Poster Samples</span>
+<span class="transition-transform group-hover:translate-x-1 font-bold">→</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Poster Mockup (lg:col-span-5) -->
+<div class="lg:col-span-5 flex justify-center order-1 lg:order-2 sticky top-12">
+<div class="relative w-full max-w-[380px] group">
+<!-- Soft Sunlight Ambient Haze behind frame -->
+<div class="absolute -inset-4 bg-gradient-to-tr from-[#C9A24D]/25 via-white/50 to-[#2F6BFF]/20 rounded-[32px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<!-- Gallery Float Frame with Luxury White Pearl & Gold Accent -->
+<div class="relative rounded-2xl p-3 bg-gradient-to-b from-white via-[#F6F9FF] to-[#EAF1FD] border border-white shadow-2xl shadow-[#1B3C73]/15">
+<!-- Poster Artwork Inner Container -->
+<div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-[#0A0A0B]">
+<img alt="Conceptual Ad Poster Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="all web sections/bcpA/310918.png">
+<!-- Vignette & Luxury Shine -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20 pointer-events-none"></div>
+<!-- Interactive Preview Trigger (Entire Image) -->
+<a href="all web sections/bcpA/code.html" class="absolute inset-0 z-10 cursor-pointer" title="View Gallery"></a>
+<!-- Poster Title Badge -->
+<div class="absolute bottom-4 left-4 right-4 pointer-events-none flex items-center justify-between">
+<div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#C9A24D] text-[#0B1F3A] uppercase tracking-wider shadow-sm">Haute Horlogerie</span>
+<p class="text-xs text-white font-semibold mt-1 drop-shadow-sm">The Nova Chronograph</p>
+</div>
+<span class="text-[11px] text-[#F3E5C8] font-serif italic drop-shadow-sm">Benefit Metaphor</span>
+</div>
+</div>
+</div>
+<!-- Second Staggered Poster Accent Behind -->
+<div class="absolute -top-4 -left-4 w-full h-full rounded-2xl border border-white/80 bg-white/60 -z-10 transform -rotate-2 pointer-events-none shadow-sm"></div>
+<!-- Floating Review Testimonial -->
+<div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-white rounded-xl p-3.5 shadow-xl shadow-[#1B3C73]/10 max-w-[220px]">
+
+<p class="text-[10px] text-[#4A5A72] italic leading-snug">"Tripled our Instagram ad CTR within the first 48 hours."</p>
+<p class="text-[9px] text-[#0B1F3A] font-bold mt-1">— Aurelian Watch Studio</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- MODAL / OVERLAY SCREEN 01: "Video Samples" screen -->
+<!-- Target: #video-samples-overlay -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 bg-[#E8F2FF]/85 backdrop-blur-2xl opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-300 overflow-y-auto" id="video-samples-overlay">
+<div class="min-h-screen py-10 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col">
+<!-- Top Navigation Bar inside Modal -->
+<div class="flex items-center justify-between pb-6 border-b border-[#2F6BFF]/15 mb-8">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1F3A] hover:text-[#2F6BFF] transition-colors py-2 px-4 rounded-xl bg-white/80 border border-white shadow-sm" href="#services-pricing">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Back to Services
+        </a>
+<div class="text-center">
+<h3 class="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-medium">Video Portfolio</h3>
+<p class="text-xs text-[#4A5A72] font-normal">Cinematic AI-generated 9:16 reels with real human scripting &amp; voice</p>
+</div>
+<a class="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center text-[#4A5A72] hover:text-[#0B1F3A] hover:bg-white transition-all text-xl" href="#services-pricing">
+          ×
+        </a>
+</div>
+<!-- Category Filter Chips -->
+<div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0B1F3A] text-white shadow-sm">All Works</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Food</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Real Estate</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Fashion</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Tech</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Local Business</button>
+</div>
+<!-- Grid of Vertical 9:16 Reel Thumbnails with Gold Play Icons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Video 1: Cosmetic Reel -->
+<div class="relative group rounded-2xl overflow-hidden aspect-[9/16] bg-white border border-white shadow-lg shadow-[#1B3C73]/10">
+<img alt="Cosmetics AI Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1USvhBv2L6JHr35S25r_aA4LjF6_46K_Y6eprar5dCkqdcyhkuPCaEF_0keLYuN79hFYuyoA6tLT2h54boaGEtQhoY8wbHwyvza06LFWJsEtWgclSWVLANu7JtAO_5gPDWG2NrnPvzmgXozE1ACbeBBmW9mUfQOoBjoZklInqVnFY9HkElbt-ay9O81uX0z8jxcTNrX6IvK-a6v7MbNZWv0Es6HyxmiQIK0-CZJ5SfMDA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<a class="absolute inset-0 flex items-center justify-center" href="#video-lightbox-1">
+<span class="w-14 h-14 rounded-full bg-white/90 border border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A24D] group-hover:text-white transition-all shadow-xl">
+<svg class="w-6 h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+</a>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/90 backdrop-blur-md border border-[#C9A24D]/40 text-[#0B1F3A]">Fashion / Beauty</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<h5 class="text-sm font-semibold text-white">Lumière Or Elixir</h5>
+<p class="text-[11px] text-white/80 font-light mt-0.5">3.4M Impressions • Real Actor Dubbing</p>
+</div>
+</div>
+<!-- Video 2: Artisan Gourmet Dish Reel -->
+<div class="relative group rounded-2xl overflow-hidden aspect-[9/16] bg-white border border-white shadow-lg shadow-[#1B3C73]/10">
+<img alt="Gourmet Dining Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1X9VAvjb1_98OmW1ZQBiC2jC-8ZQWiWJ64HnxaJE6q2YKYSLO6zGF6EarpPwYDAHHx_KMiDq-Rbpo3guMml_KgQh1Qsf-trSIIWlaJhYaZXib2TbEMkXA0hh3t_YB7Io4AUVno_AwXeC-k9hiLHjAgk7PPQ4-J_KbcgczqhqCOTOD7l-eA2_VA2VAUqajXZnz-w6L-BprMwG5h8wyqCR3M2ftQAHPKMXUw0l-pfbqWOMg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<a class="absolute inset-0 flex items-center justify-center" href="#video-lightbox-1">
+<span class="w-14 h-14 rounded-full bg-white/90 border border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A24D] group-hover:text-white transition-all shadow-xl">
+<svg class="w-6 h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+</a>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/90 backdrop-blur-md border border-[#C9A24D]/40 text-[#0B1F3A]">Food &amp; Hospitality</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<h5 class="text-sm font-semibold text-white">Auberge Duck Confit</h5>
+<p class="text-[11px] text-white/80 font-light mt-0.5">Viral Food Reel • Handcrafted Sound FX</p>
+</div>
+</div>
+<!-- Video 3: Luxury Watch Motion -->
+<div class="relative group rounded-2xl overflow-hidden aspect-[9/16] bg-white border border-white shadow-lg shadow-[#1B3C73]/10">
+<img alt="Luxury Horology Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XxGB8jt7KAZmZKKjdwkAM2xM4bksrNRDeITGkkGrA58I-v1N4UX1mUwUmI0F0DsxvXjtu9WbWv7nBUO29LVCsj9dL_ohm2BGrqHl-bnx6M2PZeDYvjLkxSU6XaxU-Xc21uByYH9D8GuL3yKyGmjZBK54TfVM-HJ5E_o_CWj74AF-ETMfgJ3nNdaQXDq43hUPmrjJwX7kUihCgD_9-3JHa4wRmxpPoMMNTAmYgb8D7Y">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<a class="absolute inset-0 flex items-center justify-center" href="#video-lightbox-1">
+<span class="w-14 h-14 rounded-full bg-white/90 border border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A24D] group-hover:text-white transition-all shadow-xl">
+<svg class="w-6 h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+</a>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/90 backdrop-blur-md border border-[#C9A24D]/40 text-[#0B1F3A]">Tech &amp; Luxury</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<h5 class="text-sm font-semibold text-white">Obsidian &amp; Liquid Gold</h5>
+<p class="text-[11px] text-white/80 font-light mt-0.5">Commercial Reel • English Voiceover</p>
+</div>
+</div>
+<!-- Video 4: Acoustic Soundwave Reel -->
+<div class="relative group rounded-2xl overflow-hidden aspect-[9/16] bg-white border border-white shadow-lg shadow-[#1B3C73]/10">
+<img alt="Acoustic Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VCLlzcwoF_9gDoANKfOqsnL493JTidLfqV_Ej1d7eRoci04wI3kKtT44N72ggUsl63sJt9orx3zD6QAqavASmbavpRM-Lk87pvNPw4vzXFaU6BaRIZC2CcqvqXgRqynJ2ewW3asvu9KyCVREZa_AsNrLAguvdQZhQsd_rHT9szcfJeAGscCtlpAUlmFXGFCai5jNS4k4e3054fs-mrZd0dDIvMV-1O001DOUSZ7wsP">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<a class="absolute inset-0 flex items-center justify-center" href="#video-lightbox-1">
+<span class="w-14 h-14 rounded-full bg-white/90 border border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A24D] group-hover:text-white transition-all shadow-xl">
+<svg class="w-6 h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+</a>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/90 backdrop-blur-md border border-[#C9A24D]/40 text-[#0B1F3A]">Tech</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<h5 class="text-sm font-semibold text-white">Sonus Elite Noise-Cancel</h5>
+<p class="text-[11px] text-white/80 font-light mt-0.5">High-Retention Reel • Custom Audio Scoring</p>
+</div>
+</div>
+</div>
+<!-- Lightbox Video Player Modal (Triggered on click) -->
+<div class="fixed inset-0 z-50 bg-[#0B1F3A]/70 backdrop-blur-2xl opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-200 flex items-center justify-center p-4" id="video-lightbox-1">
+<a class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/80 text-[#0B1F3A] flex items-center justify-center text-2xl hover:bg-white transition-all shadow-lg" href="javascript:alert('All these videos are available in the Reels section of my Instagram. Please visit my profile to watch them!')">×</a>
+<div class="max-w-md w-full bg-white border border-white rounded-3xl p-4 shadow-2xl relative">
+<div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black">
+<img alt="Playing Video Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1USvhBv2L6JHr35S25r_aA4LjF6_46K_Y6eprar5dCkqdcyhkuPCaEF_0keLYuN79hFYuyoA6tLT2h54boaGEtQhoY8wbHwyvza06LFWJsEtWgclSWVLANu7JtAO_5gPDWG2NrnPvzmgXozE1ACbeBBmW9mUfQOoBjoZklInqVnFY9HkElbt-ay9O81uX0z8jxcTNrX6IvK-a6v7MbNZWv0Es6HyxmiQIK0-CZJ5SfMDA">
+<!-- Video Player Controls Bar Simulation -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 flex flex-col justify-between p-6">
+<div class="flex justify-between items-center text-xs text-white">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> 4K Ultra HD</span>
+<span class="text-[#F3E5C8]">Dolby Atmos Dubbed</span>
+</div>
+<div>
+<div class="w-full bg-white/30 h-1.5 rounded-full overflow-hidden mb-3">
+<div class="bg-[#C9A24D] h-full w-2/3"></div>
+</div>
+<div class="flex items-center justify-between text-white text-xs">
+<span class="">0:18 / 0:30</span>
+<span class="text-[#F3E5C8] font-semibold">Real Human Voiceover Engaged</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 px-2 flex justify-between items-center">
+<div>
+<h4 class="text-sm font-bold text-[#0B1F3A]">Lumière Or — Global Campaign Reel</h4>
+<p class="text-xs text-[#4A5A72]">Produced for Aurélia Paris • Standard 2-Day Turnaround</p>
+</div>
+<a class="px-4 py-2 rounded-lg bg-[#0B1F3A] text-white text-xs font-bold shadow-md hover:bg-[#1A3359] transition-colors" href="#services-pricing">Book This Reel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- MODAL / OVERLAY SCREEN 02: "Poster Samples" screen -->
+<!-- Target: #poster-samples-overlay -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 bg-[#E8F2FF]/85 backdrop-blur-2xl opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-300 overflow-y-auto" id="poster-samples-overlay">
+<div class="min-h-screen py-10 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col">
+<!-- Top Navigation Bar inside Poster Gallery Modal -->
+<div class="flex items-center justify-between pb-6 border-b border-[#2F6BFF]/15 mb-8">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1F3A] hover:text-[#2F6BFF] transition-colors py-2 px-4 rounded-xl bg-white/80 border border-white shadow-sm" href="#services-pricing">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Back to Services
+        </a>
+<div class="text-center">
+<h3 class="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-medium">Poster Archive</h3>
+<p class="text-xs text-[#4A5A72] font-normal">Product Benefit Conceptual Ad Posters (PBCAP) with metaphorical impact</p>
+</div>
+<a class="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center text-[#4A5A72] hover:text-[#0B1F3A] hover:bg-white transition-all text-xl" href="#services-pricing">
+          ×
+        </a>
+</div>
+<!-- Category Filter Chips -->
+<div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0B1F3A] text-white shadow-sm">All Categories</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Horology</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Audio Tech</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Cosmetics</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#DCEBFF] text-[#4A5A72] hover:border-[#2F6BFF] hover:text-[#0B1F3A] transition-all">Culinary</button>
+</div>
+<!-- Masonry Style Gallery of Posters with Hover Zoom -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+<!-- Poster 1: Luxury Watch Emerging from Molten Gold -->
+<div class="cloud-card rounded-2xl overflow-hidden p-3 group shadow-lg shadow-[#1B3C73]/10">
+<div class="relative overflow-hidden rounded-xl aspect-[3/4] bg-black">
+<img alt="Luxury Chronograph Ad Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AEtjO1XxGB8jt7KAZmZKKjdwkAM2xM4bksrNRDeITGkkGrA58I-v1N4UX1mUwUmI0F0DsxvXjtu9WbWv7nBUO29LVCsj9dL_ohm2BGrqHl-bnx6M2PZeDYvjLkxSU6XaxU-Xc21uByYH9D8GuL3yKyGmjZBK54TfVM-HJ5E_o_CWj74AF-ETMfgJ3nNdaQXDq43hUPmrjJwX7kUihCgD_9-3JHa4wRmxpPoMMNTAmYgb8D7Y">
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#C9A24D]">Benefit Metaphor</span>
+<p class="text-sm font-semibold text-white">"Forged in Timeless Fusion"</p>
+<p class="text-xs text-slate-200 font-light mt-1">Conveys indestructible craftsmanship and molten heritage.</p>
+</div>
+</div>
+<!-- Zoom Lightbox trigger -->
+<a class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 border border-[#C9A24D]/60 text-[#0B1F3A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#C9A24D] hover:text-white" href="#poster-lightbox-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="p-3 flex justify-between items-center">
+<h5 class="text-xs font-bold text-[#0B1F3A]">Aurelian Genève • Nova Chronograph</h5>
+<span class="text-xs text-[#C9A24D] font-bold">₹799 Base</span>
+</div>
+</div>
+<!-- Poster 2: Soundwave Glass Headphones -->
+<div class="cloud-card rounded-2xl overflow-hidden p-3 group shadow-lg shadow-[#1B3C73]/10">
+<div class="relative overflow-hidden rounded-xl aspect-[3/4] bg-black">
+<img alt="Acoustic Noise-Canceling Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AEtjO1VCLlzcwoF_9gDoANKfOqsnL493JTidLfqV_Ej1d7eRoci04wI3kKtT44N72ggUsl63sJt9orx3zD6QAqavASmbavpRM-Lk87pvNPw4vzXFaU6BaRIZC2CcqvqXgRqynJ2ewW3asvu9KyCVREZa_AsNrLAguvdQZhQsd_rHT9szcfJeAGscCtlpAUlmFXGFCai5jNS4k4e3054fs-mrZd0dDIvMV-1O001DOUSZ7wsP">
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#C9A24D]">Benefit Metaphor</span>
+<p class="text-sm font-semibold text-white">"Silence the Chaos. Experience Pure."</p>
+<p class="text-xs text-slate-200 font-light mt-1">Shattering soundwaves show physical isolation of pure acoustic tones.</p>
+</div>
+</div>
+<!-- Zoom Lightbox trigger -->
+<a class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 border border-[#C9A24D]/60 text-[#0B1F3A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#C9A24D] hover:text-white" href="#poster-lightbox-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="p-3 flex justify-between items-center">
+<h5 class="text-xs font-bold text-[#0B1F3A]">Sonus Elite • Active Noise-Canceling</h5>
+<span class="text-xs text-[#C9A24D] font-bold">₹799 Base</span>
+</div>
+</div>
+<!-- Poster 3: Liquid Obsidian & Gold Elixir -->
+<div class="cloud-card rounded-2xl overflow-hidden p-3 group shadow-lg shadow-[#1B3C73]/10">
+<div class="relative overflow-hidden rounded-xl aspect-[3/4] bg-black">
+<img alt="Cosmetic Serum Metaphor Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AEtjO1USvhBv2L6JHr35S25r_aA4LjF6_46K_Y6eprar5dCkqdcyhkuPCaEF_0keLYuN79hFYuyoA6tLT2h54boaGEtQhoY8wbHwyvza06LFWJsEtWgclSWVLANu7JtAO_5gPDWG2NrnPvzmgXozE1ACbeBBmW9mUfQOoBjoZklInqVnFY9HkElbt-ay9O81uX0z8jxcTNrX6IvK-a6v7MbNZWv0Es6HyxmiQIK0-CZJ5SfMDA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#C9A24D]">Benefit Metaphor</span>
+<p class="text-sm font-semibold text-white">"Cellular Radiance From Darkness"</p>
+<p class="text-xs text-slate-200 font-light mt-1">Luminescent skin hydration visual through rippling dark mineral water.</p>
+</div>
+</div>
+<!-- Zoom Lightbox trigger -->
+<a class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 border border-[#C9A24D]/60 text-[#0B1F3A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#C9A24D] hover:text-white" href="#poster-lightbox-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="p-3 flex justify-between items-center">
+<h5 class="text-xs font-bold text-[#0B1F3A]">Aurélia Paris • Lumière Or</h5>
+<span class="text-xs text-[#C9A24D] font-bold">₹799 Base</span>
+</div>
+</div>
+</div>
+<!-- Lightbox with Next / Previous Arrows -->
+<div class="fixed inset-0 z-50 bg-[#0B1F3A]/70 backdrop-blur-2xl opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-200 flex items-center justify-center p-4" id="poster-lightbox-1">
+<a class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/80 text-[#0B1F3A] flex items-center justify-center text-2xl hover:bg-white transition-all shadow-lg" href="all web sections/bcpA/code.html">×</a>
+<!-- Navigation Arrow Left -->
+<a class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 border border-white hover:border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center transition-all hover:scale-110 shadow-lg" href="#poster-lightbox-2">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<!-- Poster Detail Center -->
+<div class="max-w-xl w-full flex flex-col items-center">
+<div class="w-full max-h-[75vh] aspect-[3/4] rounded-2xl overflow-hidden border border-white shadow-2xl shadow-black/40">
+<img alt="Poster Zoom View" class="w-full h-full object-contain bg-black" src="https://lh3.googleusercontent.com/aida/AEtjO1XxGB8jt7KAZmZKKjdwkAM2xM4bksrNRDeITGkkGrA58I-v1N4UX1mUwUmI0F0DsxvXjtu9WbWv7nBUO29LVCsj9dL_ohm2BGrqHl-bnx6M2PZeDYvjLkxSU6XaxU-Xc21uByYH9D8GuL3yKyGmjZBK54TfVM-HJ5E_o_CWj74AF-ETMfgJ3nNdaQXDq43hUPmrjJwX7kUihCgD_9-3JHa4wRmxpPoMMNTAmYgb8D7Y">
+</div>
+<div class="mt-4 text-center bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-md border border-white">
+<h4 class="font-serif text-xl text-[#0B1F3A]">The Nova Chronograph — Aurelian Genève</h4>
+<p class="text-xs text-[#4A5A72] mt-1">Concept: "Forged in Timeless Fusion" • 8K High Fidelity Editorial Print Ad</p>
+</div>
+</div>
+<!-- Navigation Arrow Right -->
+<a class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 border border-white hover:border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center transition-all hover:scale-110 shadow-lg" href="#poster-lightbox-2">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<!-- Lightbox 2 (For Next arrow demonstration) -->
+<div class="fixed inset-0 z-50 bg-[#0B1F3A]/70 backdrop-blur-2xl opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-200 flex items-center justify-center p-4" id="poster-lightbox-2">
+<a class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/80 text-[#0B1F3A] flex items-center justify-center text-2xl hover:bg-white transition-all shadow-lg" href="all web sections/bcpA/code.html">×</a>
+<a class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 border border-white hover:border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center transition-all hover:scale-110 shadow-lg" href="#poster-lightbox-1">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="max-w-xl w-full flex flex-col items-center">
+<div class="w-full max-h-[75vh] aspect-[3/4] rounded-2xl overflow-hidden border border-white shadow-2xl shadow-black/40">
+<img alt="Sonus Elite Poster Zoom" class="w-full h-full object-contain bg-black" src="https://lh3.googleusercontent.com/aida/AEtjO1VCLlzcwoF_9gDoANKfOqsnL493JTidLfqV_Ej1d7eRoci04wI3kKtT44N72ggUsl63sJt9orx3zD6QAqavASmbavpRM-Lk87pvNPw4vzXFaU6BaRIZC2CcqvqXgRqynJ2ewW3asvu9KyCVREZa_AsNrLAguvdQZhQsd_rHT9szcfJeAGscCtlpAUlmFXGFCai5jNS4k4e3054fs-mrZd0dDIvMV-1O001DOUSZ7wsP">
+</div>
+<div class="mt-4 text-center bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-md border border-white">
+<h4 class="font-serif text-xl text-[#0B1F3A]">Sonus Elite — Silence The Chaos</h4>
+<p class="text-xs text-[#4A5A72] mt-1">Concept: Physical Acoustic Isolation • Metaphorical Soundwave Shatter</p>
+</div>
+</div>
+<a class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 border border-white hover:border-[#C9A24D] text-[#0B1F3A] flex items-center justify-center transition-all hover:scale-110 shadow-lg" href="#poster-lightbox-1">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+
+
+
+</div>
+<!-- END: Marketing Services Injected -->
+
+
+
+
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="relative w-full pt-16 pb-8 lg:pt-24 lg:pb-12 overflow-hidden bg-[#050505] mt-auto z-40 border-t-2 border-[#d4af37]/30">
+    <!-- Premium Spotlight & Matte Texture -->
+    <div class="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.12)_0%,_rgba(0,0,0,1)_70%)]"></div>
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+            
+            <!-- Column 1: Logo & About -->
+            <div class="lg:col-span-4 flex flex-col items-start">
+                <img src="av_logo_transparent.png" alt="AV Business Support Logo" class="h-14 sm:h-16 w-auto object-contain mb-6 drop-shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                <p class="text-[#a0a5b5] font-light text-sm leading-relaxed pr-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                    Transforming abstract ideas into visually stunning, high-performance digital realities. Providing bespoke graphic design and complete web solutions to elevate brands since 2023.
+                </p>
+            </div>
+
+            <!-- Column 2: Contact (STUDIOS equivalent) -->
+            <div class="lg:col-span-3 flex flex-col">
+                <h4 class="text-[#8c734b] font-bold text-[0.65rem] tracking-[0.2em] uppercase mb-6 font-display">Contact</h4>
+                <ul class="space-y-4 text-sm font-light text-[#e8dcb5] font-['Plus_Jakarta_Sans',sans-serif]">
+                    <li>Ved Prakash Dubey</li>
+                    <li><a href="mailto:avbusinesssupport@31gmail.com" class="hover:text-white transition-colors break-words">avbusinesssupport@31gmail.com</a></li>
+                    <li><a href="tel:+919203469002" class="hover:text-white transition-colors">+91 9203469002</a></li>
+                    <li class="flex items-center gap-4 mt-2">
+                        <a href="https://wa.me/919203469002" class="hover:text-white transition-colors" title="WhatsApp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors" title="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Navigation (NAVIGATION equivalent) -->
+            <div class="lg:col-span-2 flex flex-col">
+                <h4 class="text-[#8c734b] font-bold text-[0.65rem] tracking-[0.2em] uppercase mb-6 font-display">Services</h4>
+                <ul class="space-y-4 text-sm font-light text-[#e8dcb5] font-['Plus_Jakarta_Sans',sans-serif]">
+                    <li><a href="#services-portfolio" class="hover:text-white transition-colors">Graphic Design</a></li>
+                    <li><a href="#services-portfolio" class="hover:text-white transition-colors">Web Development</a></li>
+                    <li><a href="#services-portfolio" class="hover:text-white transition-colors">Marketing</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2"><span class="text-[#dcb773]">★</span> Give Review (4.8)</a></li>
+                    <li><a href="#services-portfolio" class="hover:text-white transition-colors flex items-center gap-2"><span class="text-[#dcb773]">✦</span> View Combo Offers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter (JOURNAL & MONOGRAPH equivalent) -->
+            <div class="lg:col-span-3 flex flex-col">
+                <h4 class="text-[#8c734b] font-bold text-[0.65rem] tracking-[0.2em] uppercase mb-6 font-display">Stay Connected</h4>
+                <p class="text-[#a0a5b5] font-light text-sm mb-6 leading-relaxed font-['Plus_Jakarta_Sans',sans-serif]">
+                    Receive updates on our latest projects, design insights, and exclusive combo offers.
+                </p>
+                <form class="flex w-full">
+                    <input type="email" placeholder="Your confidential email" class="w-full bg-transparent border border-white/20 text-[#e8dcb5] px-4 py-3 text-sm focus:outline-none focus:border-[#dcb773] transition-colors rounded-none placeholder:text-white/30" required>
+                    <button type="submit" class="bg-[#1a1a1a] border border-l-0 border-white/20 px-5 flex items-center justify-center hover:bg-[#dcb773] hover:text-black hover:border-[#dcb773] transition-colors rounded-none group cursor-pointer">
+                        <svg class="w-4 h-4 text-[#e8dcb5] group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-white/10 mb-6"></div>
+
+        <!-- Bottom Row -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-[#8a8f9d] font-['Plus_Jakarta_Sans',sans-serif]">
+            <p>&copy; 2026 AV Business Support. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition-colors">Privacy Charter</a>
+                <a href="#" class="hover:text-white transition-colors">Artisan Provenance</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Commission</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    // Ensure ScrollTrigger is registered
+    gsap.registerPlugin(ScrollTrigger);
+
+    // =======================================================
+    // 1. EXPERIENCE TIMELINE CAROUSEL (#experience-section)
+    // =======================================================
+    const expSection = document.getElementById('experience-section');
+    if (expSection) {
+        const yearColors = [
+            "#d00000", // 2023 - Red
+            "#1758e5", // 2024 - Royal Blue
+            "#3e4a21", // 2025 - Earth
+            "#7cbbeb", // 2026 - Sky Blue
+            "#fb6f92"  // Present - Vibrant Pink
+        ];
+
+        const yearTintColors = [
+            "#ff4d4d", // 2023 - Lighter Red
+            "#4d84ff", // 2024 - Lighter Royal Blue
+            "#6b8236", // 2025 - Lighter Earth
+            "#a8d8f8", // 2026 - Lighter Sky Blue
+            "#ff9ebb"  // Present - Lighter Pink
+        ];
+
+        const numItems = 5;
+        const items = expSection.querySelectorAll('.exp-item');
+        const texts = expSection.querySelectorAll('.exp-text');
+        const container = expSection.querySelector('.exp-pin-container');
+        const track = expSection.querySelector('.exp-track');
+        
+        if (items.length && texts.length && container && track) {
+            gsap.set(items, { scale: 0.85, opacity: 0.6 });
+            gsap.set(items[0], { scale: 1.2, opacity: 1 });
+            
+            gsap.set(texts, { opacity: 0, y: 20 });
+            gsap.set(texts[0], { opacity: 1, y: 0 });
+
+            gsap.set(container, { backgroundColor: yearColors[0] });
+            gsap.set('.exp-bottom-curve-path', { fill: yearTintColors[0] });
+            gsap.set('.exp-tint-bg', { color: yearTintColors[0] });
+
+            const updateTrackPosition = () => {
+                const itemWidth = items[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                const connector = expSection.querySelector('.exp-connector');
+                const connectorWidth = connector ? connector.offsetWidth : 0;
+                const stepDistance = itemWidth + (gap * 2) + connectorWidth;
+                const initialOffset = -(itemWidth / 2);
+                return { stepDistance, initialOffset };
+            };
+
+            const { stepDistance, initialOffset } = updateTrackPosition();
+            gsap.set(track, { x: initialOffset });
+
+            let expTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: expSection,
+                    start: "top top",
+                    end: "+=3000",
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    snap: {
+                        snapTo: 1 / (numItems - 1),
+                        duration: { min: 0.2, max: 0.4 },
+                        delay: 0.1,
+                        ease: "power1.inOut"
+                    }
+                }
+            });
+
+            for (let i = 0; i < numItems - 1; i++) {
+                expTl.to(container, { backgroundColor: yearColors[i + 1], ease: "none", duration: 1 }, i)
+                     .to('.exp-bottom-curve-path', { fill: yearTintColors[i + 1], ease: "none", duration: 1 }, i)
+                     .to('.exp-tint-bg', { color: yearTintColors[i + 1], ease: "none", duration: 1 }, i)
+                     .to(items[i], { scale: 0.85, opacity: 0.6, ease: "power1.inOut", duration: 1 }, i)
+                     .to(items[i + 1], { scale: 1.2, opacity: 1, ease: "power1.inOut", duration: 1 }, i)
+                     .to(texts[i], { opacity: 0, y: -20, ease: "power1.inOut", duration: 0.5 }, i)
+                     .fromTo(texts[i + 1], 
+                         { opacity: 0, y: 20 },
+                         { opacity: 1, y: 0, ease: "power1.inOut", duration: 0.5 },
+                         i + 0.5
+                     )
+                     .to(track, {
+                         x: () => {
+                             const { stepDistance, initialOffset } = updateTrackPosition();
+                             return initialOffset - (stepDistance * (i + 1));
+                         },
+                         ease: "none",
+                         duration: 1
+                     }, i);
+            }
+        }
+    }
+
+    // =======================================================
+    // 2. PROVEN RESULTS METRICS COUNTERS (#metrics-section)
+    // =======================================================
+    const metricsSection = document.getElementById('metrics-section');
+    if (metricsSection) {
+        metricsSection.querySelectorAll('.metrics-item').forEach((item) => {
+            const number = item.querySelector('.metric-number');
+            const circle = item.querySelector('.metric-circle');
+            const targetValStr = number ? number.getAttribute('data-val') : '0';
+            const targetNum = parseFloat(targetValStr) || 0;
+            const targetOffset = circle ? (parseFloat(circle.getAttribute('data-target-offset')) || 25) : 25;
+            
+            let metricTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    toggleActions: "restart none none reverse"
+                }
+            });
+
+            if (number) {
+                metricTl.fromTo(number, 
+                    { innerHTML: 0 }, 
+                    { 
+                        innerHTML: targetNum, 
+                        duration: 2, 
+                        snap: { innerHTML: 1 }, 
+                        ease: "power3.out",
+                        onUpdate: function() {
+                            number.innerHTML = Math.round(this.targets()[0].innerHTML);
+                        }
+                    }, 0
+                );
+            }
+
+            if (circle) {
+                metricTl.fromTo(circle,
+                    { strokeDashoffset: 283 },
+                    { strokeDashoffset: targetOffset, duration: 2.2, ease: "power3.out" },
+                    0
+                );
+            }
+        });
+
+        // Pin metrics section without spacing to create overlay effect for the pricing section
+        ScrollTrigger.create({
+            trigger: metricsSection,
+            start: "bottom bottom",
+            end: () => "+=" + (document.getElementById('pricing-section')?.offsetHeight || window.innerHeight),
+            pin: true,
+            pinSpacing: false
+        });
+    }
+
+    // =======================================================
+    // 2.5 PRICING SECTION OVERLAY ANIMATION (#pricing-section)
+    // =======================================================
+    const pricingSection = document.getElementById('pricing-section');
+    if (pricingSection) {
+        gsap.to('.pricing-content-fade', {
+            scrollTrigger: {
+                trigger: pricingSection,
+                start: "top 20%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    }
+
+    // =======================================================
+    // 3. WHY CHOOSE STACKED CARDS (#why-choose)
+    // =======================================================
+    const whySection = document.getElementById('why-choose');
+    if (whySection) {
+        const wrappers = whySection.querySelectorAll('.why-note-wrapper');
+        const finalMsg = whySection.querySelector('.final-msg');
+        
+        if (wrappers.length >= 4) {
+            const topNote = wrappers[3];
+            const secondNote = wrappers[2];
+            const thirdNote = wrappers[1];
+            const bottomNote = wrappers[0];
+
+            gsap.set(topNote, { rotation: -1, zIndex: 40 });
+            gsap.set(secondNote, { rotation: 2, x: 8, y: 5, zIndex: 30 });
+            gsap.set(thirdNote, { rotation: -1.5, x: -6, y: 12, zIndex: 20 });
+            gsap.set(bottomNote, { rotation: 1, x: 5, y: 18, zIndex: 10 });
+            
+            if (finalMsg) gsap.set(finalMsg, { opacity: 0, scale: 0.9, y: 20 });
+
+            const isMobile = window.innerWidth < 768;
+            const fallY = window.innerHeight * (isMobile ? 0.9 : 1.2);
+            
+            const whyTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: whySection,
+                    start: 'top top',
+                    end: '+=400%',
+                    pin: true,
+                    scrub: 1.5,
+                    anticipatePin: 1
+                }
+            });
+
+            whyTl.to(topNote, { y: fallY, x: isMobile ? -50 : -250, rotation: -25, opacity: 0, duration: 1, ease: 'power1.in' }, 0)
+                 .to(secondNote, { y: fallY, x: isMobile ? 60 : 300, rotation: 30, opacity: 0, duration: 1, ease: 'power1.in' }, 1)
+                 .to(thirdNote, { y: fallY, x: isMobile ? -40 : -200, rotation: -15, opacity: 0, duration: 1, ease: 'power1.in' }, 2)
+                 .to(bottomNote, { y: fallY, x: isMobile ? 50 : 250, rotation: 20, opacity: 0, duration: 1, ease: 'power1.in' }, 3);
+
+            if (finalMsg) {
+                whyTl.to(finalMsg, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.5)' }, 3.8);
+            }
+        }
+    }
+
+    // =======================================================
+    // 4. TORN PAPER STATS SHOWCASE (#numbers-that-speak)
+    // (Located directly BELOW "What you need" & ABOVE Footer)
+    // =======================================================
+    const tornSection = document.getElementById('numbers-that-speak');
+    if (tornSection) {
+        const s1 = document.getElementById('stat-slide-rating');
+        const s2 = document.getElementById('stat-slide-30');
+        const s3 = document.getElementById('stat-slide-70');
+        const dot1 = document.getElementById('stat-dot-1');
+        const dot2 = document.getElementById('stat-dot-2');
+        const dot3 = document.getElementById('stat-dot-3');
+
+        // Initial positions for horizontal slide transition
+        gsap.set(s1, { xPercent: 0, opacity: 1, scale: 1, zIndex: 13 });
+        gsap.set(s2, { xPercent: 100, opacity: 0, scale: 0.95, zIndex: 12 });
+        gsap.set(s3, { xPercent: 100, opacity: 0, scale: 0.95, zIndex: 11 });
+
+        const tornTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: tornSection,
+                start: "top top",
+                end: "+=1800",
+                pin: true,
+                scrub: 1.2,
+                anticipatePin: 1,
+                snap: {
+                    snapTo: [0, 0.5, 1],
+                    duration: { min: 0.25, max: 0.45 },
+                    delay: 0.05,
+                    ease: "power2.inOut"
+                },
+                onUpdate: (self) => {
+                    const p = self.progress;
+                    if (dot1 && dot2 && dot3) {
+                        if (p < 0.3) {
+                            dot1.className = "w-6 h-2 rounded-full bg-[#dcb773] transition-all duration-300";
+                            dot2.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                            dot3.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                        } else if (p < 0.75) {
+                            dot1.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                            dot2.className = "w-6 h-2 rounded-full bg-[#dcb773] transition-all duration-300";
+                            dot3.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                        } else {
+                            dot1.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                            dot2.className = "w-2 h-2 rounded-full bg-white/40 transition-all duration-300";
+                            dot3.className = "w-6 h-2 rounded-full bg-[#dcb773] transition-all duration-300";
+                        }
+                    }
+                }
+            }
+        });
+
+        // 1. Hold Slide 1, then Slide Transition to Slide 2
+        tornTimeline
+            .to(s1, { xPercent: -100, opacity: 0, scale: 0.95, duration: 0.35, ease: "power2.inOut" }, 0.25)
+            .fromTo(s2, 
+                { xPercent: 100, opacity: 0, scale: 0.95 },
+                { xPercent: 0, opacity: 1, scale: 1, duration: 0.35, ease: "power2.inOut" }, 
+                0.25
+            );
+
+        // 2. Hold Slide 2, then Slide Transition to Slide 3
+        tornTimeline
+            .to(s2, { xPercent: -100, opacity: 0, scale: 0.95, duration: 0.35, ease: "power2.inOut" }, 0.70)
+            .fromTo(s3, 
+                { xPercent: 100, opacity: 0, scale: 0.95 },
+                { xPercent: 0, opacity: 1, scale: 1, duration: 0.35, ease: "power2.inOut" }, 
+                0.70
+            );
+    }
+
+    // =======================================================
+    // 6. ABOUT SECTION ANIMATION
+    // =======================================================
+    const aboutSection = document.querySelector('#about');
+    const aboutContent = document.querySelector('.about-content-wrapper');
+    
+    if (aboutSection && aboutContent) {
+        gsap.from(aboutContent, {
+            scrollTrigger: {
+                trigger: aboutSection,
+                start: "top 20%", // Triggers when the top of #about reaches 20% from the top of the viewport (meaning it has covered 80% of the screen)
+                toggleActions: "play none none reverse"
+            },
+            y: 120, // Slide up from below
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    }
+
+    // =======================================================
+    // 7. SERVICES SECTION ANIMATION
+    // =======================================================
+    const servicesSection = document.querySelector('#services-portfolio');
+    const servicesContent = document.querySelector('#services-content-wrapper');
+    
+    if (servicesSection && servicesContent) {
+        gsap.from(servicesContent, {
+            scrollTrigger: {
+                trigger: servicesSection,
+                start: "top 80%", // Triggers when top of section is 80% down viewport (i.e. 20% visible)
+                toggleActions: "play none none reverse"
+            },
+            y: 120, // Slide up from below
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    }
+
+    // =======================================================
+    // 5. GLOBAL SCROLLTRIGGER SYNC & REFRESH
+    // Ensures all pinned spacers and triggers are calculated in exact DOM order
+    // =======================================================
+    ScrollTrigger.sort();
+    ScrollTrigger.refresh();
+
+    window.addEventListener('load', () => {
+        ScrollTrigger.sort();
+        ScrollTrigger.refresh();
+    });
+
+    window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
+    });
+});
+
+    // Overlay Transition for Services -> Marketing
+    if (document.getElementById('services-portfolio') && document.querySelector('.marketing-services-wrapper')) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+            trigger: "#services-portfolio",
+            start: "bottom bottom", 
+            endTrigger: ".marketing-services-wrapper",
+            end: "bottom bottom",
+            pin: true,
+            pinSpacing: false
+        });
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

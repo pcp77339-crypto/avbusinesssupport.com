@@ -1,0 +1,209 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>High-End Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#75d5ff",
+                        "surface-container-low": "#191c1e",
+                        "surface-tint": "#c6c6cc",
+                        "on-tertiary-container": "#987900",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#909095",
+                        "on-surface-variant": "#c6c6cb",
+                        "on-secondary-fixed-variant": "#004d65",
+                        "surface": "#101415",
+                        "on-secondary": "#003547",
+                        "on-tertiary": "#3c2f00",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "tertiary": "#e9c349",
+                        "error-container": "#93000a",
+                        "on-surface": "#e0e3e5",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#363a3b",
+                        "primary": "#c6c6cc",
+                        "primary-fixed": "#e2e2e8",
+                        "on-tertiary-fixed": "#241a00",
+                        "outline-variant": "#45474b",
+                        "surface-dim": "#101415",
+                        "inverse-on-surface": "#2d3133",
+                        "surface-container-highest": "#323537",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary-fixed": "#1a1c20",
+                        "primary-container": "#0f1115",
+                        "on-error": "#690005",
+                        "on-background": "#e0e3e5",
+                        "tertiary-container": "#171000",
+                        "background": "#101415",
+                        "on-primary": "#2f3035",
+                        "on-secondary-container": "#00475e",
+                        "surface-container": "#1d2022",
+                        "on-primary-fixed-variant": "#45474b",
+                        "on-primary-container": "#7b7c82",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-variant": "#323537",
+                        "surface-container-lowest": "#0b0f10",
+                        "surface-container-high": "#272a2c",
+                        "secondary-fixed": "#bee9ff",
+                        "on-secondary-fixed": "#001f2a",
+                        "secondary-container": "#00bcf1",
+                        "secondary-fixed-dim": "#6bd2ff",
+                        "inverse-primary": "#5d5e63"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-panel:hover {
+            box-shadow: 0 0 30px rgba(117, 213, 255, 0.15);
+            border-color: rgba(117, 213, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- Top Navigation Placeholder (Hidden for this specific canvas as per semantic shell mandate for focused canvas) -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop py-6 w-full fixed top-0 z-50 bg-surface/40 backdrop-blur-xl border-b border-white/10">
+<div class="font-display-lg text-secondary tracking-tighter text-3xl">LUMINA</div>
+<nav class="flex gap-8">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-lg text-body-lg" href="#">Portfolio</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300 font-body-lg text-body-lg" href="#">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300 font-body-lg text-body-lg" href="#">Process</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300 font-body-lg text-body-lg" href="#">Contact</a>
+</nav>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-white transition-colors duration-300">Hire Me</button>
+</header>
+<main class="pt-32 pb-32 min-h-screen flex flex-col justify-center relative z-10">
+<!-- Decorative Ambient Light -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<section class="relative z-10 w-full overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop mb-16 text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Evolving Excellence</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explore our tiered approach to digital presence, from foundational frameworks to ultra-premium futuristic experiences.</p>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="w-full relative">
+<!-- Fade Gradients -->
+<div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none hidden md:block"></div>
+<div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none hidden md:block"></div>
+<div class="flex overflow-x-auto hide-scrollbar gap-8 px-margin-mobile md:px-[20vw] pb-12 snap-x snap-mandatory py-8">
+<!-- Card 1: Basic -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[400px] aspect-[9/16] relative group rounded-2xl overflow-hidden glass-panel transition-all duration-500 ease-out hover:-translate-y-4">
+<img alt="Basic Web Experience" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhkSnaxylOZgTi9NaledzhV_hmZgFcFg06I5Efr7PqgVPJVyKyTj00HRmlNkbbCYfbWHh_5nWdzOg-VRnYQdpxro1DQhJzXXC1WOySWi9Elf9i49fmsf43q6jTXTWrCHTJG79VEORDzbfWYAu8FSZDMh8IbUq5Xm7GBSEm_qut3mFcmN3nvp0V4vGEV0vQrfH3zU0iFRGEuiScRmiJwsXItIca0NRl9u-Mxu4_6HEO1MgwXbEMspe-">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<span class="inline-block px-3 py-1 bg-surface-variant/80 backdrop-blur-md text-on-surface rounded-full font-label-caps text-label-caps mb-4 border border-white/10">Tier 01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Basic Web Experience</h3>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Clean, professional, minimalist landing pages.</p>
+</div>
+</div>
+<!-- Card 2: Premium (Center Focus) -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[450px] aspect-[9/16] relative group rounded-2xl overflow-hidden glass-panel transition-all duration-700 ease-out md:scale-110 hover:-translate-y-4 md:hover:scale-115 z-10 shadow-[0_0_40px_rgba(117,213,255,0.1)] border-secondary/30">
+<img alt="Premium Corporate Presence" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXnOglKG-9-7UUM0lbd7Hj2zPiyZwUMgDNnWP0zypx3RxwQin_QKaXkqE4HTsAKvDxpx59x_n2j0FdsSBtioGCVqYYF8V8WdQzT7BX59XBqEYAsJISaRw9FB9pTiIhZs2gzmucY9OZSwlP42X0mXoWOgdVuXX3_V6-K4tBuwKdpIvQQsE59bQ-wxpvfFqu74hr6_m6BTpXGIJDwAAs2Xv5Uo0jH_mnU0VaqPIwQD7juRY44glWyEVo">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/95 via-surface-container-lowest/30 to-transparent"></div>
+<!-- Glowing Border Effect for Center Card -->
+<div class="absolute inset-0 border border-secondary/20 rounded-2xl pointer-events-none group-hover:border-secondary/50 transition-colors duration-500"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-block px-3 py-1 bg-secondary/10 backdrop-blur-md text-secondary rounded-full font-label-caps text-label-caps border border-secondary/30">Tier 02</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 drop-shadow-lg">Premium Corporate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sophisticated glassmorphism, elegant typography, smooth shadows.</p>
+</div>
+</div>
+<!-- Card 3: Super Premium -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[400px] aspect-[9/16] relative group rounded-2xl overflow-hidden glass-panel transition-all duration-500 ease-out hover:-translate-y-4">
+<img alt="Ultra-Premium Futuristic" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcXbfnV3_Bi2Xir7avqxc_wjE8Kry_qEV6tJbIrSovk4H5diJ1VhJo8YvJzEPfG5s5wYa9QaGJwhZE2mgnfIplMbNAALlonJ55sOI6hrV8KWMsVlURGDOfoPMUpH4VWzFAAQ6iDHLZ-YmIgb-pR7lr7ySmJiHNKmcO_GVXxASAEeoK212MhI5qJk6nQdmUdIjjUBtNu1QQ8a3TZPy6A6aruReDp13rb8lBQ7ngpXbsA6ee4sQJLQEh">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<span class="inline-block px-3 py-1 bg-[#D4AF37]/10 backdrop-blur-md text-[#D4AF37] rounded-full font-label-caps text-label-caps mb-4 border border-[#D4AF37]/30">Tier 03</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Ultra-Premium</h3>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Dynamic 3D elements, immersive layouts.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 bg-surface-dim border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter relative z-10">
+<div class="font-headline-md text-headline-md text-on-surface">LUMINA</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm tracking-wide text-center md:text-right">© 2024 LUMINA DIGITAL. ALL RIGHTS RESERVED.</div>
+</footer>
+<script>
+        // Simple script to center the scroll position initially for the peek effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollContainer = document.querySelector('.hide-scrollbar');
+            if(scrollContainer && window.innerWidth > 768) {
+                // Approximate centering logic
+                const centerCardIndex = 1; 
+                const cards = scrollContainer.children;
+                if(cards.length > centerCardIndex) {
+                    const scrollTarget = cards[centerCardIndex].offsetLeft - (window.innerWidth / 2) + (cards[centerCardIndex].offsetWidth / 2);
+                    scrollContainer.scrollLeft = scrollTarget;
+                }
+            }
+        });
+    </script>
+</body></html>

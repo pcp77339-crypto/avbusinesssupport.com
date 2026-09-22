@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Work Experience Timeline</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for modern typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration matching requested Warm Caramel / Espresso palette -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ffedd8',
+              100: '#f3d5b5',
+              200: '#e7bc91',
+              300: '#d4a276',
+              400: '#bc8a5f',
+              500: '#a47148',
+              600: '#8b5e34',
+              700: '#6f4518',
+              800: '#603808',
+              900: '#583101',
+              dark: '#140c06',
+              darker: '#0a0502',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for visual flair, glow lines, and angled image cuts -->
+<style data-purpose="custom-effects">
+    /* Slanted image cut inspired by the modern cyber UI card */
+    .angled-cut-left {
+      clip-path: polygon(18% 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* Ambient glow circles */
+    .planet-glow-top {
+      background: radial-gradient(circle at center, rgba(188, 138, 95, 0.28) 0%, rgba(111, 69, 24, 0.12) 45%, rgba(10, 5, 2, 0) 70%);
+    }
+
+    .planet-glow-bottom {
+      background: radial-gradient(circle at center, rgba(164, 113, 72, 0.22) 0%, rgba(88, 49, 1, 0.08) 50%, rgba(10, 5, 2, 0) 75%);
+    }
+
+    /* Subtle neon border & node lighting */
+    .glow-line {
+      box-shadow: 0 0 14px rgba(231, 188, 145, 0.45);
+    }
+    .glow-dot {
+      box-shadow: 0 0 12px rgba(243, 213, 181, 0.8), 0 0 24px rgba(188, 138, 95, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#0c0704] text-[#ffedd8] font-sans antialiased min-h-screen relative overflow-x-hidden selection:bg-brand-400 selection:text-white">
+<!-- BEGIN: AmbientBackgroundDecorations -->
+<!-- Ambient top-right planetary sphere glow -->
+<div class="pointer-events-none fixed -top-40 -right-40 w-[620px] h-[620px] rounded-full planet-glow-top blur-3xl opacity-80 z-0"></div>
+<div class="pointer-events-none fixed top-10 -right-20 w-[420px] h-[420px] rounded-full border border-brand-300/10 shadow-[inset_0_0_80px_rgba(212,162,118,0.08)] z-0"></div>
+<!-- Ambient bottom-left celestial glow -->
+<div class="pointer-events-none fixed -bottom-36 -left-36 w-[560px] h-[560px] rounded-full planet-glow-bottom blur-3xl opacity-70 z-0"></div>
+<!-- END: AmbientBackgroundDecorations -->
+<!-- BEGIN: MainTimelineSection -->
+<main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 lg:py-24">
+<!-- BEGIN: HeaderSection -->
+<header class="mb-14 lg:mb-20 max-w-4xl" data-purpose="section-header">
+<div class="w-12 h-1 bg-gradient-to-r from-brand-200 to-brand-400 mb-6 rounded-full shadow-[0_0_10px_rgba(243,213,181,0.5)]"></div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+<span class="text-white">Work </span>
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-100 via-brand-200 to-brand-400 drop-shadow-sm">
+          Experience
+        </span>
+</h1>
+<p class="mt-4 text-xs sm:text-sm font-semibold tracking-[0.26em] uppercase text-brand-300/80">
+        My journey, growth and the path that brought me here.
+      </p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: TimelineTrackContainer -->
+<div class="relative" data-purpose="timeline-wrapper"><!-- Continuous vertical timeline beam centered behind the timeline nodes -->
+<div class="hidden md:block absolute left-[142px] top-8 bottom-12 w-[2px] bg-gradient-to-b from-brand-300/80 via-brand-400/50 to-brand-600/30 glow-line"></div>
+
+<div class="space-y-10 sm:space-y-12">
+  <!-- 2023 Item -->
+  <article class="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 group" data-purpose="experience-item">
+    <!-- Left: Year Column -->
+    <div class="md:w-[124px] flex-shrink-0 md:text-right pr-0 md:pr-4 flex flex-col md:items-end">
+      <span class="text-2xl lg:text-3xl font-bold tracking-tight text-brand-200 block group-hover:text-brand-100 transition-colors duration-300">2023</span>
+      <div class="w-8 h-0.5 bg-brand-400/60 mt-1.5 rounded"></div>
+    </div>
+    
+    <!-- Center: Node & Horizontal Connector -->
+    <div class="hidden md:flex items-center justify-center w-[38px] flex-shrink-0 relative z-10">
+      <div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#150d08] border border-brand-300/60 group-hover:border-brand-200 transition-all duration-300 shadow-[0_0_12px_rgba(212,162,118,0.2)]">
+        <span class="w-3 h-3 rounded-full bg-brand-100 glow-dot group-hover:scale-125 transition-transform duration-300"></span>
+      </div>
+      <div class="absolute left-[38px] w-6 h-[2px] bg-gradient-to-r from-brand-300/60 to-brand-400/30"></div>
+    </div>
+    
+    <!-- Right: Glassmorphic Experience Card -->
+    <div class="flex-1 md:pl-6 w-full">
+      <div class="bg-gradient-to-r from-[#1e120a]/90 via-[#180e07]/90 to-[#120a05]/95 border border-brand-400/25 group-hover:border-brand-300/50 rounded-2xl p-6 sm:p-7 shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(212,162,118,0.14)]">
+        <h2 class="text-lg lg:text-xl font-bold text-[#ffedd8] mb-2.5">
+          Started My <span class="text-brand-200">Freelance Journey</span>
+        </h2>
+        <p class="text-xs lg:text-sm text-brand-100/75 leading-relaxed font-normal">
+          Started my professional journey as a Freelance Graphic Designer, providing creative design services to businesses and individuals. Worked on logos, branding, posters, banners, social media creatives, advertisements, thumbnails, menus and promotional designs, gaining hands-on experience through real client projects.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2024 Item -->
+  <article class="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 group" data-purpose="experience-item">
+    <!-- Left: Year Column -->
+    <div class="md:w-[124px] flex-shrink-0 md:text-right pr-0 md:pr-4 flex flex-col md:items-end">
+      <span class="text-2xl lg:text-3xl font-bold tracking-tight text-brand-200 block group-hover:text-brand-100 transition-colors duration-300">2024</span>
+      <div class="w-8 h-0.5 bg-brand-400/60 mt-1.5 rounded"></div>
+    </div>
+    
+    <!-- Center: Node & Horizontal Connector -->
+    <div class="hidden md:flex items-center justify-center w-[38px] flex-shrink-0 relative z-10">
+      <div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#150d08] border border-brand-300/60 group-hover:border-brand-200 transition-all duration-300 shadow-[0_0_12px_rgba(212,162,118,0.2)]">
+        <span class="w-3 h-3 rounded-full bg-brand-100 glow-dot group-hover:scale-125 transition-transform duration-300"></span>
+      </div>
+      <div class="absolute left-[38px] w-6 h-[2px] bg-gradient-to-r from-brand-300/60 to-brand-400/30"></div>
+    </div>
+    
+    <!-- Right: Glassmorphic Experience Card -->
+    <div class="flex-1 md:pl-6 w-full">
+      <div class="bg-gradient-to-r from-[#1e120a]/90 via-[#180e07]/90 to-[#120a05]/95 border border-brand-400/25 group-hover:border-brand-300/50 rounded-2xl p-6 sm:p-7 shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(212,162,118,0.14)]">
+        <h2 class="text-lg lg:text-xl font-bold text-[#ffedd8] mb-2.5">
+          Expanding <span class="text-brand-200">Graphic Design Experience</span>
+        </h2>
+        <p class="text-xs lg:text-sm text-brand-100/75 leading-relaxed font-normal">
+          Expanded my freelance work and worked with businesses across Indore, Satna, Maihar, Rewa, Jabalpur, Katni, Bhopal, Ujjain, Sagar and other locations. Took on a wider range of design requirements, from complete brand visuals and marketing materials to social media and print designs, while developing a stronger understanding of branding, typography, composition and visual communication.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2025 Item -->
+  <article class="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 group" data-purpose="experience-item">
+    <!-- Left: Year Column -->
+    <div class="md:w-[124px] flex-shrink-0 md:text-right pr-0 md:pr-4 flex flex-col md:items-end">
+      <span class="text-2xl lg:text-3xl font-bold tracking-tight text-brand-200 block group-hover:text-brand-100 transition-colors duration-300">2025</span>
+      <div class="w-8 h-0.5 bg-brand-400/60 mt-1.5 rounded"></div>
+    </div>
+    
+    <!-- Center: Node & Horizontal Connector -->
+    <div class="hidden md:flex items-center justify-center w-[38px] flex-shrink-0 relative z-10">
+      <div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#150d08] border border-brand-300/60 group-hover:border-brand-200 transition-all duration-300 shadow-[0_0_12px_rgba(212,162,118,0.2)]">
+        <span class="w-3 h-3 rounded-full bg-brand-100 glow-dot group-hover:scale-125 transition-transform duration-300"></span>
+      </div>
+      <div class="absolute left-[38px] w-6 h-[2px] bg-gradient-to-r from-brand-300/60 to-brand-400/30"></div>
+    </div>
+    
+    <!-- Right: Glassmorphic Experience Card -->
+    <div class="flex-1 md:pl-6 w-full">
+      <div class="bg-gradient-to-r from-[#1e120a]/90 via-[#180e07]/90 to-[#120a05]/95 border border-brand-400/25 group-hover:border-brand-300/50 rounded-2xl p-6 sm:p-7 shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(212,162,118,0.14)]">
+        <h2 class="text-lg lg:text-xl font-bold text-[#ffedd8] mb-2.5">
+          Entered <span class="text-brand-200">Web Design &amp; Development</span>
+        </h2>
+        <p class="text-xs lg:text-sm text-brand-100/75 leading-relaxed font-normal">
+          Expanded my skills from graphic design into Web Design and Development. Started creating modern, responsive websites while continuing graphic design projects. Worked across UI/UX, responsive layouts, landing pages, interactive sections, animations, visual design and complete website experiences, combining my graphic design background with web technologies.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2026 Item -->
+  <article class="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 group" data-purpose="experience-item">
+    <!-- Left: Year Column -->
+    <div class="md:w-[124px] flex-shrink-0 md:text-right pr-0 md:pr-4 flex flex-col md:items-end">
+      <span class="text-2xl lg:text-3xl font-bold tracking-tight text-brand-200 block group-hover:text-brand-100 transition-colors duration-300">2026</span>
+      <div class="w-8 h-0.5 bg-brand-400/60 mt-1.5 rounded"></div>
+    </div>
+    
+    <!-- Center: Node & Horizontal Connector -->
+    <div class="hidden md:flex items-center justify-center w-[38px] flex-shrink-0 relative z-10">
+      <div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#150d08] border border-brand-300/60 group-hover:border-brand-200 transition-all duration-300 shadow-[0_0_12px_rgba(212,162,118,0.2)]">
+        <span class="w-3 h-3 rounded-full bg-brand-100 glow-dot group-hover:scale-125 transition-transform duration-300"></span>
+      </div>
+      <div class="absolute left-[38px] w-6 h-[2px] bg-gradient-to-r from-brand-300/60 to-brand-400/30"></div>
+    </div>
+    
+    <!-- Right: Glassmorphic Experience Card -->
+    <div class="flex-1 md:pl-6 w-full">
+      <div class="bg-gradient-to-r from-[#1e120a]/90 via-[#180e07]/90 to-[#120a05]/95 border border-brand-400/25 group-hover:border-brand-300/50 rounded-2xl p-6 sm:p-7 shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(212,162,118,0.14)]">
+        <h2 class="text-lg lg:text-xl font-bold text-[#ffedd8] mb-2.5">
+          Graphic + <span class="text-brand-200">Web Design</span>
+        </h2>
+        <p class="text-xs lg:text-sm text-brand-100/75 leading-relaxed font-normal">
+          Currently working as a Graphic Designer and Web Designer, handling both creative and digital projects. My work now covers branding, graphic design, UI/UX, responsive websites, website development, animations, interactive experiences and digital marketing creatives for businesses and individuals.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Present Item -->
+  <article class="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 group" data-purpose="experience-item">
+    <!-- Left: Year Column -->
+    <div class="md:w-[124px] flex-shrink-0 md:text-right pr-0 md:pr-4 flex flex-col md:items-end">
+      <span class="text-2xl lg:text-3xl font-bold tracking-tight text-brand-200 block group-hover:text-brand-100 transition-colors duration-300">Present</span>
+      <div class="w-8 h-0.5 bg-brand-400/60 mt-1.5 rounded"></div>
+    </div>
+    
+    <!-- Center: Node & Horizontal Connector -->
+    <div class="hidden md:flex items-center justify-center w-[38px] flex-shrink-0 relative z-10">
+      <div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#150d08] border border-brand-300/60 group-hover:border-brand-200 transition-all duration-300 shadow-[0_0_12px_rgba(212,162,118,0.2)]">
+        <span class="w-3 h-3 rounded-full bg-brand-100 glow-dot group-hover:scale-125 transition-transform duration-300"></span>
+      </div>
+      <div class="absolute left-[38px] w-6 h-[2px] bg-gradient-to-r from-brand-300/60 to-brand-400/30"></div>
+    </div>
+    
+    <!-- Right: Glassmorphic Experience Card -->
+    <div class="flex-1 md:pl-6 w-full">
+      <div class="bg-gradient-to-r from-[#1e120a]/90 via-[#180e07]/90 to-[#120a05]/95 border border-brand-400/25 group-hover:border-brand-300/50 rounded-2xl p-6 sm:p-7 shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(212,162,118,0.14)]">
+        <h2 class="text-lg lg:text-xl font-bold text-[#ffedd8] mb-2.5">
+          AV <span class="text-brand-200">Business Support</span>
+        </h2>
+        <p class="text-xs lg:text-sm text-brand-100/75 leading-relaxed font-normal">
+          Through AV Business Support, I bring my graphic design and web development skills together to provide businesses with the digital solutions they need — from professional branding and creative designs to modern websites and complete online presence.
+        </p>
+      </div>
+    </div>
+  </article>
+</div></div>
+<!-- END: TimelineTrackContainer -->
+</main>
+<!-- END: MainTimelineSection -->
+</body></html>

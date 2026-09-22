@@ -1,0 +1,557 @@
+<!DOCTYPE html><html class="h-full bg-[#EDE4D8]" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ATELIER CARTE — Restaurant Menu Design &amp; Bespoke Pricing</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: EB Garamond, DM Sans, Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"EB Garamond"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            warm: {
+              50: '#FDFBF7',
+              100: '#F7F3EC',
+              200: '#EDE4D8',
+              300: '#E1D3C1',
+              400: '#C7B299',
+              500: '#A89278',
+              600: '#7D6A53',
+              700: '#5A4B3A',
+              800: '#382E23',
+              900: '#211B14',
+            },
+            mineral: {
+              50: '#FAF8F5',
+              100: '#F4EFEA',
+              200: '#EDE4D8',
+              300: '#DFD2C2',
+              400: '#C5B5A2',
+              500: '#9E8C77',
+              600: '#736350',
+              700: '#524536',
+              800: '#342B21',
+              900: '#1E1812',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Architectural Styles (Warm Travertine & Cashmere Taupe) -->
+<style data-purpose="luxury-travertine-atmosphere">
+    body {
+      background-color: #EDE4D8;
+      background-image: 
+        radial-gradient(ellipse at 80% 15%, rgba(255, 248, 238, 0.75) 0%, rgba(237, 228, 216, 0.5) 45%, transparent 75%),
+        radial-gradient(ellipse at 20% 80%, rgba(225, 211, 193, 0.5) 0%, rgba(228, 216, 200, 0.4) 40%, transparent 70%),
+        radial-gradient(circle at 50% 30%, rgba(255, 253, 249, 0.6) 0%, transparent 55%),
+        linear-gradient(180deg, #F0E8DC 0%, #EDE4D8 50%, #E4D8C8 100%);
+      color: #211B14;
+    }
+
+    .architectural-grid {
+      background-size: 64px 64px;
+      background-image: 
+        linear-gradient(to right, rgba(180, 160, 140, 0.14) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(180, 160, 140, 0.14) 1px, transparent 1px);
+    }
+
+    .lux-glass-mineral {
+      background: linear-gradient(135deg, rgba(255, 252, 248, 0.85) 0%, rgba(248, 242, 234, 0.72) 100%);
+      backdrop-filter: blur(20px) saturate(120%);
+      -webkit-backdrop-filter: blur(20px) saturate(120%);
+      border: 1px solid rgba(215, 200, 185, 0.7);
+      box-shadow: 
+        0 18px 36px -12px rgba(56, 46, 35, 0.05),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+    }
+
+    .lux-card-mineral {
+      background: linear-gradient(145deg, rgba(255, 252, 248, 0.88) 0%, rgba(246, 239, 230, 0.75) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(215, 200, 185, 0.7);
+      box-shadow: 
+        0 10px 24px -8px rgba(56, 46, 35, 0.04),
+        0 1px 3px 0 rgba(56, 46, 35, 0.02);
+    }
+
+    .stage-glow-mineral {
+      box-shadow: 
+        0 30px 65px -15px rgba(56, 46, 35, 0.1),
+        0 0 60px 4px rgba(255, 248, 238, 0.7);
+    }
+  </style>
+<!-- END: Architectural Styles -->
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between relative selection:bg-[#DFD2C2] selection:text-[#211B14] overflow-x-hidden antialiased">
+<!-- Subtle Architectural Grid Background Overlay in Warm Tones -->
+<div class="fixed inset-0 pointer-events-none architectural-grid z-0"></div>
+<!-- Ambient Light Plumes in Warm Amber-Linen and Cashmere Tones -->
+<div class="fixed top-6 -right-28 w-[680px] h-[680px] rounded-full bg-[#EBD7B9]/45 blur-[140px] pointer-events-none"></div>
+<div class="fixed -bottom-24 -left-20 w-[600px] h-[600px] rounded-full bg-[#DFCBB3]/40 blur-[130px] pointer-events-none"></div>
+<div class="fixed top-1/2 left-1/3 w-[500px] h-[500px] rounded-full bg-white/40 blur-[150px] pointer-events-none"></div>
+<!-- BEGIN: SiteHeader -->
+<header class="relative z-40 w-full px-6 sm:px-12 pt-7 pb-4">
+</header>
+<!-- END: SiteHeader -->
+<!-- BEGIN: Main Showcase Section -->
+<main class="relative z-20 flex-grow max-w-7xl mx-auto w-full px-6 sm:px-12 py-6 lg:py-10 flex flex-col justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+<!-- LEFT COLUMN: Headline, Pricing Board & Key Features (Cols 1-7) -->
+<section aria-labelledby="rate-card-title" class="lg:col-span-7 flex flex-col space-y-6 z-20 pr-0 lg:pr-2">
+<!-- Eyebrow Ribbon -->
+<div class="flex flex-wrap items-center gap-3">
+</div>
+<!-- Master Headline & Description -->
+<div class="space-y-3">
+<h1 class="font-serif text-3xl sm:text-5xl xl:text-[54px] font-normal text-[#211B14] tracking-[-0.025em] leading-[1.08]" id="rate-card-title">
+          Restaurant Menu Design<div><br></div></h1>
+<div class="text-[#382E23] text-base sm:text-lg leading-relaxed font-normal max-w-xl space-y-2.5"><p class="">Your restaurant menu is more than just a list of dishes — it’s part of your brand experience.</p><p class="text-[#5A4B3A] text-sm sm:text-base font-light"></p><div><span class="" style="font-size: 1rem;">We create premium, visually engaging menus that make your food look irresistible and your brand feel memorable. Every page is thoughtfully designed to turn attention into appetite and customers into loyal guests.</span></div><div><span class="" style="font-size: 1rem;"><br></span></div><p></p></div>
+</div>
+<!-- Pricing Tiers Grid -->
+<div class="space-y-2.5" data-purpose="pricing-matrix" id="rate-card">
+<div class="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-[#7D6A53] font-semibold px-1">
+<span class="">Editorial Volume &amp; Rate Structure</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<!-- Tier 1 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">1 – 2 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹200</span>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">3 – 5 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹399</span>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">6 – 10 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹899</span>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">11 – 15 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹1,449</span>
+</div>
+</div>
+<!-- Tier 5 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">15 – 20 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹1,799</span>
+</div>
+</div>
+<!-- Tier 6 -->
+<div class="lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">22 – 25 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-[#211B14] font-medium">₹2,299</span>
+</div>
+</div>
+<!-- Tier 7 (Span Full Width in Grid) -->
+<div class="sm:col-span-2 lux-card-mineral p-3 sm:p-3.5 rounded-xl border border-[#D7C8B9]/80 hover:border-[#A89278] transition-all group flex items-center justify-between bg-white/80">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-[#211B14]">25 – 30 Pages</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-serif text-xl text-[#211B14] font-semibold">₹2,749</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Core Service Features Grid -->
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-3.5 pt-1">
+<button class="relative group px-7 py-3.5 rounded-full bg-[#211B14] text-[#FAF8F5] font-medium text-xs tracking-[0.2em] uppercase shadow-[0_12px_28px_rgba(33,27,20,0.2)] hover:shadow-[0_16px_36px_rgba(33,27,20,0.3)] hover:bg-[#382E23] hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 flex items-center gap-3 cursor-pointer overflow-hidden" type="button">
+<span class="relative z-10 font-semibold">Reserve Menu Consultation →</span>
+</button>
+<button class="px-6 py-3.5 rounded-full lux-glass-mineral hover:bg-white text-[#382E23] hover:text-[#211B14] font-semibold text-xs tracking-[0.18em] uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer border border-[#D7C8B9]" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#7D6A53]"></span>
+</button>
+</div>
+</section>
+<!-- RIGHT COLUMN: Museum Gallery Specimen Card featuring Floating 3D Spheres (Cols 8-12) -->
+<section aria-label="Visual Art Showcase" class="lg:col-span-5 relative flex flex-col items-center pt-2 lg:pt-0">
+<!-- Subtle Warm Ambient Glow -->
+<div class="absolute -inset-4 rounded-[40px] bg-gradient-to-tr from-[#EBD7B9]/35 via-white/60 to-[#DFCBB3]/30 blur-2xl pointer-events-none"></div>
+<!-- Museum Showcase Frame in Warm Travertine & Ivory -->
+<div class="w-full max-w-[480px] flex items-center justify-between px-1 pb-3 z-20"><div class="flex items-center gap-2.5"><span class="w-2.5 h-2.5 rounded-full bg-[#211B14]"></span><span class="text-base font-semibold uppercase tracking-[0.2em] text-[#211B14]">MY PAST WORK</span></div></div><div class="relative w-full max-w-[480px] rounded-[32px] p-3.5 sm:p-4 bg-gradient-to-b from-white/95 via-[#FDFBF7]/90 to-[#F4EFEA]/85 stage-glow-mineral border border-[#D7C8B9] backdrop-blur-2xl">
+<!-- Artwork Stage Container -->
+<div class="relative overflow-hidden rounded-[24px] aspect-[1/1] bg-[#EDE4D8] group shadow-inner">
+<!-- Tactile Matte Floating Spheres Image -->
+<img alt="Ultra-luxury 3D spatial studio cyclorama background with warm minimalist architectural polished travertine stone floor and cream wall" class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU9Y-uz6TFZsXe3QdBJMi1qyIynnmEljP-Xaq7R5otVjh6NvWs97PdorZ406OJJi3peWy_qOQ7LbsHXFSakgHdw0I7NhsxlSVd2KmvFDabj8ktawWTrh_rI91nUlpSzZd9FJmTv5-l843yVoWRaC3VR6lGvmvopRIl3UDpn1NI4huRCkN2bWRi2W0vbCstDH68DYE1WcrKfrioCqnt_fyOxETycpFVfh7nZDR41LOjO9r-wDOwNhrQwg">
+<!-- Refined Warm Studio Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#211B14]/15 via-transparent to-white/10 pointer-events-none"></div>
+<div class="absolute inset-0 pointer-events-none overflow-hidden z-10">
+<!-- Ground Reflections and Ambient Shadows Overlay Plane for Polished Travertine Ground -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" style="filter: blur(2px); mix-blend-mode: multiply;" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient cx="50%" cy="50%" id="shadowGrad" r="50%">
+<stop offset="0%" stop-color="rgba(42, 28, 16, 0.45)"></stop>
+<stop offset="50%" stop-color="rgba(54, 38, 24, 0.18)"></stop>
+<stop offset="100%" stop-color="rgba(54, 38, 24, 0)"></stop>
+</radialGradient>
+</defs>
+<!-- Resting & Low Floating Sphere Ground Shadows -->
+<ellipse cx="52%" cy="87%" fill="url(#shadowGrad)" rx="44" ry="10"></ellipse>
+<ellipse cx="28%" cy="88%" fill="url(#shadowGrad)" rx="36" ry="8"></ellipse>
+<ellipse cx="74%" cy="86%" fill="url(#shadowGrad)" rx="38" ry="9"></ellipse>
+<ellipse cx="88%" cy="89%" fill="url(#shadowGrad)" rx="26" ry="6"></ellipse>
+<ellipse cx="14%" cy="88%" fill="url(#shadowGrad)" rx="24" ry="6"></ellipse>
+<ellipse cx="40%" cy="91%" fill="url(#shadowGrad)" rx="32" ry="7"></ellipse>
+<ellipse cx="63%" cy="92%" fill="url(#shadowGrad)" rx="28" ry="6"></ellipse>
+<ellipse cx="36%" cy="78%" fill="url(#shadowGrad)" opacity="0.6" rx="22" ry="5"></ellipse>
+<ellipse cx="78%" cy="76%" fill="url(#shadowGrad)" opacity="0.55" rx="25" ry="5"></ellipse>
+<ellipse cx="21%" cy="77%" fill="url(#shadowGrad)" opacity="0.5" rx="20" ry="4.5"></ellipse>
+<ellipse cx="58%" cy="79%" fill="url(#shadowGrad)" opacity="0.6" rx="22" ry="4.5"></ellipse>
+<ellipse cx="89%" cy="79%" fill="url(#shadowGrad)" opacity="0.45" rx="16" ry="3.5"></ellipse>
+</svg>
+<!-- Ground Subtle Mirror Reflections for resting or near-ground spheres -->
+<div class="absolute left-[42%] top-[86%] w-[94px] h-[36px] rounded-full overflow-hidden opacity-35 blur-[2.5px] pointer-events-none" style="transform: scaleY(-0.6) perspective(300px) rotateX(40deg); mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+<img alt="" class="w-full h-[94px] object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSutSg-ynWCJ9KMkFayXvSe2yur-2lBmGs-uaBua-v0KzJQJIqNONxlD_BJEFGP8NUcDjcDs8zff9e__5oDfow7FerZNwwiyrHbVNSmGlnDr1Cy8I_860aaFkxHsWF1zwEEOKGBPaj19gSaOlpgj4A7hT0vs8LM8syox1piw5bENLy6qzhDlAmQI0SxNM0R__iOfMSXj6NfF2JMM6vi9vkbRlwXmZbLBlgXEVvS8JEuQipVDNSl_XmYwpGG2yhv_5_GaU">
+</div>
+<div class="absolute left-[19%] top-[87%] w-[78px] h-[30px] rounded-full overflow-hidden opacity-30 blur-[2px] pointer-events-none" style="transform: scaleY(-0.6) perspective(300px) rotateX(40deg); mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+<img alt="" class="w-full h-[78px] object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79VZI2NvCMlrZCv__hyQaAG5Hu0GTG-UeKYUj-AKbDCdVuFBAB2VJBP3sUqrsvl-f_fvmwXQxM6w9la5_suYELO3OHcbvOf7dxI4lqBJFpc_IxFl2MuCg6J3o2iWBZgKQxi7gECus9QO_5azgQf-15AiZ_o7Xuw-lnW2GMO1_kdwaKEuUcKMVJ4-nbyy-0D6f5nICBHhEHkKQ3XlnCN7roqyGwZupPGSQo3AE_0T3jgb2s_SeWmTpVEG1HmbGBMk6L2M">
+</div>
+<div class="absolute left-[65%] top-[85%] w-[82px] h-[32px] rounded-full overflow-hidden opacity-30 blur-[2px] pointer-events-none" style="transform: scaleY(-0.6) perspective(300px) rotateX(40deg); mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+<img alt="" class="w-full h-[82px] object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHVZoOU--dz78m-pKUw-r9qRd9J5Slb5bRCQswfhCD0Z-XKQEo_pX70ZcfQxiJ4Q3zqMXG9ESfxOyhOXvBHjEqGle0ZZeSucyfIp5utFK_6h7y8TeNNnSM4V0Khd226Clx_41tPobU_ZrHwjMNVakPEHE682b0DyklN98DFXqH0sMQ_wjdA_jIYOgq_weisWWR-BTkUTaaHUvnW4vg_21pRM67MJfIu7fAT5yP7VazkDW2T-mkRjzgshqwffzn_xOpvPo">
+</div>
+<div class="absolute left-[33%] top-[90%] w-[68px] h-[24px] rounded-full overflow-hidden opacity-25 blur-[2px] pointer-events-none" style="transform: scaleY(-0.5) perspective(300px) rotateX(40deg); mask-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+<img alt="" class="w-full h-[68px] object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLNhELgFTl87D6zzkVuI8_gxVONt9QGDgrms0vdJ_mUtacQEyO9IuLebvCQiFIFQjVfropXA9fsDfBnqP3sz_sCFhp3O1G86J4ueJSTYZ9Q95FuqXv82a6cVl6lr4DbPseyzfcclwYllhuX-X5FhnvHdmkxzmFsXsDPFAhexHi_wtW5gzL7DzVERPFwB-tFzhi53iVzFxE9L1d3ICd7yfrsC79eywAmk5EeK5kaHmP_TlfzFNmQ7wQA1Ta7uP3HgfAeCU">
+</div>
+<!-- Helper reusable styles for spherical highlight & occlusion overlay -->
+<style>
+    .sphere-shell {
+      position: absolute;
+      border-radius: 9999px;
+      overflow: hidden;
+      box-shadow:
+        inset -3px -5px 12px rgba(25, 16, 8, 0.55),
+        inset 2px 3px 6px rgba(255, 255, 255, 0.75),
+        0 10px 22px -4px rgba(35, 24, 14, 0.35);
+      transform: translateZ(0);
+      transition: transform 0.4s ease-out;
+    }
+    .sphere-gloss {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 32% 26%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.2) 28%, rgba(0,0,0,0) 58%, rgba(26,16,8,0.45) 98%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+    }
+  </style>
+<!-- 50 ARTISTICALLY COMPOSED 3D MENU SPHERES -->
+<!-- 1. Primary Hero Sphere (Large ~96px, Center foreground) -->
+<div class="sphere-shell left-[43%] top-[68%] w-[96px] h-[96px] z-30">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB33lU3DJUuk9IVUjHdnZqiEY6dbmFB57DzQPTVhGFDSnAkKB-iomkDKv32wep3ml3DfXZGLbo9nfplDTCQGMmZrAuLtv8MTQSjejrP2PZEGofY2a4hjMi_alB8BSZuJUJbf4hPALqxQelspG0_Tsam1-Z0g6-DjUkNjL-GJSYVwjKClSo7R5YHX1HNy_QENLv0X28QKbYinbxv8Ls8xQGkAtI8asysMDq3-_5pIWupp1TiRuvgB1-R25qwctZ97v4RBj8">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 2. Statement Sphere Left Ground (Large ~82px) -->
+<div class="sphere-shell left-[19%] top-[71%] w-[82px] h-[82px] z-28">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxFUtRAMu2bvJgLcAmQ7O89jxaA_uAeiZr6gzJL170WlhIULNJZiNQlSuLUL8_IjgyTAcCMhkOy4z3p-XW0tOs5XHPcMMWS-Ld5MyOkWwnFSGlhvqSuh9uBeOXd-cOJUZkPzVJLkZ21koMIyUbI-jBviTs4XQiMl1uEe4sgkH8gP-wkdR0K8Rim4McmRJ4Fm3dfBbykzG3LLfb3Q0pxu7GbqjjZ0quH7rFTqDD5wkoIQ24M9u-wlrLF_ajR0LCiQQU6Q">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 3. Statement Sphere Right Ground (Large ~86px) -->
+<div class="sphere-shell left-[66%] top-[69%] w-[86px] h-[86px] z-28">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmIKJghx55X3u3bkZfBeo0VX5RXG5wTeX0ZvaZTeeZVBCJeqLwC6yFkEXQ5PHQ_nlBzferqD_GBDUVjCYz_i2iMU47ZEifcoOOdojp5oQv6J8W4lACL7HNXdfhpEYfq8L-SP7GJwRBSITsE2Fsb3hnWJdQMAOwz7K0ZQs3QhiM5Y1Cm_Uy4F1Q0-hxuPq3CH1kC2XlYBMtcBgoy6EcmHUyhQ5dDRJvTUCaNMXx1Xt0OpFP0ZLB189jjt3Lwg0sqrogl9o">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 4. Front Edge Accent Sphere (Medium ~64px) -->
+<div class="sphere-shell left-[33%] top-[78%] w-[64px] h-[64px] z-30">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0c3yPNo65bfuSFrFiFKERwMG2X8UOYNlWh8AzAkO_Y2yxa0HHeb_xmbHWLvf3xd0B0hQzBdn-zNIHi-638I8kBNqUavXDzdKKUqv1BJiurN28HUK9-HoK9w8XU4OS0BfnEfa7xg1hLIpCdpYbqgSio8ENYTc-ru9vgckfJu4VuQXct2vnkhJKh3oubBne114DeG0CVxhY6OJP8AftNTRWgI6ET92gbjmjuwYfVz5KO62O1AFPKR8y86qzyEchAk1j1Q">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 5. Front Right Edge Accent (Medium ~60px) -->
+<div class="sphere-shell left-[56%] top-[79%] w-[60px] h-[60px] z-30">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDieHDJ0k9L0ZAhzG6H8HJ17CV-KfJkChJDPpyTqlM5TtNAumSrMUUik_0t6Co6ib5AmENPUYI4VjhxsSd95Pm1T773CWUMcH5WjG8XVM2-I3eU3-xOScYY3MyqNtqQfWd1wSsKUtjvw6QQ-qPxZ584BL0Q4iwnumb0bcDPdhhbJSmis8Ho2lH-9k8SEI7ev4c7eAQFixOzyAX3C1JFRiMc-w-kz6FYZEKg7A58EkC12GFz5WRVtsaii4_WBkeL-fYGGnY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 6. Left Ground Edge (Medium ~52px) -->
+<div class="sphere-shell left-[8%] top-[77%] w-[52px] h-[52px] z-26">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv6DBZ-sinkCoI0PDgx_u-kirCWALC46QEg0qzVsIe0XivW783bu6GxO41aHwnXreB5YHSu_XD87JSX9MdNEhnwocWyQwu6bCB4ExjjcdwSPskx_tDoMgVR9jJqeZYoXgiyUqZEMvQ4oBFEBxNl4qoVQrdlyxA6AyxDkNRqp6Is8-dAx3vfkZbL58JXIaCKXqRjcuPnamTXzEz5YpthPmWd99-R4X8ryjHXHjOXWtb1X5r8Ceojx3egWYkg6spcK23WxQ">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 7. Far Right Ground Edge (Medium ~56px) -->
+<div class="sphere-shell left-[82%] top-[77%] w-[56px] h-[56px] z-26">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVukMj39uQX-nyO-e64y-9GBpTDE5Utf4Muc00JkGJSXhTFArbNEoyWqimXKvHwUsmswxn7rALQ8_-O_0HNiqJTlvhdhzmLpdk5HDkeKRfcL8ZGCVdQM0fTY--kxdQavFHuXYSJACrqdJmX3ygc8wGBs27-ar-EfahwGyC3tckrpMocETBHRu_8-RzyK3HpJDMUI5O1PkIQuu6Z7m2OuknhiumQ4ySJWLrYlDohbxhas4R9In7TttKqxXtEC2xXLzpGxY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 8. Floating Center-Mid Tier (Large ~78px) -->
+<div class="sphere-shell left-[38%] top-[48%] w-[78px] h-[78px] z-24">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPRPW5Hp55eDIzUJiNzUQw4KzDQPDf8aU6l2fNnMRzywLZGifBucrrK01zvyFouKgc7OtxXZX_4kUIORIlEHOuFlOLgBRdPx5lFnxfViNBQzUJp-hvHSvA9hGAo3TOVN3B7bPKHN7nvPxt7ROKloEquuE1-aA0Iu0AIigPFXzYkhxNWGQmBpTYvDaBluEysv7jnSI5eTLJyQMDNmnud1amvJYa8MG_7oI97YIgC-EP-DQw76CX8A5axjDmHy5lnvNhbwg">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 9. Floating Right-Mid Tier (Large ~74px) -->
+<div class="sphere-shell left-[60%] top-[46%] w-[74px] h-[74px] z-24">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8zbcn2P_hPVkMPL9epAlkSwCKhMmDmKa63YmCnpYo5aSOYeb3ZR8wQhNTwx7IhwVRyaDD-OT_bFkhELFL67A9FQlD7tbZhosTHydaxRahQUBXvXKkl3v8zQFcoE9a_S-EH7XTGArRX6GHOU2hO8c8QVLelSwrhT1LYjyEQWFf56B8KOu0HKIJ-adp5IClVzqFpoEZDcovqCYeEjcPMOpemL8FqofR3-lsOV8skgsOC4Sm56xv94E-4HcgAWgf9kf-TY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 10. Floating Left Mid-Tier (Medium ~62px) -->
+<div class="sphere-shell left-[17%] top-[52%] w-[62px] h-[62px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTK5j_UdTEesiMSQYpNgTgvvPrf6173jUyN8eSm6prJhmwubdVt4PNoVZgUtO1cVgsLI-i_ch4hjCsMYlqSXzIfyWXlSApk2f2_2RG5DtRKGiC0T-fQ2mSPEkM_-bZSRm1Ls7WQzpOfgpEX_PmQYXl8GeJNKe9mU4PmtYI4kYPiPZmd7i5uldR0UaJDJc2A1Q-1WsS3Wb8GSw2YClWNk9AY8Pw8UdzSiGcXi0oLtajxZq4m5t0r-QsE0EWXEo_43CZOqc">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 11. Floating Right Flank (Medium ~58px) -->
+<div class="sphere-shell left-[79%] top-[50%] w-[58px] h-[58px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqaYWtgjP3v1lbDVQu8Jc7JoxrnRZsTfvmJwQL1u3tw0ngScGW9sDdB1jQ3Qb2A94tAaa1-wwfkX1jHiTxYfcu6akYkc9GqmJEhxmmzilD16ggAtuHCktE51KK3JAyycfbJrQ-vafqvlwFPucC00p3FJ9mhNXg-6lEDWnudAgnPdMWz4bdS5PNzCUUnYBkULcmCgp8EEX4Ql7LZLWePxS5-lGI97KnZnOFO-_s5litz5s24qN9Y-RieaFppRCD9PAraak">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 12. Floating Center Crown (Large ~84px) -->
+<div class="sphere-shell left-[47%] top-[27%] w-[84px] h-[84px] z-20">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmgdRKgHV5W4_eA2LgJBxwK1LOvGzosgMeQM-r2Xk2OWj6jGXPmsAtEouiaIsOOBVFSZhIgAQKuK0cx_a-he2mVCLjch5pje00twqGM-Ytn507gt5jPwtj9SG_u2FoR2Mp2bxVJ7CD0l3rkyxFh8w-28JjvfJcWpNPcxz8wCr5gO_WC6r6t69O5d9LZuIejqVjk8gxvCyup4kGWMUjTPBhorQb-suDYTuS9jtiGuNcuW8sbxTXeRXTwcBEi1bN4s3cx10">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 13. Floating Upper Left (Medium ~56px) -->
+<div class="sphere-shell left-[26%] top-[31%] w-[56px] h-[56px] z-18">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6yTdKZXVc8BMqTk1a9WrD1NqOFT7jGKgThDKrLpbxSmldEHbx9mWred_78DrGfOCmXBWFXwrGjIJN8BZ2RSb6P366Bg05sYKhQrJNd1kusbNsiEl2GvlKDqvEluxCRCRyvDUDJwOmG5xX-ZisqZHlVvTcfL-1J67Y5mcQ1kKI0QishSJrFRCrEQqleLs-gRvUyZ1BFgfks5cMa3JEINnbG8c9caJyfJGsxKkkYSt5SlSM3RwgYSutScH_PcQynV4SrNY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 14. Floating Upper Right (Medium ~54px) -->
+<div class="sphere-shell left-[70%] top-[30%] w-[54px] h-[54px] z-18">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhl1kpS2bryJv52QSbDEkr8xkeuX6p2cIQav63-l7FRcSgr5BcF6biVblFskoNTvFD3ztpIeWbeMTI2FDsmA13yOO4PvFdBSVTJ6rFUWIay3THFnaLqovOrt5eep8z1sve81peoi1WDSDMvUei7CHarqZG9TZFT-5vH58E1DNdTnStHC5PDmp-yxbuOPNvLHsl4ZI6u8DSeU9p5N5GKpR0GGa9aC6W8Gbmbf3WkXMd-xOw3X6gJHoaTC7CDE2SNXwcsPI">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 15. Apex Floating Sphere (Medium ~46px) -->
+<div class="sphere-shell left-[49%] top-[13%] w-[46px] h-[46px] z-16">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHcRwagI0W8F0fD5Jnq5xojDXNP7TFWbejTFnrEz0TnubQVvSZXDTKJvK8ROndxp8ChpgeHD1gLfF_IPuQzQqpeCiGj0rEdlCiJKk2DroG7WQa0bvDyixSiifzGRJJX7cRcPaVB0sPVd4yiDHy_Jg02DMNX6_fVdDjx4caI0nM2KfpFbFpt6NuDpA6uTteygt50T0steG8JzX_tf_1GBEpZsxVmduA0V26Wcu6iqST8n4bDqUaT4ScLOFBMPnIy7JovJ8">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 16. Apex High Left (Small ~36px) -->
+<div class="sphere-shell left-[35%] top-[17%] w-[36px] h-[36px] z-15">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhozDLkKFoGrYPMznmeg5j_ixGlB1Te0yBR-Hs1ufejOyIS35e0xc9kbKaqy305WEtAMaiFAysm_wZGBjyKSJK1nUe2g939mQgR2ioJhfTSe71KRVMG2dfGF6dgvesWPTN332noleqqNQ4FusBF68XRr3DQPSMqxYtt6oed2u7Vc3VlZVWCGCm3GfyFs8EmuTEcplJjpVsmNfxBb4J5OHaP2_8ro6SYPUxfLmSShD0vBAshnGX8JsGT8hHT3IgAx5m938">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 17. Apex High Right (Small ~38px) -->
+<div class="sphere-shell left-[63%] top-[16%] w-[38px] h-[38px] z-15">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAII00ehOaF1h4QC9xftiBQLia10GuR0gEy5j7tHIFtFhmbgQiNNHZMDX1QenHsw3ClxhYgod9lEpe6KhogOgfjzMRjCWx6q8bFQA2xZ_QqS3bkj1uINOtlPQXNuSQaw8XzVojpKjMgQriycHs4gIszlDWSXl7fDSMNaQDJxTV1zzE80IC27IAmoR6eCo2DoWwPg-_JgxxZPFVeLGdmeSya-guhDyL6agQoOG0dPzyw10SlTy5olvphc8E07fBc1hnohks">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 18. Upper Left Flank (Small ~34px) -->
+<div class="sphere-shell left-[14%] top-[23%] w-[34px] h-[34px] z-14">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaRrGD9UG9XnM4d1s5PXjmZio49me65c8BSUceIXQn7ip62M2NxHiSTdZNoBeBGYSEVOSdhBp0LL-VYub7h9qJdpkLxp7NenZ2AdhaDNlEWqSQ7fj6wYKITXkBVk3q8x-mEg4GCDJ_eoCqrinhgG22VyPHgOUq-CR6ylH3sTCRzS70MFC9MLcfv0q19q-2FSYxenl6GAHX4QAvPz_GXMnx7teKtWCO07a6iWhTHwbTYHhGhsUS4QFM0R1znhtfCrdxu0g">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 19. Upper Right Flank (Small ~32px) -->
+<div class="sphere-shell left-[84%] top-[22%] w-[32px] h-[32px] z-14">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMeMMw6Irxy75Bt7_I8nTMqGdrzXWL5XlcBwETpPATtUH8case9gsQM0YSnOak1nC5y79kcdPGeyuNQC4b-iV66pNLcb64bEw_S7eDxnJDZdWxcpf270cE3hoygNk1-d4_u8Xu4KJQ8ug6_g_rEYNxamCfvLwkca8akuVenQy7Ixj_NmOiBiaorwkoSOD06zd4cbqEUxW1nrOGqjfizWyg3ohbRWdyWBwfKO8NoqY4PU74uAOQ0JaA5StHap2uqJp99BY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 20. Mid-Left Satellite (Small ~36px) -->
+<div class="sphere-shell left-[9%] top-[39%] w-[36px] h-[36px] z-16">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAx2Sd7_kAwgPmBFVKy1lw2vFCU1-EWdpqweuJ4ouXs20-uPLak_5-zOaOuzllARzt0ZHJX8blOMSIE4RwPRMqCCOMPzvj2NTpjlDm57f-WgAfGGsl-jnWpJkBWRA5YsokSiDSzs1C3fywVdLnyNVmv1OgNqlHvdlWq2XVg6CWFsMbKA7voG6W4uM4tSGVirE0qvTFhau0JRuMqOcLxVmLrCSUSGhKCBXdh4a4tdZE6ImFnuSLJTg_4_Gyd8kSUawr9wM">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 21. Mid-Right Satellite (Small ~38px) -->
+<div class="sphere-shell left-[88%] top-[38%] w-[38px] h-[38px] z-16">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqhpe9YoonyTQVcaoAd_3vhuFjI1O07wx9iCeggUWGu_Wb5Lr2YMGlsw21HTQpufH0rlcvgU7QavJph6yW59sk-3N-bWkSYjAXsDHcYlGvjOVBFYtDA6PXvUNYcWet2p5qJaB882Ea8VIOIPFYvcfwzkQHlpgFXjiGWse1kbs6hbT9rmWZHE4Ll4UaVVI2rFoNCwYWp90R2kzq0gqgO9Mtiyrx8_EmbP1XII_l6P0P9A231uhzqyMWHzPjOMwRawdop0c">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 22. In-between Center Cluster (Small ~32px) -->
+<div class="sphere-shell left-[49%] top-[42%] w-[32px] h-[32px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLojhA9_R747bVFbqQKHy2X9-X6tmzHx6srPXSgYDsueDrZoBxnu0oxDQBjNOG1KgYDuLatu9i-X8NECVA7tmF0pPBVaO8GufIVwCLnG9U43JzUb4UmgtwTrWxVgY_1VJA0Jm7VAYWGvqlSOBDPNzOT9wxla59HdA9HPhvwRY237EzzLR9PyAR239Ts8M5Iojf6crHpvMD9oTp3MwtTmOimKxVHA8yhrJrfuGbOvcC-759adwk2_CC0S6TvZDoSXfikA">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 23. Left Intermediate (Small ~34px) -->
+<div class="sphere-shell left-[29%] top-[44%] w-[34px] h-[34px] z-20">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAAMU3yewrczuiLT8CTJrQsIsbl4_qLU54rPmGXJbX2I1lECL5vVhbLs4himTM5W72tZAQjhrZMUualC_VAnmR8ETUxUy8mYCBk5Ov16Z_JlQNQNA2Hv2WaeF8B58jN_sZWgYhHJjTAYslzGDRcz9IKbMGeFJO3I24QsVppYNMzbE0Vdu7CsThultiYpz4EaRIh473sQGtVHurgS6MVThm3bmvGh7P2DCbu0Y7_5vPg9vUQcJKgl0p4SGrFYXKmEeP7Gg">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 24. Right Intermediate (Small ~35px) -->
+<div class="sphere-shell left-[71%] top-[43%] w-[35px] h-[35px] z-20">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCyveBHGZZUDJCYi28shhOLCJME63Oy3NL3ErXw_TGhYsukyoxYFPzGVKJJTk8_iuGsDaOW89XPID4gtLJIjZjk8ONIBcLAhRQA1gIGpMCA3Zarw9coTBwZwzoDQBH4N5aDzqXD9bxZ0-wL15MKpAS0WCXYBd0dIb5PxHIaVym__CrDQPl0ZirnPs9ObUTxUcWNOKNOoz2bKUxwx7aMFYCgSjyKaqgS3xdUmhaQ_CXaXF3tjnYJmQup5lJbKB-Ki_rkgg">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 25. Lower Left Horizon (Medium ~44px) -->
+<div class="sphere-shell left-[13%] top-[66%] w-[44px] h-[44px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZyn0OewPToL1T0Q0zvw9v6B1qbW7XHY6lhXk1ydNED_c3VTZgs9AxkYe6iNHa1M4TEaY4PL3uh52cEV0OEtw5jKw0jk0yFkMgiLaqwXNuo0CoZiYosCcw9lciUx_fJ9RtMqvLUGnQ_zBCEa1p2i0ygLZNudclW5Ji3Y2XEvO_ON5Owu8sKGvryK71qYEBtscZruNY-WdpHGfdZ3m8Y_8mdRcZYp1QH3ciFz1ZetZrw-09u2daYOektc2Q7IKvtoDn9j4">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 26. Lower Right Horizon (Medium ~46px) -->
+<div class="sphere-shell left-[80%] top-[65%] w-[46px] h-[46px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-7iN_Uo0OdCkqUVOlteiDaa8_wJouhmQH6deC8aDzWne6jP5qNUgcmNH66EUqLjrci4wRGJnRbOUts35m6uh4oSz7aIO7yaPdNN88cwGYPMZRo-is8oipJwiLIlFzlO-U0I68XZXlxrcQPLiPGYHJv_JQgA_N6zdSAoe6ofZkh9ySxdAs51A2spoH305jQbiJQ4Mya-NYBdTrYtPIsQBSeaVALb4_eBNaukMPQd7pnGl15sthtkuSbskg1DiwNDS2ol8">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 27. Foreground Tiny Accent 1 (~18px) -->
+<div class="sphere-shell left-[27%] top-[86%] w-[18px] h-[18px] z-32">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6NiaJwEo-ZXmeH7LoDE08zwg-HdN3Agnxp6_C0I8GHKm5tGR-LPMIVhKynpg5QRvSWehc00DApUJcuNuaveAGFUo3NPFuBeAvRPcMWxDIF9HG3MBjO2C6Mklx8BydyaS_KeX12TA9ZWm9MFTH_f9Oh9FFCXukIMSEVakXHIvk6-3F4rIORcr-ZFldd3Q4UiEz2LZy42gtNlpNNRKu20Xo-Nw6J-onZg3z-ykkxLoJU63u-cpkKbJ2tp7mmDTstmAqW-M">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 28. Foreground Tiny Accent 2 (~22px) -->
+<div class="sphere-shell left-[52%] top-[85%] w-[22px] h-[22px] z-32">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXx8bm94wxo4va1KGcYSLSBXoLwqhhfQOMgfXaT6UtRT7DlFZT_Tc2sfgRZ4vDSpS0ZMs2i9qdl3D-pD_6j2nghhUbo_Hy-BasJgz9ba12aDMJbNr6mjhKjdwS-_ADd9STj90uRKMoeVQiv3FXuIxjkOKjOzxKENgGSpuAaWNAcojA5CDlM-dZaITptKRaKd6RxZxYpkSTiW7mxdf8fZqNKk4D7DbuXR6RQNPOvA1cl76MU9b7CFh-LuxQEB8ec8C9ruw">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 29. Foreground Tiny Accent 3 (~16px) -->
+<div class="sphere-shell left-[73%] top-[84%] w-[16px] h-[16px] z-32">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6JVyKh2SaY9Lp7mPJLHn1VAlyA7dWS1yLXy2UErTQZjGxQrHnWvQoSAGsHG4Uy-VcWjoJDukxw7CdotwJ3PC6JBVGdPCVTqSbQ10_CPTRwPQNs7t8nWkOjxjVuVDKN_8eX16hygZ2cFw2oanoDXl8oUWz8FZQtXPFkvhDwYmNyRe9IiUIudKof46Wl_2FigWohOtUCmF7H5KnxjA3l_4AZ1xjkcB5ClrLWJJqS_0CheZL5Lt1b_w5ysYrXoKbIdz2vPw">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 30. Foreground Tiny Accent 4 (~20px) -->
+<div class="sphere-shell left-[42%] top-[84%] w-[20px] h-[20px] z-32">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4v3Vu9kEY119gFKBGU1g3p59IFxAl3n9R3q8M6kzyTGZM_R70FL_QpCHR3RvcjoV1HzabCSXuFmd4p4iTa2by8uNkqm64NmdYUYhGAl4K-NUD-2cuR-Mh42hGV5SRUKlS1AyOHtoeX_IqnvznY6ZYzkuBeX-o55Nw0bJL6Bi9T12IFdyIhHjTd4IFdpUuNUGC0TOHuBGeQjYJSceu0C_L1EIwRNXo59dB7Cabwsj0lPDSo_vXs_w6RDb3lzT4ZpoQRxc">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 31. Mid-level Small Sparkle 1 (~26px) -->
+<div class="sphere-shell left-[22%] top-[62%] w-[26px] h-[26px] z-21">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0WZbV-yMPidfe28eykB5lgSLtPMwb0lEbKiJh3emOI7jBj-TrcpNLvGlizour8OtJSEI5xi-CSFPfSkz-PIZ39tN4f0IZkmvwM3qYsSnOOGq8eQei_XSEyoNAhgoBxw6F3_rz4pb9kug_AjCrllASCd_5PIvQbzEswcHhvIVjrPPZosH7YYIiYZR3SvhYIcPWGDXb5XIOv2uPQLNzW9tTzqPuo0UM7oaOOsXv84dFX2s7pU41w8qoqZyCb0wz9zqqJTA">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 32. Mid-level Small Sparkle 2 (~28px) -->
+<div class="sphere-shell left-[60%] top-[63%] w-[28px] h-[28px] z-21">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuooXJBWHX8USwwl9h8F5UOlN2UF0y5IedyDS-NlARYPtAFFpbvtShrkQ4goVNKeV6HhTXVCYAmi3be8-OJJo3FR21_-BAd3DTQvsTbXWpLBp_0sqdSFt6HJYKUvH2tpLGG4n0d1KNk05IAdVlifHpikNN0FEdX_i6jx8gS-_JWivbzGMG0JmtSCbqZMzEeSvCVUYxMBR6Gw08Lr619YRba8ij33iIOIG9UeQ6KLpmxt6Too2etoFJpwffwimU-3j5mV4">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 33. Upper Ambient Sparkle (~18px) -->
+<div class="sphere-shell left-[43%] top-[22%] w-[18px] h-[18px] z-16">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXv7eSuo2wBYB6xfiZeARvjs-HwYzqfoaxiK8XKO7-gXy9f5R4w2Y9SC17WqEJlRAjjse22xpecvlxyZwo_XqaVA8fWvXa9hKb4ybbPyEdq4fgcXDlWaiugK4qgwgX9ZodoxbmGf1IT1UpibRgmYdGOC6It1xfS0AeFM9DkUpvjHqWnvJo8hq52xTpfhuTThJgO_izRGOF87hsg3CzdDsWHMtuJCdrJNas1Vo3VLJvac6t8gIZzgItsjE_zg9KetUkoUg">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 34. Upper Right Ambient (~20px) -->
+<div class="sphere-shell left-[56%] top-[23%] w-[20px] h-[20px] z-16">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0_0Yg0BEWPaWNdQMCK78uIlhrYpqA0frCpx6ihO21zhogiFN0Ywfeb2aIU4fU2wr84m7Q4tRgYP7eiSLKMP9j8SYnI7msIeZ7RxYdUNjlF5taBKmDVTT5YnHY84KVhpIgrLfj3tX286P-l3jnGltqkmi5it_7hWTQSUwZIm9O561qeWGbnCjIsRfCZzBh2XqldD93N59px-oydfkj3kNUvH-idsiNDwNQwq7PV3prtgqUh2o1Wh7-Oe1-wr3uCAFA-VE">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 35. High Far Left Ambient (~16px) -->
+<div class="sphere-shell left-[20%] top-[14%] w-[16px] h-[16px] z-13">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnxFBAa4jGtT9K7Kmp1emkhYFVPAKnPZKVcj7FX0YAqqL2ZbSxVmy961mRUgt5Z9QzBGPktBr7VofCuWpuheORNoqk2vEL2olO1aXtGeEBwebFYqny_CZxjbYK2Hz1EEU3VHa961H7nRGZNDdphMGwIeEzkb83-iVUWR5-V3gsFXGqtTnMr_KtasRfqnYydERdbyJ8boaenjc3YELEii4MDS4wQUNbFZb76vGXj2vHXFjIZuO2imbdkE2D-3JzKsU95h4">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 36. High Far Right Ambient (~18px) -->
+<div class="sphere-shell left-[78%] top-[13%] w-[18px] h-[18px] z-13">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCurHyStiz1NHXec2nP83I23KlRmkhyDKA6qITw0apjtMGLYsHpaeTNbXUcLTCfAKwxaM0yPkS3kA1582DsoDDz5DTdTICVe7DrorHzfqn4y1WvyzlfmP8oeCmnwgiSSm7mPtaw9eRz3kMZ0BRZusCiKfnBH_pAyqilyXLDb6GsWMocMoiIREUuHXOxizi-Ted7OdW0BYuL3cL3cBXc-57lbne0S6B6b-yjOTFwipzLPlXW6GTdrojzR1cDki_wch3cF9g">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 37. Depth Bridge Left (~28px) -->
+<div class="sphere-shell left-[32%] top-[60%] w-[28px] h-[28px] z-23">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALm-NH-556JZtkpWTA3IvRQIlPxs3lhKlWTSxaevq-3DYVvA1FXb6bEbYrnM5nSaBjGBJR2NuHl6ZOC7Em4MCKYRmsXuLnVDOklyDV55rh_Ckf94rJR-vnzZrUpPcUQm2wkJL5rMlc66vPELUaAKneOzomQyWEiRd-A1d4YBCWuE0rkVHRLfbDItnluqLHaOOmHZLCxDr09Mlbg8uIdyamI5110dl8ynp0VK6C8Nihk1PBJe8LZk3RNXxXGe7HeaB_WMw">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 38. Depth Bridge Right (~30px) -->
+<div class="sphere-shell left-[74%] top-[59%] w-[30px] h-[30px] z-23">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW0CGmBKVeFoLwkXq-9Is8qpWJo4BT-LiX6869K-wfVBJiP7GRir1MK1TuCsDG4Tr7xRoIpB1ERapP92hMKCPBMUYyEwmnR0QvCVpgIuuGvng02Y0nAHmqovvxJ0LAcm4v9sSdGdVjVK0DvFDMB4mdS6j1WL0A6gSbGmBEXf-gsLB3YAUMmY6hXKce2f-Nz-B6L1E2wjYPJizr8ntsEuP9PMtJeYH4QHLEt23I7vS7JsHzK0jmS0nnSU_0L4slTFIf_yU">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 39. Far Left Floating Sphere (~24px) -->
+<div class="sphere-shell left-[5%] top-[48%] w-[24px] h-[24px] z-18">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0eSUASOq9MBW3VanwowoUhKb3vzFIjWJPA2SxCNpg1flAFXF1-fR6eUDjGg34k3areR3ip53XCwOxnOxzk8RZXxd2knpfcnZiQV-tfysU2ytdo49gXbOtl25TNdy1U2Qhmfcxz72wQDn-dy8vUzv_bF0atXMj7WACSINfzhHQPjuNbjbU9vDKP6JbQWR2wVG5IxsupKYWLqpzj3epCsjjSv0N9x3NEYeCROuhwVR8R1Rl6hBV1WZ9dYxCQGZgGnN3qyY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 40. Far Right Floating Sphere (~26px) -->
+<div class="sphere-shell left-[93%] top-[47%] w-[26px] h-[26px] z-18">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkjNeZ50sj8DX9-7J1MINoNd6hKfv--p023zy0bVaudU9FuPw6iWD-X9O02jccksi3k5m_B3ekl51lds84cIRR85xvrsdIvf8kcbp8F4RPmoKxAv7ydcxrCOAZJaa0uq_2j6o422e-OGc4KGBrK-V6X_K4-2IIaX-UB4GdIrKd9JwWEc0kTwLDEhpuYAnzup52lfjmJ_LnR4wnPG5YWrMDDywcbzNqDCJvy0Yo11AuhA5AJwA6iSj1XKtlPzcK4I0-MU">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 41. Studio Center Aura Sphere (~24px) -->
+<div class="sphere-shell left-[52%] top-[56%] w-[24px] h-[24px] z-22">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP_mRk4YsRo0zYcUiYMp9vp-3Cgh-2aBHIeM-2D4oIqcKXQ7cV6dDBC0pp86CmPYbdVCaPkxZzzO_Dc4RPSdNhrShm3tL5aFnUU14yq0gUrJvAPM9sjJHzU_TQq3YZNbmsurerGoVICJiZfJdHnkHtgLTValv1_PW5JtaHkO-4EjTU8rmLWm-412R0-gwIjCXjCVC_lyFajrZvsobaFkQs-tnH0fR6O6BD7WAbkdr-_2_4ub5oMBNx3juaFFyurH4nAgU">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 42. Upper Mid-Left Float (~22px) -->
+<div class="sphere-shell left-[21%] top-[39%] w-[22px] h-[22px] z-17">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6J1-XRXCvTgoYjzPhRF1F2X-tkIUnAJ2cx18mvH8OfY32VCxDyFdjL7HHr3iV9PFHfX59D5wZzFSzs1f92vVd-6irDu-5BAev2HW3CSsoCicwVvBWCpYO2iutsfb1ecxxXWQPW-BC8JQWQ8ILdkGJhpekXPlfAPy3fxpoCpPGXCCmpQH-NMbwsV4YkOi1suTuwQFKR_91h4kT-UxGLvA9voMqJBX_ZGSlUT66j6FKVDkWSQBEkVuEl8ZDbLSH9J9WzGM">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 43. Upper Mid-Right Float (~22px) -->
+<div class="sphere-shell left-[82%] top-[34%] w-[22px] h-[22px] z-17">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbjIaTHyzwbvSimIC37GYXfRsNH-oq24PeswDM31fRUkKtu4nl9gCyNhaQpl9A4esGg0ndnnZYx7RUHji71K8vCEMVwSga17PQLaFTIoc4aOgp7Xr8ndsIxzDlIKROQmvpF1vDUzRTBeRhEr5NfGaN8siB_AmXfMhb1DFsNucGJp50L3F4PJzo70rrRw5Z8R53_0n054c5yO-lz3jI1IvILHqPlf2p2d47HVSpBVlOuJtj_5CK4q_AfY1y7KSUb2oaoo0">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 44. Lowest Ground Contact Sphere Left (~22px) -->
+<div class="sphere-shell left-[17%] top-[85%] w-[22px] h-[22px] z-30">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzgXBe-d6_JuWqe-aokX_StoYZk3INUGPijpUiqtvKVmwYHBhqx3LatD3f4hviHDNB_NKz59sugf5XBQRobN6NCgd2DrHUg8rioGhNNuaf4NN-y-HUESzeZc7HMCkBzFmjKOx3Ax_yfO0TWbaKdGLlFAOEJ4hWd8iUWPwQ2-YtId9qBKyGYdZEaBkqX5lhD_yRDRt2V1CqhN-6SRrnECjpTEFT_40GTYuR1Xp0sQD_6_FGr37S9cYloXtIfV07vEmpBfY">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 45. Lowest Ground Contact Sphere Right (~24px) -->
+<div class="sphere-shell left-[85%] top-[86%] w-[24px] h-[24px] z-30">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfTa-7IVMS0n6u45qCFOSdWVL-aF2PQD5To2F39_8q-EBAQ660pOmjdAgyixov8kjHBhmy8hDhk2E5tK26HNt8seym3DbLLjbMEcx60NkZkUcpzOWwTxb5V4zbtfAiPP0hUPbpiAbhcgNRXeEhwkYe6f_G0yDTszsw698D6yMw3-YCVeSkfR1pr9kDG76GxsDmlS4gPq-pjG0dLGHuFTGglNwR-ygcAxxCHM0DQXVvAvrdghIf-E_AcMvbLkxd68sKPs8">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 46. Fine Micro Satellite Top Center (~14px) -->
+<div class="sphere-shell left-[47%] top-[8%] w-[14px] h-[14px] z-12">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUNwyGL5wmUznnW1dN_TXPYGwgIJHCZF9NNv9Q9iVBKvAsNDRY2RlOhd6fQFyeKJrBzekSITV26V5uzAdWlfJafMY8KV01OYjPRbWl4ZekPo_vvQnj_y7KCWBQ0S8itqcmFvmf0j3cL4tpRDdL7ZZxISB3YmJe1WuCNUlbqCVI2a-0RZKEQRAmXXsFc1BrnOVnvC15Z5iGmzXFKC-G2ZN1h2tZ0ozQh9A2QXJc4r_ZyMkKgHxFuQqL8RWV_ivtGqiWsyQ">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 47. Fine Micro Satellite Left (~15px) -->
+<div class="sphere-shell left-[31%] top-[24%] w-[15px] h-[15px] z-14">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfyWFwdR-F-IztXRfkq85SEwobqi7XNa2yhV51rzQrPb0JVWeUmnlv0sSWuF3ivmBxQ8Rmexg1T04fs7pYoTkMkF5Fs8cxL8NsonaqUeVCL-9vtg4JwRvDRlV2DcPZY2iJ_00h_bKdxo-9Ue75hKA96epilu0pvbmxWrEaB4ShghWe71pur6aBFny--ti7kf8SNcimcdj8O1vx8L6w-E0bNkgVFwm0DDTv5zvgd5RSw2KPHHqo6i17SkPQo6-9ffssvc">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 48. Fine Micro Satellite Right (~15px) -->
+<div class="sphere-shell left-[67%] top-[23%] w-[15px] h-[15px] z-14">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1uKD1NY_CVP7FV5R67grWq4MxyltRc70dHKQYlQuK7Q363WwjG6c_nURUeV72S6njCM-is3OFMsxyNfG5WBfgE90uDlP_NCrCyekKwJgcmaLV_BvvNHE8wJLk4rkCsn4dgOpUma-uil4wTn2egG5CHg-4bjDoISzLTqzKvT6uX58x9R23M6h7W8RlfQTi9oykxX5PwJkI_bHyu_PKbeDWOy2CvqPKm1WGkt97QWXxrQCZuYoEPpXjkHiH8gfz5OFzQyM">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 49. Center Depth Satellite (~20px) -->
+<div class="sphere-shell left-[46%] top-[37%] w-[20px] h-[20px] z-18">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB46_3f9be2gL5P-NQ0T7MVOh4boxdkYQ5VHOgv21kTzPOA23W3P5mDfALA1-RuFbpCyrhaX3iEOVETpUyBGLSbZYeUYwL8nZM0z1ymCM827RLhoqPxw4uvZDEB230xonvURtZv4uGW3cxubDQJwGlZeOzAukRsaeatHP6Ru8tOplYNelg70bbcIUbGDfWLEMPh1UAO6548DYxlOnh1bN3MzNJaqewDdaH_AcQwN66TWLYeW07jWlHY9npyHcTLEn2XHPE">
+<div class="sphere-gloss"></div>
+</div>
+<!-- 50. Foreground Center Contact Micro Sphere (~16px) -->
+<div class="sphere-shell left-[48%] top-[89%] w-[16px] h-[16px] z-32">
+<img alt="Menu item" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi_d1e5Wy69E4BmeX42XPix_HDKaTBLgtrhRbRAbInqA35Ip8ze7y_lxh-1rmC58g0dkwd7_K6xirLPh8hXvEiXR545g6toyCcDVGtNCCH9qkvbp5jpNxCycUFXDtrp0gxrKv-dya1iqhBBDrwk84a1XWI2Y7c8O1xWXH93VGpYpIwmhV8WVZEZmfuKW0cuBzvL5JtZUghkOyWievV9T5InD_IVmdmVagyHVaeWZDmlwVUpBlF1xYExXzIUWsOf_9vHF0">
+<div class="sphere-gloss"></div>
+</div>
+</div><div class="absolute inset-0 ring-1 ring-inset ring-[#382E23]/10 rounded-[24px] pointer-events-none"></div>
+<!-- Floating Badges Top -->
+<div class="absolute top-4 left-4 z-20">
+</div>
+<div class="absolute top-4 right-4 z-20">
+</div>
+<!-- Floating Badge Bottom -->
+<div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between gap-3">
+</div>
+</div>
+<!-- Spec Sheet Strip Below Artwork -->
+</div>
+<div class="w-full max-w-[480px] mt-4 space-y-2.5 z-20"><div class="text-[10px] uppercase tracking-[0.2em] text-[#7D6A53] font-semibold px-1">Editorial Craftsmanship &amp; Guarantees</div><div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"><div class="lux-glass-mineral rounded-xl p-3 border border-[#D7C8B9]/80"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#7D6A53]"></span><h3 class="text-xs font-semibold tracking-wide text-[#211B14]">PRICE&nbsp; CAN&nbsp; BE&nbsp; LESS</h3></div><p class="text-[11px] text-[#7D6A53] leading-snug mt-1"></p><p class="">This pricing is for our <strong>Premium Menu Design</strong> service. If you do not need a premium design, the price can be lower depending on your requirements.</p><p></p></div><div class="lux-glass-mineral rounded-xl p-3 border border-[#D7C8B9]/80"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#7D6A53]"></span><h3 class="text-xs font-semibold tracking-wide text-[#211B14]">And in that price</h3></div><p class="text-[11px] text-[#7D6A53] leading-snug mt-1"></p><p class="">With this service, every menu page will have a <strong>premium text design, attractive layouts, and a good colour combination</strong> that matches your restaurant.</p><p></p></div><div class="lux-glass-mineral rounded-xl p-3 border border-[#D7C8B9]/80"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#7D6A53]"></span><h3 class="text-xs font-semibold tracking-wide text-[#211B14]">HD Food PNG's</h3></div><p class="text-[11px] text-[#7D6A53] leading-snug mt-1"></p><p class="">We also use <strong>high-quality food PNG images</strong> to make your dishes look more attractive and professional.</p><p></p></div><div class="lux-glass-mineral rounded-xl p-3 border border-[#D7C8B9]/80"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#7D6A53]"></span><h3 class="text-xs font-semibold tracking-wide text-[#211B14]">Complimentary Covers</h3></div><p class="text-[11px] text-[#7D6A53] leading-snug mt-1"></p><p class="">You will also get <strong>a free Intro Page and Outro Page</strong> with your menu design.</p><p></p></div></div></div></section>
+</div>
+</main>
+<!-- END: Main Showcase Section -->
+<!-- BEGIN: ArchitecturalFooter -->
+<!-- END: ArchitecturalFooter -->
+</body></html>

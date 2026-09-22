@@ -1,0 +1,546 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>swapie. — Next-Gen Brand Logos</title>
+<!-- Tailwind CSS CDN with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            display: ['Cabinet Grotesk', 'Inter', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#f6f7fb',
+              100: '#ebedf5',
+              900: '#0f111a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<!-- Core Layout Styles -->
+<style data-purpose="layout">
+    body {
+      background-color: #f7f9fd;
+      color: #111827;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Ambient background glows matching light-mode iridescent feel */
+    .radial-bg {
+      background: 
+        radial-gradient(circle at 75% 20%, rgba(220, 235, 255, 0.85) 0%, rgba(247, 249, 253, 0) 55%),
+        radial-gradient(circle at 15% 65%, rgba(245, 230, 255, 0.65) 0%, rgba(247, 249, 253, 0) 50%),
+        radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.95) 0%, rgba(247, 249, 253, 0.4) 75%);
+    }
+
+    /* Subtle typographic watermark in background */
+    .bg-watermark {
+      position: absolute;
+      right: -2rem;
+      top: 4rem;
+      font-size: 17vw;
+      font-weight: 900;
+      color: rgba(140, 160, 200, 0.04);
+      user-select: none;
+      pointer-events: none;
+      line-height: 0.85;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      z-index: 0;
+    }
+  </style>
+<!-- 3D Holographic Card Styles -->
+<style data-purpose="3d-cards">
+    .deck-viewport {
+      perspective: 1400px;
+      perspective-origin: 50% 42%;
+    }
+
+    .deck-container {
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out;
+    }
+
+    /* Floating card base with authentic glassmorphic depth */
+    .card-base {
+      position: absolute;
+      width: 295px;
+      height: 195px;
+      border-radius: 22px;
+      transform-style: preserve-3d;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 
+        -18px 30px 50px -12px rgba(60, 80, 130, 0.22),
+        0 10px 24px -5px rgba(20, 40, 80, 0.1),
+        inset 0 1.5px 1.5px rgba(255, 255, 255, 0.9),
+        inset 0 -1.5px 2px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+
+    /* Interactive hover fan-out */
+    .deck-container:hover .card-front-1 {
+      transform: rotateX(24deg) rotateY(-18deg) rotateZ(18deg) translateY(-14px) translateZ(105px);
+    }
+    .deck-container:hover .card-front-2 {
+      transform: rotateX(24deg) rotateY(-18deg) rotateZ(16deg) translateY(-6px) translateZ(55px);
+    }
+    .deck-container:hover .card-front-3 {
+      transform: rotateX(24deg) rotateY(-18deg) rotateZ(15deg) translateY(0px) translateZ(5px);
+    }
+    .deck-container:hover .card-front-4 {
+      transform: rotateX(24deg) rotateY(-18deg) rotateZ(14deg) translateY(6px) translateZ(-40px);
+    }
+
+    /* Card 1: Topmost Glassmorphic Card (IMAGE_4 Velora Warm Organic) */
+    .card-front-1 {
+      top: 0px;
+      left: 10px;
+      z-index: 35;
+      transform: rotateX(26deg) rotateY(-20deg) rotateZ(19deg) translateZ(80px);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    /* Card 2: Second Glassmorphic Card (IMAGE_5 Novara Architectural) */
+    .card-front-2 {
+      top: 48px;
+      left: 80px;
+      z-index: 25;
+      transform: rotateX(26deg) rotateY(-20deg) rotateZ(18deg) translateZ(40px);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    /* Card 3: Third Glassmorphic Card (IMAGE_6 Aerix Tech Cyan) */
+    .card-front-3 {
+      top: 96px;
+      left: 150px;
+      z-index: 15;
+      transform: rotateX(26deg) rotateY(-20deg) rotateZ(17deg) translateZ(-2px);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    /* Card 4: Fourth Glassmorphic Card (IMAGE_2 Forma Geometric) */
+    .card-front-4 {
+      top: 144px;
+      left: 215px;
+      z-index: 8;
+      transform: rotateX(26deg) rotateY(-20deg) rotateZ(16deg) translateZ(-44px);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Bottom Large Supporting Glass Platter */
+    .card-bottom-platter {
+      position: absolute;
+      width: 460px;
+      height: 280px;
+      bottom: -75px;
+      right: -85px;
+      border-radius: 32px;
+      transform: rotateX(54deg) rotateY(-18deg) rotateZ(32deg) translateZ(-95px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(230,240,255,0.72) 50%, rgba(255,240,248,0.85) 100%);
+      box-shadow: -28px 45px 65px -12px rgba(79, 70, 229, 0.18), 0 20px 30px -10px rgba(0,0,0,0.06);
+      border: 1.5px solid rgba(255,255,255,0.95);
+      pointer-events: none;
+    }
+
+    /* Pill capsule ornament */
+    .hero-pill-ornament {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      height: 1.15em;
+      width: 3.4em;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 50%, #60a5fa 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 6px 14px rgba(99, 102, 241, 0.22);
+      margin: 0 0.18em;
+      position: relative;
+    }
+
+    /* Asterisk / Sparkle Icon Styling */
+    .sparkle-badge {
+      display: inline-block;
+      animation: rotate-slow 18s linear infinite;
+    }
+
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Levitating / Floating Elevation Effects (Hawa mein floating effect) */
+    .float-elevation {
+      box-shadow: 
+        0 24px 45px -15px rgba(30, 41, 59, 0.12),
+        0 10px 20px -8px rgba(99, 102, 241, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .float-elevation:hover {
+      transform: translateY(-4px);
+      box-shadow: 
+        0 30px 55px -15px rgba(30, 41, 59, 0.16),
+        0 14px 28px -6px rgba(99, 102, 241, 0.14),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    }
+
+    /* Bottom 3 Service Cards Interactivity & Hover Effects */
+    .service-card-interactive {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.32);
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px) saturate(160%);
+      box-shadow: rgba(56, 115, 180, 0.18) 0px 20px 40px -15px, rgba(255, 255, 255, 0.8) 0px 1.5px 2px inset;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(0px) scale(1);
+    }
+
+    .service-card-interactive .service-icon {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card-interactive:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255, 255, 255, 0.55);
+      border-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 24px 45px -10px rgba(14, 116, 214, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.95);
+    }
+
+    .service-card-interactive:hover .service-icon {
+      transform: scale(1.12) rotate(6deg);
+    }
+  </style>
+
+  <!-- View Transitions for magical layout morphing -->
+  <style data-purpose="view-transitions">
+    /* Default state: Deck cards have the names */
+    .card-front-1 img { view-transition-name: logo-card-1; }
+    .card-front-2 img { view-transition-name: logo-card-2; }
+    .card-front-3 img { view-transition-name: logo-card-3; }
+    .card-front-4 img { view-transition-name: logo-card-4; }
+
+    /* When gallery is open, deck cards lose the names */
+    body.gallery-open .card-front-1 img { view-transition-name: none; }
+    body.gallery-open .card-front-2 img { view-transition-name: none; }
+    body.gallery-open .card-front-3 img { view-transition-name: none; }
+    body.gallery-open .card-front-4 img { view-transition-name: none; }
+
+    /* Default state: Gallery images do NOT have the names */
+    #gallery-modal .gallery-img:nth-child(1) { view-transition-name: none; }
+    #gallery-modal .gallery-img:nth-child(2) { view-transition-name: none; }
+    #gallery-modal .gallery-img:nth-child(3) { view-transition-name: none; }
+    #gallery-modal .gallery-img:nth-child(4) { view-transition-name: none; }
+
+    /* When gallery is open, Gallery images GET the names */
+    body.gallery-open #gallery-modal .gallery-img:nth-child(1) { view-transition-name: logo-card-1; }
+    body.gallery-open #gallery-modal .gallery-img:nth-child(2) { view-transition-name: logo-card-2; }
+    body.gallery-open #gallery-modal .gallery-img:nth-child(3) { view-transition-name: logo-card-3; }
+    body.gallery-open #gallery-modal .gallery-img:nth-child(4) { view-transition-name: logo-card-4; }
+    
+    #gallery-modal { view-transition-name: gallery-modal-bg; }
+
+    ::view-transition-old(gallery-modal-bg) {
+      animation: fade-out 0.4s ease-in-out;
+    }
+    ::view-transition-new(gallery-modal-bg) {
+      animation: fade-in 0.4s ease-in-out;
+    }
+
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA78oFdncHyS1PY7hSiXQmo9hIEzpw1ywnLACqEOUg7k6CQwDALt-CyE_-xvYLTmLJzWY4BEMlzuOne6RAjKi4KxzWchIBXTf8ONxUZ6Qy4Y5n0IlybUPUXyl6uU1tzLipsnjdJ-9vauPACbx4Rxsv916r5iuPmDCdCwt1nTnn1qwVsBWezxB_C8U6yB7xGngXG52s8WuvgaQwXpI529V6EjlvHKwBXc0aBNG_YIDLqjIc6b8wBKb42pG8vT_c3KsCpNA&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+<!-- Typographic Background Ambient Element -->
+<!-- BEGIN: NavigationBar -->
+<header class="relative z-40 w-full max-w-7xl mx-auto px-6 sm:px-10 pt-7 pb-4 flex items-start justify-between">
+<div class="flex flex-col items-start">
+<h1 class="text-5xl sm:text-6xl xl:text-7xl font-black text-slate-900 tracking-tight leading-none mb-3 max-w-2xl">L<span class="inline-block text-indigo-600 font-normal scale-105 sparkle-badge">✻</span>go</h1>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 border border-slate-200/85 shadow-sm backdrop-blur-md hover:border-slate-300 transition-colors">
+<svg class="w-3.5 h-3.5 text-indigo-500 sparkle-badge" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"></path>
+</svg>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-slate-600">
+            More than 5+ crafted brands
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<a class="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold uppercase tracking-wider text-slate-800 bg-white/85 hover:bg-white border border-white/90 rounded-full backdrop-blur-xl shadow-md hover:shadow-lg hover:text-indigo-600 hover:scale-105 transition-all duration-200" data-purpose="nav-cta-waitlist" href="#portfolio">Past Works</a>
+</div>
+</header>
+<!-- END: NavigationBar -->
+<!-- BEGIN: HeroSection -->
+<main class="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 flex-grow flex flex-col justify-between py-2 sm:py-4">
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+<!-- LEFT COLUMN: Headline, Tag, Pricing (positioned high up at top-left) -->
+<section class="lg:col-span-6 xl:col-span-7 flex flex-col items-start z-10 lg:pt-0 pt-7 justify-center h-full" data-purpose="hero-copy-block"><div class="p-4 sm:p-5 rounded-2xl border border-white/90 float-elevation backdrop-blur-xl flex flex-wrap sm:flex-nowrap items-center gap-5 w-full max-w-lg mt-10" data-purpose="pricing-callout" style="background: rgba(255, 255, 255, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.45); backdrop-filter: blur(16px) saturate(150%); box-shadow: rgba(56, 115, 180, 0.15) 0px 20px 40px -10px, rgba(255, 255, 255, 0.7) 0px 1px 2px inset; transform: perspective(800px) rotateX(2deg) rotateY(-1deg);">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1.5">
+<span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">₹399</span>
+<span class="text-sm font-semibold text-slate-500">/ per brand</span>
+</div>
+<p class="text-xs text-slate-500 font-medium mt-1">
+              Full commercial rights • Instant vector delivery
+            </p>
+</div>
+<div class="sm:ml-auto w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 text-xs font-bold uppercase tracking-wider text-white bg-slate-900 hover:bg-indigo-600 rounded-full shadow-md hover:shadow-indigo-500/25 transition-all duration-200" href="https://wa.me/919203469002?text=Hey%20Ved%21%20I%20am%20interested%20in%20getting%20a%20professional%20logo%20designed%20for%20my%20brand.%20Let%27s%20discuss%20the%20details." target="_blank">
+              Claim Logo
+            </a>
+</div>
+</div>
+<div class="mt-7 w-full max-w-2xl" data-purpose="brand-philosophy-card"><p class="text-xl sm:text-2xl leading-relaxed text-slate-800 font-medium tracking-tight">Your brand deserves more than a generic template. Every logo we create is thoughtfully designed to capture your identity — clean, modern, and built to stand out. From the first click to the final download, we make sure your brand starts with an impression that lasts.</p></div></section>
+<!-- RIGHT COLUMN: 3D Levitating Floating Cards with Provided Logo Assets -->
+<section aria-label="3D Interactive Cards Preview" class="lg:col-span-6 xl:col-span-5 relative flex items-center justify-center min-h-[440px] sm:min-h-[490px] deck-viewport">
+<div class="deck-container relative w-[370px] h-[330px] sm:w-[430px] sm:h-[370px]" style="transform: rotateX(0deg) rotateY(0deg);">
+<!-- CARD 4 (Base Stack): Forma Geometric Alternative Logo -->
+<article class="card-base card-front-4 group cursor-pointer" data-purpose="3d-card-layer-4"><div class="w-full h-full relative overflow-hidden rounded-[22px]"><img alt="Forma Logo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxH9EMKsac1GkLmzEEkUKmf5UI4j-akX35YXcRnLEad5OyuV6-9_rZ5NUYWc9oyGvxNc1RVvCSKnsE2VaYmN-zK3dyFkw9Nu9sQu0PvQZ3OwjN-AdHlhkgraEmbIxn04uGsrqKzvU94U_ZGvhndMme-IiXbRjGfePFqsaxdq6-mv44ARikg_90Eu7Ay7PLW2fCB4_Hc6W8XFx9n79j197kmhBy9QLI0a8q13DcgilU2S4YEQLwjILW-Jj6YFGStP3XNA"><div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 pointer-events-none"></div></div></article>
+<!-- CARD 3: Aerix Tech Futuristic Neon Cyan Logo -->
+<article class="card-base card-front-3 group cursor-pointer" data-purpose="3d-card-layer-3"><div class="w-full h-full relative overflow-hidden rounded-[22px]"><img alt="Aerix Futuristic Logo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu6XxmHYIg-DNlV1AcT1Hjc3jprh5sG8lYkF00Ql-EqAH1zR0KJJHR2-JYLhHtJcONvnqn781IZSu72MgbgmolfBOzFZjSqlH4I-NFf2vu_sm_FgkhafXEck34Rtd1CrNePwqRsI4HcDjCBJISS4AGz6_aLfb6y8M4AMKieOXcgl4FXmOHPXwuOiF8x6duMswQPcfpmH79YHz7_NH1I9kk3t8LV5dSzsccmjmcAAgfycqgHQquWoslFxMLRcZfUW4Pew"><div class="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-white/10 pointer-events-none"></div></div></article>
+<!-- CARD 2: Novara Architectural Luxury Gold Logo -->
+<article class="card-base card-front-2 group cursor-pointer" data-purpose="3d-card-layer-2"><div class="w-full h-full relative overflow-hidden rounded-[22px]"><img alt="Novara Luxury Architectural Logo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICPY941jrv1p3eEnWVvzuz8E6csOFYYRmK2EoPb5mQ6Dd3BbMet_XCXI0J4FTcAS3l0rlXNeGyNbZX5BFgqBYwLbH-3-3ZzGnR9RkN3uWSFiGpBPUlHuxBdzkh37r84W5kzvWgjeY04WU1nNEcZTl_CiDocraaZIYntUBzHBLGovdXilQqlCY-vujhkybgsoUueFskjvMjQd8uHalaLy6EGtAv79VzAfNCqKx6ItXSZ0RJy20Ri8qSaMFiJyA4VN44A"><div class="absolute inset-0 bg-gradient-to-t from-amber-950/20 via-transparent to-white/10 pointer-events-none"></div></div></article>
+<!-- CARD 1 (Top Hero Card): Velora Warm Organic Logo -->
+<article class="card-base card-front-1 group cursor-pointer" data-purpose="3d-card-layer-top"><div class="w-full h-full relative overflow-hidden rounded-[22px]"><img alt="Velora Organic Brand Logo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xKEE_a_kZAXKBPNuLxkH2Xwv-x0Eyn5S6z4gCxHPWfjEXOS8EDpqSFgW6UuUQjNt1K376sJ_bGUm9OZk9emG-tYlUikxh0Y-boEJSU2jh73rBoj7zvQ0MmClA3PeICgiaBnU7fCggRXTYktFQnmRO165Gs_x8gvOydJ3449NIADWnSp9BaiPMdh1GTIztSubVK63UY5h_4PYbq9ySDLkos5I0D9yeERVfzgIwDHhYxfqS34MaOHc3nvnSTtSxbnI8g"><div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/20 pointer-events-none"></div></div></article>
+<!-- Ambient Supporting Bottom Platter -->
+<div aria-hidden="true" class="card-bottom-platter hidden sm:block"></div>
+</div>
+</section>
+</div>
+<!-- EXPANDED BOTTOM SERVICES SECTION (Interactive 3 spacious floating cards) -->
+<section aria-label="Brand Services and Guarantees" class="w-full border-slate-200/70 pt-7" data-purpose="expanded-services-section" style="margin-top: 4.5rem; position: relative; z-index: 20;">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+<!-- Service Card 1: Copyright Free Logos -->
+<div class="service-card-interactive rounded-2xl p-5 sm:p-6 flex items-start gap-4" role="button" tabindex="0">
+<div class="service-icon w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-indigo-500/20">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            Copyright Free Logos
+          </h3>
+<p class="text-xs text-slate-600 font-normal leading-relaxed mt-1">
+            100% Commercial rights &amp; complete ownership. Ready for trademarking, apps &amp; print merchandise.
+          </p>
+</div>
+</div>
+<!-- Service Card 2: 3 Free Edits -->
+<div class="service-card-interactive rounded-2xl p-5 sm:p-6 flex items-start gap-4" role="button" tabindex="0">
+<div class="service-icon w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-pink-500/20">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            3 Free Edits
+          </h3>
+<p class="text-xs text-slate-600 font-normal leading-relaxed mt-1">
+            Unlimited revisions &amp; tweaks till perfection. Custom color palettes, fine typographics &amp; scaling.
+          </p>
+</div>
+</div>
+<!-- Service Card 3: Unique Brand Identity -->
+<div class="service-card-interactive rounded-2xl p-5 sm:p-6 flex items-start gap-4" role="button" tabindex="0">
+<div class="service-icon w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-500 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-cyan-500/20">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-3 7"></path>
+<circle cx="12" cy="17" r="1"></circle>
+</svg>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            Unique Identity
+          </h3>
+<p class="text-xs text-slate-600 font-normal leading-relaxed mt-1">
+            Tailored vector aesthetics crafted for high conversion. Export in pristine SVG, PNG, PDF &amp; EPS formats.
+          </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: MinimalFooterNote -->
+<footer class="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 py-5 flex items-center justify-between text-slate-400 text-xs border-t border-slate-200/60 mt-4">
+<div class="">© <span class="" id="current-year">2026</span> All rights reserved.</div>
+<div class="flex items-center gap-6 font-medium">
+<a class="hover:text-slate-600 transition-colors" href="#terms">Licensing Terms</a>
+<a class="hover:text-slate-600 transition-colors" href="#support">Instant Support</a>
+</div>
+</footer>
+<!-- END: MinimalFooterNote -->
+<!-- Interactive 3D tilt tracking script -->
+<script data-purpose="3d-card-interactive-tilt">
+    document.addEventListener('DOMContentLoaded', () => {
+      const deck = document.querySelector('.deck-container');
+      const viewport = document.querySelector('.deck-viewport');
+
+      if (!deck || !viewport) return;
+
+      viewport.addEventListener('mousemove', (e) => {
+        const rect = viewport.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+
+        deck.style.transform = `rotateX(${ -deltaY * 9 }deg) rotateY(${ deltaX * 9 }deg)`;
+      });
+
+      viewport.addEventListener('mouseleave', () => {
+        deck.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      });
+
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+
+
+<!-- Gallery Modal -->
+<div id="gallery-modal" class="fixed inset-0 z-50 hidden bg-black/95 overflow-y-auto">
+  <div class="sticky top-0 p-4 flex justify-between items-center bg-black/80 backdrop-blur-md z-10 border-b border-white/10">
+    <h2 class="text-white text-xl font-bold font-display">Logo Gallery</h2>
+    <button id="close-gallery-btn" class="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+      &larr; Back
+    </button>
+  </div>
+  <div class="p-6 max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xKEE_a_kZAXKBPNuLxkH2Xwv-x0Eyn5S6z4gCxHPWfjEXOS8EDpqSFgW6UuUQjNt1K376sJ_bGUm9OZk9emG-tYlUikxh0Y-boEJSU2jh73rBoj7zvQ0MmClA3PeICgiaBnU7fCggRXTYktFQnmRO165Gs_x8gvOydJ3449NIADWnSp9BaiPMdh1GTIztSubVK63UY5h_4PYbq9ySDLkos5I0D9yeERVfzgIwDHhYxfqS34MaOHc3nvnSTtSxbnI8g" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10" style="object-position: center; border-radius: 22px;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICPY941jrv1p3eEnWVvzuz8E6csOFYYRmK2EoPb5mQ6Dd3BbMet_XCXI0J4FTcAS3l0rlXNeGyNbZX5BFgqBYwLbH-3-3ZzGnR9RkN3uWSFiGpBPUlHuxBdzkh37r84W5kzvWgjeY04WU1nNEcZTl_CiDocraaZIYntUBzHBLGovdXilQqlCY-vujhkybgsoUueFskjvMjQd8uHalaLy6EGtAv79VzAfNCqKx6ItXSZ0RJy20Ri8qSaMFiJyA4VN44A" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10" style="object-position: center; border-radius: 22px;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu6XxmHYIg-DNlV1AcT1Hjc3jprh5sG8lYkF00Ql-EqAH1zR0KJJHR2-JYLhHtJcONvnqn781IZSu72MgbgmolfBOzFZjSqlH4I-NFf2vu_sm_FgkhafXEck34Rtd1CrNePwqRsI4HcDjCBJISS4AGz6_aLfb6y8M4AMKieOXcgl4FXmOHPXwuOiF8x6duMswQPcfpmH79YHz7_NH1I9kk3t8LV5dSzsccmjmcAAgfycqgHQquWoslFxMLRcZfUW4Pew" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10" style="object-position: center; border-radius: 22px;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxH9EMKsac1GkLmzEEkUKmf5UI4j-akX35YXcRnLEad5OyuV6-9_rZ5NUYWc9oyGvxNc1RVvCSKnsE2VaYmN-zK3dyFkw9Nu9sQu0PvQZ3OwjN-AdHlhkgraEmbIxn04uGsrqKzvU94U_ZGvhndMme-IiXbRjGfePFqsaxdq6-mv44ARikg_90Eu7Ay7PLW2fCB4_Hc6W8XFx9n79j197kmhBy9QLI0a8q13DcgilU2S4YEQLwjILW-Jj6YFGStP3XNA" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10" style="object-position: center; border-radius: 22px;">
+    <img src="./samples/311751.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311752.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311753.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311754.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311755.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311756.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311757.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311758.jpg (1).jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311758.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311759.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311760.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311761.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311762.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311763.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311764.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+    <img src="./samples/311765.jpg.jpeg" class="gallery-img w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-105 transition-transform border border-white/10">
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="fixed inset-0 z-[60] hidden bg-black/95 flex flex-col items-center justify-center p-4">
+  <div class="absolute top-4 left-4 z-10">
+    <button id="close-lightbox-btn" class="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+      &larr; Back to Gallery
+    </button>
+  </div>
+  <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-white/10">
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryModal = document.getElementById('gallery-modal');
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeGalleryBtn = document.getElementById('close-gallery-btn');
+    const closeLightboxBtn = document.getElementById('close-lightbox-btn');
+    
+    // Helper function for View Transitions
+    function toggleGallery(show) {
+      if (!document.startViewTransition) {
+        // Fallback for older browsers
+        if (show) {
+          galleryModal.classList.remove('hidden');
+          document.body.classList.add('gallery-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          galleryModal.classList.add('hidden');
+          document.body.classList.remove('gallery-open');
+          document.body.style.overflow = '';
+        }
+        return;
+      }
+      
+      // Modern View Transition
+      document.startViewTransition(() => {
+        if (show) {
+          galleryModal.classList.remove('hidden');
+          document.body.classList.add('gallery-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          galleryModal.classList.add('hidden');
+          document.body.classList.remove('gallery-open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Open Gallery when clicking Card section (deck-viewport)
+    const cardSection = document.querySelector('.deck-viewport');
+    if(cardSection) {
+      cardSection.style.cursor = 'pointer';
+      cardSection.addEventListener('click', (e) => {
+        toggleGallery(true);
+      });
+    }
+
+    // Open Gallery when clicking Past Works
+    const pastWorksBtn = document.querySelector('a[href="#portfolio"]');
+    if(pastWorksBtn) {
+      pastWorksBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleGallery(true);
+      });
+    }
+
+    // Close Gallery
+    closeGalleryBtn.addEventListener('click', () => {
+      toggleGallery(false);
+    });
+
+    // Open Lightbox
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxModal.classList.remove('hidden');
+        galleryModal.classList.add('hidden');
+      });
+    });
+
+    // Close Lightbox
+    closeLightboxBtn.addEventListener('click', () => {
+      lightboxModal.classList.add('hidden');
+      galleryModal.classList.remove('hidden');
+    });
+  });
+</script>
+</body></html>
