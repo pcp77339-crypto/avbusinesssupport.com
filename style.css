@@ -353,6 +353,19 @@ nav ul li a:hover::after {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    .personal-brand {
+        top: 20px;
+        left: 20px;
+        font-size: 1rem;
+        padding: 5px 12px;
+    }
+    .bg-video {
+        object-position: center top;
+    }
+
     .navbar {
         padding: 1rem 2rem;
     }
