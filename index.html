@@ -287,8 +287,44 @@
 </style>
 </head>
 <body>
+    <!-- Shortcut Menu -->
+    <div class="fixed top-6 right-6 z-[100] group">
+        <!-- Main Button -->
+        <button class="bg-white/5 backdrop-blur-2xl border border-white/20 px-4 py-2 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all duration-300 cursor-pointer font-display font-bold group/btn">
+            <span class="material-symbols-outlined text-lg opacity-80 text-white mix-blend-difference group-hover/btn:mix-blend-normal group-hover/btn:text-amber-400">bolt</span>
+            <span class="text-white mix-blend-difference group-hover/btn:mix-blend-normal group-hover/btn:text-amber-400">Shortcut</span>
+        </button>
+        <!-- Dropdown Content -->
+        <div class="absolute top-full mt-2 right-0 w-64 bg-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 max-h-[75vh] overflow-y-auto">
+            <style>
+                /* Custom Scrollbar for Dropdown */
+                .dropdown-scroll::-webkit-scrollbar { width: 4px; }
+                .dropdown-scroll::-webkit-scrollbar-track { background: transparent; }
+                .dropdown-scroll::-webkit-scrollbar-thumb { background: rgba(251, 191, 36, 0.3); border-radius: 4px; }
+            </style>
+            <ul class="flex flex-col gap-1 text-sm font-medium dropdown-scroll">
+                <li><a href="#hero" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Hero Section</a></li>
+                <li><a href="#about" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">About Me</a></li>
+                <li><a href="#experience-section" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Experience</a></li>
+                <li><a href="#metrics-section" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Impact & Stats</a></li>
+                <li><a href="#pricing-section" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Website Pricing</a></li>
+                <li><a href="#why-choose" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Why Choose Us</a></li>
+                
+                <li class="mt-2 mb-1 px-3 text-[10px] uppercase tracking-wider font-bold border-t border-white/10 pt-3 text-white mix-blend-difference">What You Need</li>
+                <li><a href="#services-portfolio" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400">All Services</a></li>
+                <li><a href="#service-logo" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400 text-xs">↳ Logo Design</a></li>
+                <li><a href="#service-banner" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400 text-xs">↳ Banner Design</a></li>
+                <li><a href="#service-menu" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400 text-xs">↳ Restaurant Menu</a></li>
+                <li><a href="#service-thumbnail" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400 text-xs">↳ Thumbnail Design</a></li>
+                <li><a href="#service-posters" class="block px-3 py-1.5 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors ml-2 border-l-2 border-transparent hover:border-amber-400 text-xs">↳ Ad Posters & Social Media</a></li>
+                
+                <li class="mt-2 mb-1 px-3 text-[10px] uppercase tracking-wider font-bold border-t border-white/10 pt-3 text-white mix-blend-difference">Marketing</li>
+                <li><a href="#services-pricing" class="block px-3 py-2 rounded-lg text-white mix-blend-difference hover:mix-blend-normal hover:bg-white/10 hover:text-amber-400 transition-colors">Marketing & Reels</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="personal-brand">
             <span class="greeting">Hey,</span> It's Ved Here
         </div>
@@ -1292,7 +1328,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             
             <!-- Card 1: Logo Design -->
-            <a href="./all web sections/logo section/logo code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+            <a href="./all web sections/logo section/logo code.html" id="service-logo" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
                 <div class="p-8 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <!-- Icon -->
@@ -1317,7 +1353,7 @@
             </a>
 
             <!-- Card 2: Banner Design -->
-            <a href="./all web sections/banner section/baner code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+            <a href="./all web sections/banner section/baner code.html" id="service-banner" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
                 <div class="p-8 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
@@ -1338,7 +1374,7 @@
             </a>
 
             <!-- Card 3: Restaurant Menu -->
-            <a href="./all web sections/manue/new/manue/code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+            <a href="./all web sections/manue/new/manue/code.html" id="service-menu" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
                 <div class="p-8 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
@@ -1359,7 +1395,7 @@
             </a>
 
             <!-- Card 4: Thumbnail Design -->
-            <a href="./all%20web%20sections/THUMNAIL%20SAMPLE/code/stitch_editorial_youtube_thumbnail_showcase/code.html" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
+            <a href="./all%20web%20sections/THUMNAIL%20SAMPLE/code/stitch_editorial_youtube_thumbnail_showcase/code.html" id="service-thumbnail" class="flex flex-col bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer h-full">
                 <div class="p-8 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-[#131821] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
@@ -1380,7 +1416,7 @@
             </a>
             
             <!-- Wide Card 5: Social Media Post & Advertisement Posters -->
-            <a href="./all%20web%20sections/banner%20thumnail%20and%20ad%20poster%20section/code.html" class="lg:col-span-4 flex flex-col lg:flex-row bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer mt-4 lg:mt-6 block">
+            <a href="./all%20web%20sections/banner%20thumnail%20and%20ad%20poster%20section/code.html" id="service-posters" class="lg:col-span-4 flex flex-col lg:flex-row bg-black/20 backdrop-blur-md rounded-[24px] border border-white/10 overflow-hidden group hover:border-amber-500/30 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.15)] relative cursor-pointer mt-4 lg:mt-6 block">
                 
                 <!-- Text Area -->
                 <div class="p-8 lg:p-14 flex flex-col justify-center w-full lg:w-2/5 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10 bg-transparent">
