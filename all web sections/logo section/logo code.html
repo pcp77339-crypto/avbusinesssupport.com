@@ -293,7 +293,7 @@
 <section class="lg:col-span-6 xl:col-span-7 flex flex-col items-start z-10 lg:pt-0 pt-7 justify-center h-full" data-purpose="hero-copy-block"><div class="p-4 sm:p-5 rounded-2xl border border-white/90 float-elevation backdrop-blur-xl flex flex-wrap sm:flex-nowrap items-center gap-5 w-full max-w-lg mt-10" data-purpose="pricing-callout" style="background: rgba(255, 255, 255, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.45); backdrop-filter: blur(16px) saturate(150%); box-shadow: rgba(56, 115, 180, 0.15) 0px 20px 40px -10px, rgba(255, 255, 255, 0.7) 0px 1px 2px inset; transform: perspective(800px) rotateX(2deg) rotateY(-1deg);">
 <div class="flex flex-col">
 <div class="flex items-baseline gap-1.5">
-<span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">₹399</span>
+<span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dynamic-price" data-inr="₹399" data-usd="$10">₹399</span>
 <span class="text-sm font-semibold text-slate-500">/ per brand</span>
 </div>
 <p class="text-xs text-slate-500 font-medium mt-1">
@@ -542,5 +542,18 @@
       galleryModal.classList.remove('hidden');
     });
   });
+</script>
+<script>
+  fetch('https://ipapi.co/country/')
+    .then(response => response.text())
+    .then(countryCode => {
+      const prices = document.querySelectorAll('.dynamic-price');
+      if (countryCode.trim() !== 'IN') {
+        prices.forEach(price => { if(price.getAttribute('data-usd')) price.innerText = price.getAttribute('data-usd'); });
+      } else {
+        prices.forEach(price => { if(price.getAttribute('data-inr')) price.innerText = price.getAttribute('data-inr'); });
+      }
+    })
+    .catch(error => console.error('Location check failed:', error));
 </script>
 </body></html>
