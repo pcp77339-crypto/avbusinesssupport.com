@@ -145,10 +145,10 @@
 <section class="relative min-h-[920px] flex items-end justify-start overflow-hidden px-6 md:px-16 pb-20 pt-28">
 <!-- Immersive Sunlit Architectural Visual -->
 <div class="absolute inset-0 z-0">
-<img alt="Expansive sunlit living room sanctuary by Atelier Vantara" class="w-full h-full object-cover object-center transition-transform duration-1000 scale-100 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1XDgBvk2_B8ijJXEIyDe6aB_9fnILTl0aoM22l0fQXrQmLpg0RElhq8YsXyruEZU42J3_UFjsA2rvZ2jzV4QgtjLdXvF1HjQdyWm9jNuPs44dv8ZRwjAjICKpZiuVZ4L4ypHGN1adruvvgUL_hikgp8DxvmsPQZQMUToEJVVTPipxYWm9s6-TFiq67Hc9fGJnTSHEOnL59O1iNO6NdBPi2PetUghS6-_XLoPBQBLwRWMPdJxwFJaOVd-p3d"/>
-<!-- Bright, White Alabaster Gradient Washes ensuring pristine light theme readability -->
-<div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 md:via-white/60 to-white/10"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent"></div>
+<img alt="Expansive sunlit living room sanctuary by Atelier Vantara" class="w-full h-full object-cover object-center" src="hero_bg.jpg"/>
+<!-- Lighter overlay to ensure the image is visible while text remains readable -->
+<div class="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-5xl mx-auto w-full">
 <!-- Luxury Badge Pill -->
@@ -710,4 +710,52 @@
 </div>
 </div>
 </footer>
+<!-- Info Modal -->
+<div id="info-modal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 1rem; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px);">
+    <div style="position: relative; background-color: #0B1F3A; border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1.5rem; padding: 2rem; max-width: 28rem; width: 100%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column; align-items: center; text-align: center; color: white; font-family: 'Inter', sans-serif;">
+        <!-- Icon -->
+        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2)); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg style="width: 2rem; height: 2rem; color: #60a5fa;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        
+        <h3 id="modal-title" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; color: white;">Important Notice</h3>
+        
+        <button id="modal-toggle-btn" onclick="toggleModalLanguage()" style="font-size: 12px; font-weight: 600; color: #fbbf24; background-color: rgba(251, 191, 36, 0.1); padding: 0.35rem 1rem; border-radius: 9999px; margin-bottom: 1rem; border: none; cursor: pointer; transition: background-color 0.2s;">
+            आप इसे हिंदी में भी पढ़ सकते हैं
+        </button>
+        
+        <p id="modal-desc-en" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 2rem; display: block;">
+            Please note that the design, UI, and UX you see here are not the final website you will receive. This sample is provided strictly to demonstrate the visual difference between a Simple website and a 2D Animated website.
+        </p>
+
+        <p id="modal-desc-hi" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 2rem; display: none;">
+            कृपया ध्यान दें कि यहाँ जो डिज़ाइन, UI और UX आप देख रहे हैं, वह आपको मिलने वाली असली वेबसाइट नहीं है। यह सैंपल सिर्फ इसलिए है ताकि आप एक सिंपल (Simple) वेबसाइट और 2D एनिमेशन (Animated) वेबसाइट के बीच का अंतर समझ सकें।
+        </p>
+        
+        <button onclick="document.getElementById('info-modal').style.display='none'" style="width: 100%; padding: 0.8rem 1.25rem; border-radius: 0.75rem; background: linear-gradient(to right, #2563eb, #0891b2); color: white; font-weight: 600; border: none; cursor: pointer; font-size: 0.95rem; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);">
+            Okay, I understand
+        </button>
+    </div>
+</div>
+
+<script>
+    function toggleModalLanguage() {
+        const enText = document.getElementById('modal-desc-en');
+        const hiText = document.getElementById('modal-desc-hi');
+        const title = document.getElementById('modal-title');
+        const btn = document.getElementById('modal-toggle-btn');
+        
+        if (enText.style.display === 'block' || enText.style.display === '') {
+            enText.style.display = 'none';
+            hiText.style.display = 'block';
+            title.innerText = 'ज़रूरी सूचना';
+            btn.innerText = 'Read in English';
+        } else {
+            enText.style.display = 'block';
+            hiText.style.display = 'none';
+            title.innerText = 'Important Notice';
+            btn.innerText = 'आप इसे हिंदी में भी पढ़ सकते हैं';
+        }
+    }
+</script>
 </body></html>
