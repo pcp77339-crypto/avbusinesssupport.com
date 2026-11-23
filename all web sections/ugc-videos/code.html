@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC Videos & Reels Showcase — Ved Creative Studio</title>
+    <link rel="icon" type="image/png" href="av_logo_transparent.png">
+    
+    <!-- Google Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#040508',
+                        cardBg: '#090c12',
+                        amberGlow: '#fbbf24',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #040508;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient glow backdrop */
+        .ambient-glow-amber {
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.12) 0%, transparent 70%);
+        }
+        .ambient-glow-blue {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+
+        /* Glass Card */
+        .video-card {
+            background: linear-gradient(180deg, rgba(16, 22, 34, 0.75) 0%, rgba(8, 11, 18, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .video-card:hover {
+            border-color: rgba(251, 191, 36, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(251, 191, 36, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #040508; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+    </style>
+</head>
+<body class="min-h-screen relative flex flex-col bg-[#040508] text-white">
+
+    <!-- Ambient Glow Orbs -->
+    <div class="fixed top-20 left-1/4 w-[500px] h-[500px] ambient-glow-amber rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-40 right-1/4 w-[600px] h-[600px] ambient-glow-blue rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-[#040508]/80 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <!-- Back to Website Link -->
+            <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs sm:text-sm font-semibold transition-all group">
+                <span class="material-symbols-outlined text-base group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <span>Back to Website</span>
+            </a>
+
+            <!-- Brand Pill -->
+            <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">UGC Videos Suite</span>
+            </div>
+
+            <!-- Direct Contact Button -->
+            <a href="index.html#footer-info-section" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-white font-medium transition-colors">
+                <span>Get In Touch</span>
+                <span class="material-symbols-outlined text-sm">north_east</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        
+        <!-- HEADER TITLE & INTRO -->
+        <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-4">
+                <span class="material-symbols-outlined text-sm">bolt</span>
+                High-Converting Short Form
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight font-sans">
+                UGC & Brand <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 font-serif italic">Videos</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base mt-4 max-w-xl mx-auto leading-relaxed">
+                Click any video card below to watch in full-screen cinematic player. Featuring scripted viral hooks, benefit demonstration, and high-CTR edits.
+            </p>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 1: MUST WATCH (SAB SE UPAR)                      -->
+        <!-- ======================================================== -->
+        <section class="mb-24" id="must-watch-section">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-8 pb-3 border-b border-white/10">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-md bg-amber-400 text-black text-[10px] font-black uppercase tracking-wider">PRIMARY</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-white font-sans">Must Watch Videos</h2>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Top-priority showcase videos designed for maximum retention & conversion</p>
+                </div>
+                <span class="text-xs font-semibold text-amber-400/90 font-mono">14 Videos Curated</span>
+            </div>
+
+            <!-- SAB SE UPAR: VIDEO 1 (FEATURED HERO SPOTLIGHT CARD) -->
+            <div class="mb-12">
+                <div class="text-xs uppercase tracking-widest font-extrabold text-amber-400 mb-3 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    FEATURED #1 — TOP HERO REEL
+                </div>
+                
+                <!-- Large Spotlight Video Card -->
+                <div class="video-card rounded-[32px] overflow-hidden group cursor-pointer border-2 border-amber-400/70 shadow-[0_0_50px_rgba(251,191,36,0.25)] relative max-w-2xl mx-auto" onclick="openPlayer('1BE6vn4dw5wVGbbULt9jl8tfAqgU9cx3q', 'Must Watch Video 01 (Featured Spotlight)')">
+                    <!-- Thumbnail / Video Container (Vertical 9:16) -->
+                    <div class="relative w-full aspect-[9/14] sm:aspect-[9/13] bg-[#07090e] overflow-hidden">
+                        <img src="https://drive.google.com/thumbnail?id=1BE6vn4dw5wVGbbULt9jl8tfAqgU9cx3q&sz=w1000" 
+                             alt="Must Watch Video 01" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Dark Vignette Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#040508] via-black/30 to-black/60 pointer-events-none"></div>
+
+                        <!-- Big Center Play Button -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-amber-400 text-black flex items-center justify-center shadow-[0_0_40px_rgba(251,191,36,0.7)] group-hover:scale-115 group-hover:bg-amber-300 transition-all duration-300">
+                                <span class="material-symbols-outlined text-4xl sm:text-5xl translate-x-1">play_arrow</span>
+                            </div>
+                        </div>
+
+                        <!-- Top Spotlight Badge -->
+                        <div class="absolute top-5 left-5 right-5 flex items-center justify-between pointer-events-none">
+                            <span class="px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/60 text-amber-300 text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                Top Pick #01
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-semibold">
+                                9:16 Vertical Reel
+                            </span>
+                        </div>
+
+                        <!-- Bottom Title & Metadata -->
+                        <div class="absolute bottom-5 left-5 right-5">
+                            <h3 class="text-xl sm:text-2xl font-black text-white font-sans drop-shadow-md">Must Watch Video 01</h3>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">High-impact viral hook with aesthetic product storytelling</p>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-amber-400 font-bold">
+                                <span>Click to Play in Fullscreen Player</span>
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FHIR 2-2 KE PAIRS (ACCORDING TO NUMBER NAME: 2 & 3, 4 & 5, 6 & 7, 8 & 9, 10 & 11...) -->
+            <div class="space-y-6 sm:space-y-8">
+                
+                <!-- PAIR 1: VIDEO 2 & VIDEO 3 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Video 2 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1GB2gbx9poZSE6BbEjkwIBBIRsw1rw1qF', 'Must Watch Video 02')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1GB2gbx9poZSE6BbEjkwIBBIRsw1rw1qF&sz=w800" alt="Must Watch Video 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <!-- Play button -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#02</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 02</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Viral Retention Reel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1vzQsfy9lLqYwxG7_5A7MdPCisHCq11Lv', 'Must Watch Video 03')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1vzQsfy9lLqYwxG7_5A7MdPCisHCq11Lv&sz=w800" alt="Must Watch Video 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#03</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 03</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Brand Storytelling Cut</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 2: VIDEO 4 & VIDEO 5 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Video 4 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1TS8nQFvXYfZVngq4L4lBnvyC3SFiFBzm', 'Must Watch Video 04')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1TS8nQFvXYfZVngq4L4lBnvyC3SFiFBzm&sz=w800" alt="Must Watch Video 04" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#04</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 04</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Visual Engagement Hook</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1FwPQkYfdBwLa8c8YR7XzHLvwD8OhydRt', 'Must Watch Video 05')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1FwPQkYfdBwLa8c8YR7XzHLvwD8OhydRt&sz=w800" alt="Must Watch Video 05" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#05</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 05</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Problem & Solution Demo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 3: VIDEO 6 & VIDEO 7 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Video 6 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1WvpGeJGK3WxFiCbrRTBR-hOLS1tfe_W0', 'Must Watch Video 06')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1WvpGeJGK3WxFiCbrRTBR-hOLS1tfe_W0&sz=w800" alt="Must Watch Video 06" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#06</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 06</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">High-CTR Reel Format</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 7 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1gLpGGyRXFme0WvWAaPyps3rMC0kbxhM2', 'Must Watch Video 07')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1gLpGGyRXFme0WvWAaPyps3rMC0kbxhM2&sz=w800" alt="Must Watch Video 07" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#07</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 07</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Direct Response UGC Ad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 4: VIDEO 8 & VIDEO 9 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Video 8 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1MW3C7UqaWVjmelijZfruAXhxhO0jvvQa', 'Must Watch Video 08')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1MW3C7UqaWVjmelijZfruAXhxhO0jvvQa&sz=w800" alt="Must Watch Video 08" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#08</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 08</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Dynamic Motion Reel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 9 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('115FW9NwEIFXFfdo8wlM0tkhGdobhOakF', 'Must Watch Video 09')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=115FW9NwEIFXFfdo8wlM0tkhGdobhOakF&sz=w800" alt="Must Watch Video 09" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#09</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 09</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Aesthetic Product Showcase</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 5: VIDEO 10 & AMAO PHONE TIPS -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Video 10 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1E8cmTLA-6IUChFuRLcAcPitKr3v1ajbq', 'Must Watch Video 10')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1E8cmTLA-6IUChFuRLcAcPitKr3v1ajbq&sz=w800" alt="Must Watch Video 10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">#10</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Must Watch Video 10</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Commercial Campaign Cut</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AMAO Phone Tips -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1PVEr0ZIneRHePS4L3MNe4kBdV6wLboMJ', 'AMAO Phone Tips (Final Edit)')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1PVEr0ZIneRHePS4L3MNe4kBdV6wLboMJ&sz=w800" alt="AMAO Phone Tips" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">AMAO</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">AMAO Phone Tips</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Feature & Product Highlights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 6: AMAO RULE OF 3 & YASH WASHING CENTER -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- AMAO Rule of 3 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1G0AqTTCw_Nc_36hs7IAjYtV5xssB5R7B', 'AMAO Rule of 3 (Final Cut)')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1G0AqTTCw_Nc_36hs7IAjYtV5xssB5R7B&sz=w800" alt="AMAO Rule of 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">STRATEGY</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">AMAO Rule of 3</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Strategic Reel Storyline</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yash Washing Center -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1Zj8QZEEzE1XPnU_orPMZNdAYKEyWQjdt', 'Yash Washing Center Commercial')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1Zj8QZEEzE1XPnU_orPMZNdAYKEyWQjdt&sz=w800" alt="Yash Washing Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-amber-400 border border-white/10">LOCAL AD</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Yash Washing Center</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Local Business Promo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 2: SECONDARY WATCH (SAB SE NICHE)                -->
+        <!-- ======================================================== -->
+        <section class="mb-24 pt-8" id="secondary-watch-section">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-8 pb-3 border-b border-white/10">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-md bg-blue-500/20 text-blue-300 border border-blue-400/30 text-[10px] font-black uppercase tracking-wider">SECONDARY</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-white font-sans">Secondary Watch Videos</h2>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">More creative variations, alternate hooks, and concept reels</p>
+                </div>
+                <span class="text-xs font-semibold text-blue-400 font-mono">7 Videos</span>
+            </div>
+
+            <!-- PAIRS OF 2 ACCORDING TO NUMBER (1 & 2, 3 & 4, 5 & 6, 7) -->
+            <div class="space-y-6 sm:space-y-8">
+                
+                <!-- PAIR 1: SECONDARY 1 & SECONDARY 2 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Sec 1 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1N6G3Xfq3BB3mnEINVfAAIQ3wfBLh4cwM', 'Secondary Watch Video 01')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1N6G3Xfq3BB3mnEINVfAAIQ3wfBLh4cwM&sz=w800" alt="Secondary Watch Video 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #01</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 01</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Creative Reel Concept</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sec 2 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1Ne7DIb0Vh0hE_lgiK61iixdW-AaF7wyx', 'Secondary Watch Video 02')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1Ne7DIb0Vh0hE_lgiK61iixdW-AaF7wyx&sz=w800" alt="Secondary Watch Video 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #02</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 02</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Alternate Pacing Edit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 2: SECONDARY 3 & SECONDARY 4 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Sec 3 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1rdm12TBXr6oUjm06NxdjuWUwExNVPLI_', 'Secondary Watch Video 03')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1rdm12TBXr6oUjm06NxdjuWUwExNVPLI_&sz=w800" alt="Secondary Watch Video 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #03</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 03</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Feature Spotlight Cut</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sec 4 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1FgNhsNgHVGv_aw83mavmStRkp15ADJL3', 'Secondary Watch Video 04')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1FgNhsNgHVGv_aw83mavmStRkp15ADJL3&sz=w800" alt="Secondary Watch Video 04" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #04</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 04</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Brand Angle Variation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAIR 3: SECONDARY 5 & SECONDARY 6 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Sec 5 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1R1yRw_lhXxVoAhWNPqB-XmwCPFc-oLlr', 'Secondary Watch Video 05')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1R1yRw_lhXxVoAhWNPqB-XmwCPFc-oLlr&sz=w800" alt="Secondary Watch Video 05" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #05</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 05</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Dynamic Product Ad</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sec 6 -->
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('17zgBZ2XNeV3jMHsecLPs7uNzuDB0Gvic', 'Secondary Watch Video 06')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=17zgBZ2XNeV3jMHsecLPs7uNzuDB0Gvic&sz=w800" alt="Secondary Watch Video 06" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #06</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 06</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Social Proof Reel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7: SECONDARY 7 (CENTERED) -->
+                <div class="max-w-md mx-auto">
+                    <div class="video-card rounded-[26px] overflow-hidden group cursor-pointer" onclick="openPlayer('1pnl50E4nIzvLz07d-0HwC4qK8NpKfevH', 'Secondary Watch Video 07')">
+                        <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1pnl50E4nIzvLz07d-0HwC4qK8NpKfevH&sz=w800" alt="Secondary Watch Video 07" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-blue-400 transition-all">
+                                    <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-black/80 text-[11px] font-black text-blue-400 border border-white/10">SEC #07</span>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h4 class="text-lg font-bold text-white leading-tight">Secondary Video 07</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Extended Showcase Cut</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOTTOM CALL TO ACTION -->
+        <div class="text-center py-12 px-6 rounded-[32px] bg-gradient-to-b from-white/5 to-transparent border border-white/10 max-w-2xl mx-auto">
+            <h3 class="text-2xl sm:text-3xl font-black text-white font-sans">Ready to grow your brand with viral videos?</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-md mx-auto">
+                Let's script, shoot, and edit custom high-converting UGC videos tailored for your business.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+                <a href="index.html#footer-info-section" class="px-6 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-sm shadow-[0_0_25px_rgba(251,191,36,0.4)] transition-all">
+                    Start a Project →
+                </a>
+                <a href="index.html" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white font-semibold text-sm transition-all">
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ======================================================== -->
+    <!-- CINEMATIC LIGHTBOX VIDEO PLAYER MODAL                    -->
+    <!-- ======================================================== -->
+    <div id="video-lightbox-modal" class="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-2xl hidden items-center justify-center p-3 sm:p-6 transition-all duration-300 opacity-0">
+        
+        <!-- Modal Backdrop Click Area -->
+        <div class="absolute inset-0" onclick="closePlayer()"></div>
+
+        <!-- Video Frame Container (Portrait 9:16) -->
+        <div class="relative w-full max-w-[420px] max-h-[92vh] aspect-[9/16] rounded-[28px] overflow-hidden border border-white/20 shadow-[0_0_80px_rgba(0,0,0,0.95),0_0_40px_rgba(251,191,36,0.2)] bg-[#040508] z-10 flex flex-col">
+            
+            <!-- Top Controls Header -->
+            <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-3.5 bg-gradient-to-b from-black/90 via-black/50 to-transparent pointer-events-auto">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                    <span id="player-title" class="text-xs sm:text-sm font-bold text-white truncate max-w-[220px]">Playing Video</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a id="player-drive-link" href="#" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white text-[11px] font-semibold transition-colors flex items-center gap-1" title="Open in Google Drive">
+                        <span>Drive</span>
+                        <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                    </a>
+                    <button onclick="closePlayer()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" title="Close (ESC)">
+                        ✕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Iframe Video Player Container -->
+            <div class="relative w-full h-full flex-1 bg-black">
+                <iframe id="player-iframe" 
+                        src="" 
+                        class="w-full h-full border-0" 
+                        allow="autoplay; encrypted-media; fullscreen" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+        <!-- Outside Close Button on Desktop -->
+        <button onclick="closePlayer()" class="hidden md:flex absolute top-6 right-8 text-white/70 hover:text-white items-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/15 cursor-pointer z-20">
+            <span>Close (ESC)</span>
+            <span class="text-sm">✕</span>
+        </button>
+    </div>
+
+    <!-- SCRIPT FOR VIDEO PLAYER LOGIC -->
+    <script>
+        const modal = document.getElementById('video-lightbox-modal');
+        const iframe = document.getElementById('player-iframe');
+        const titleEl = document.getElementById('player-title');
+        const driveLink = document.getElementById('player-drive-link');
+
+        function openPlayer(videoId, title) {
+            if (!modal || !iframe) return;
+            titleEl.textContent = title || 'Playing Video';
+            driveLink.href = `https://drive.google.com/file/d/${videoId}/view`;
+            iframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            });
+        }
+
+        function closePlayer() {
+            if (!modal || !iframe) return;
+            modal.classList.add('opacity-0');
+            modal.classList.remove('opacity-100');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                iframe.src = '';
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePlayer();
+            }
+        });
+    </script>
+
+</body>
+</html>
