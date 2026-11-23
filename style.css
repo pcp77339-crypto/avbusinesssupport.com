@@ -19,6 +19,7 @@ body, html {
     background-color: var(--bg-dark);
     color: var(--primary-color);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Typography Selection */
