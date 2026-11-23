@@ -594,86 +594,53 @@
     </main>
 
     <!-- ======================================================== -->
-    <!-- CUSTOM FULLSCREEN CINEMATIC VIDEO PLAYER                 -->
+    <!-- INSTANT FULLSCREEN CINEMATIC VIDEO PLAYER                -->
     <!-- 1 click full screen, no middle clutter, back btn on top,  -->
     <!-- timeline on bottom that auto-hides after 1 sec           -->
     <!-- ======================================================== -->
     <div id="fullscreen-video-player" class="fixed inset-0 z-[99999] bg-black w-screen h-screen hidden flex-col items-center justify-center overflow-hidden select-none">
         
-        <!-- Video Element (Full screen object-contain) -->
-        <video id="main-video-element" 
-               class="w-full h-full object-contain cursor-pointer max-h-screen" 
-               playsinline 
-               preload="auto">
-        </video>
+        <!-- Cropped Iframe Container: Crops out Google Drive's top bar (-58px) so only clean video & timeline are visible -->
+        <div class="relative w-full h-full max-w-full max-h-screen overflow-hidden flex items-center justify-center bg-black">
+            <iframe id="player-iframe" 
+                    src="" 
+                    class="w-full h-[calc(100%+62px)] -mt-[58px] border-0 bg-black" 
+                    allow="autoplay; fullscreen; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+        </div>
 
         <!-- TOP BAR: ONLY Back Button (Auto-hides after 1 sec of inactivity) -->
         <div id="player-top-bar" class="absolute top-0 left-0 right-0 p-5 sm:p-7 flex items-center justify-between z-30 transition-opacity duration-300 pointer-events-auto">
-            <button id="player-back-btn" onclick="closePlayer()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/70 hover:bg-black/95 border border-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md shadow-2xl transition-all cursor-pointer">
+            <button id="player-back-btn" onclick="closePlayer()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 hover:bg-black border border-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md shadow-2xl transition-all cursor-pointer">
                 <span class="material-symbols-outlined text-base">arrow_back</span>
                 <span>Back</span>
             </button>
         </div>
 
-        <!-- BOTTOM BAR: ONLY Timeline (Auto-hides after 1 sec of inactivity) -->
-        <div id="player-bottom-bar" class="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-5 z-30 transition-opacity duration-300 pointer-events-auto bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-            
-            <div class="max-w-4xl mx-auto flex flex-col gap-2">
-                <!-- Timeline Slider Container (Click & Drag anywhere on timeline to skip) -->
-                <div id="timeline-container" class="relative w-full h-8 flex items-center cursor-pointer group">
-                    <!-- Background Track -->
-                    <div class="w-full h-1.5 sm:h-2 bg-white/25 rounded-full overflow-hidden transition-all group-hover:h-3 relative">
-                        <!-- Progress Bar -->
-                        <div id="progress-bar" class="h-full bg-gradient-to-r from-amber-400 to-amber-500 w-0 relative transition-none"></div>
-                    </div>
-                    <!-- Scrubber Dot -->
-                    <div id="scrubber-dot" class="absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)] pointer-events-none transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style="left: 0%;"></div>
-                </div>
-
-                <!-- Time display: Current Time / Total Duration -->
-                <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-300 font-mono select-none px-1">
-                    <span id="current-time-display">0:00</span>
-                    <span id="duration-display">0:00</span>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
-    <!-- SCRIPT FOR CUSTOM 1-CLICK FULLSCREEN & AUTO-HIDE TIMELINE -->
+    <!-- SCRIPT FOR INSTANT 1-CLICK FULLSCREEN & AUTO-HIDE CONTROLS -->
     <script>
         const playerOverlay = document.getElementById('fullscreen-video-player');
-        const video = document.getElementById('main-video-element');
+        const iframe = document.getElementById('player-iframe');
         const topBar = document.getElementById('player-top-bar');
-        const bottomBar = document.getElementById('player-bottom-bar');
-        const progressBar = document.getElementById('progress-bar');
-        const scrubberDot = document.getElementById('scrubber-dot');
-        const timelineContainer = document.getElementById('timeline-container');
-        const currentTimeDisplay = document.getElementById('current-time-display');
-        const durationDisplay = document.getElementById('duration-display');
 
         let hideTimeout = null;
 
-        // Auto-hide controls after 1 second of inactivity
+        // Auto-hide Back button after 1 second of inactivity
         function showControls() {
-            if (!topBar || !bottomBar) return;
+            if (!topBar) return;
             topBar.style.opacity = '1';
-            bottomBar.style.opacity = '1';
             topBar.style.pointerEvents = 'auto';
-            bottomBar.style.pointerEvents = 'auto';
             if (playerOverlay) playerOverlay.style.cursor = 'default';
 
             clearTimeout(hideTimeout);
             // Hide after 1 second (1000ms)
             hideTimeout = setTimeout(() => {
-                if (!video.paused) {
-                    topBar.style.opacity = '0';
-                    bottomBar.style.opacity = '0';
-                    topBar.style.pointerEvents = 'none';
-                    bottomBar.style.pointerEvents = 'none';
-                    if (playerOverlay) playerOverlay.style.cursor = 'none';
-                }
+                topBar.style.opacity = '0';
+                topBar.style.pointerEvents = 'none';
+                if (playerOverlay) playerOverlay.style.cursor = 'none';
             }, 1000);
         }
 
@@ -683,87 +650,10 @@
         playerOverlay.addEventListener('touchstart', showControls, { passive: true });
         playerOverlay.addEventListener('touchmove', showControls, { passive: true });
 
-        // Clicking on video toggles play / pause without clutter
-        video.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-            showControls();
-        });
-
-        // Update progress bar
-        video.addEventListener('timeupdate', () => {
-            if (!video.duration) return;
-            const pct = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = pct + '%';
-            scrubberDot.style.left = pct + '%';
-            currentTimeDisplay.textContent = formatTime(video.currentTime);
-        });
-
-        video.addEventListener('loadedmetadata', () => {
-            durationDisplay.textContent = formatTime(video.duration);
-        });
-
-        // Skip / Seek by clicking or dragging on the timeline
-        let isSeeking = false;
-        function seek(e) {
-            const rect = timelineContainer.getBoundingClientRect();
-            const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-            let pos = (clientX - rect.left) / rect.width;
-            pos = Math.max(0, Math.min(1, pos));
-            if (video.duration) {
-                video.currentTime = pos * video.duration;
-            }
-            progressBar.style.width = (pos * 100) + '%';
-            scrubberDot.style.left = (pos * 100) + '%';
-            currentTimeDisplay.textContent = formatTime(video.currentTime);
-        }
-
-        timelineContainer.addEventListener('mousedown', (e) => {
-            isSeeking = true;
-            seek(e);
-            showControls();
-        });
-        window.addEventListener('mousemove', (e) => {
-            if (isSeeking) {
-                seek(e);
-                showControls();
-            }
-        });
-        window.addEventListener('mouseup', () => {
-            if (isSeeking) isSeeking = false;
-        });
-
-        // Touch support for timeline
-        timelineContainer.addEventListener('touchstart', (e) => {
-            isSeeking = true;
-            seek(e);
-            showControls();
-        }, { passive: true });
-        window.addEventListener('touchmove', (e) => {
-            if (isSeeking) {
-                seek(e);
-                showControls();
-            }
-        }, { passive: true });
-        window.addEventListener('touchend', () => {
-            if (isSeeking) isSeeking = false;
-        });
-
-        function formatTime(sec) {
-            if (isNaN(sec)) return '0:00';
-            const m = Math.floor(sec / 60);
-            const s = Math.floor(sec % 60);
-            return m + ':' + (s < 10 ? '0' : '') + s;
-        }
-
         // Open player in full screen on 1 click
         function openPlayer(id, title) {
-            const streamUrl = `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`;
-            video.src = streamUrl;
+            // Google Drive preview stream (fast, transcoded, 100% reliable)
+            iframe.src = `https://drive.google.com/file/d/${id}/preview?autoplay=1`;
             
             playerOverlay.classList.remove('hidden');
             playerOverlay.classList.add('flex');
@@ -776,14 +666,12 @@
                 playerOverlay.webkitRequestFullscreen();
             }
 
-            video.play().catch(e => console.log('Autoplay:', e));
             showControls();
         }
 
         // Close player
         function closePlayer() {
-            video.pause();
-            video.src = '';
+            iframe.src = '';
             clearTimeout(hideTimeout);
             playerOverlay.classList.add('hidden');
             playerOverlay.classList.remove('flex');
