@@ -48,7 +48,7 @@
             background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
         }
 
-        /* Glass Card */
+        /* Glass Video Card */
         .video-card {
             background: linear-gradient(180deg, rgba(16, 22, 34, 0.75) 0%, rgba(8, 11, 18, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -110,7 +110,7 @@
                 UGC & Brand <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 font-serif italic">Videos</span>
             </h1>
             <p class="text-slate-300 text-sm sm:text-base mt-4 max-w-xl mx-auto leading-relaxed">
-                Click any video card below to watch in full-screen cinematic player. Featuring scripted viral hooks, benefit demonstration, and high-CTR edits.
+                Click any video to play instantly in full screen with clean timeline scrubber.
             </p>
         </div>
 
@@ -139,8 +139,7 @@
                 </div>
                 
                 <!-- Large Spotlight Video Card -->
-                <div class="video-card rounded-[32px] overflow-hidden group cursor-pointer border-2 border-amber-400/70 shadow-[0_0_50px_rgba(251,191,36,0.25)] relative max-w-2xl mx-auto" onclick="openPlayer('1BE6vn4dw5wVGbbULt9jl8tfAqgU9cx3q', 'Must Watch Video 01 (Featured Spotlight)')">
-                    <!-- Thumbnail / Video Container (Vertical 9:16) -->
+                <div class="video-card rounded-[32px] overflow-hidden group cursor-pointer border-2 border-amber-400/70 shadow-[0_0_50px_rgba(251,191,36,0.25)] relative max-w-2xl mx-auto" onclick="openPlayer('1BE6vn4dw5wVGbbULt9jl8tfAqgU9cx3q', 'Must Watch Video 01')">
                     <div class="relative w-full aspect-[9/14] sm:aspect-[9/13] bg-[#07090e] overflow-hidden">
                         <img src="https://drive.google.com/thumbnail?id=1BE6vn4dw5wVGbbULt9jl8tfAqgU9cx3q&sz=w1000" 
                              alt="Must Watch Video 01" 
@@ -163,7 +162,7 @@
                                 Top Pick #01
                             </span>
                             <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-semibold">
-                                9:16 Vertical Reel
+                                1-Click Fullscreen
                             </span>
                         </div>
 
@@ -171,10 +170,6 @@
                         <div class="absolute bottom-5 left-5 right-5">
                             <h3 class="text-xl sm:text-2xl font-black text-white font-sans drop-shadow-md">Must Watch Video 01</h3>
                             <p class="text-xs sm:text-sm text-slate-300 mt-1">High-impact viral hook with aesthetic product storytelling</p>
-                            <div class="mt-3 flex items-center gap-2 text-xs text-amber-400 font-bold">
-                                <span>Click to Play in Fullscreen Player</span>
-                                <span>→</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +185,6 @@
                         <div class="relative w-full aspect-[9/13] bg-[#07090e] overflow-hidden">
                             <img src="https://drive.google.com/thumbnail?id=1GB2gbx9poZSE6BbEjkwIBBIRsw1rw1qF&sz=w800" alt="Must Watch Video 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 pointer-events-none"></div>
-                            <!-- Play button -->
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all">
                                     <span class="material-symbols-outlined text-3xl translate-x-0.5">play_arrow</span>
@@ -600,82 +594,204 @@
     </main>
 
     <!-- ======================================================== -->
-    <!-- CINEMATIC LIGHTBOX VIDEO PLAYER MODAL                    -->
+    <!-- CUSTOM FULLSCREEN CINEMATIC VIDEO PLAYER                 -->
+    <!-- 1 click full screen, no middle clutter, back btn on top,  -->
+    <!-- timeline on bottom that auto-hides after 1 sec           -->
     <!-- ======================================================== -->
-    <div id="video-lightbox-modal" class="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-2xl hidden items-center justify-center p-3 sm:p-6 transition-all duration-300 opacity-0">
+    <div id="fullscreen-video-player" class="fixed inset-0 z-[99999] bg-black w-screen h-screen hidden flex-col items-center justify-center overflow-hidden select-none">
         
-        <!-- Modal Backdrop Click Area -->
-        <div class="absolute inset-0" onclick="closePlayer()"></div>
+        <!-- Video Element (Full screen object-contain) -->
+        <video id="main-video-element" 
+               class="w-full h-full object-contain cursor-pointer max-h-screen" 
+               playsinline 
+               preload="auto">
+        </video>
 
-        <!-- Video Frame Container (Portrait 9:16) -->
-        <div class="relative w-full max-w-[420px] max-h-[92vh] aspect-[9/16] rounded-[28px] overflow-hidden border border-white/20 shadow-[0_0_80px_rgba(0,0,0,0.95),0_0_40px_rgba(251,191,36,0.2)] bg-[#040508] z-10 flex flex-col">
+        <!-- TOP BAR: ONLY Back Button (Auto-hides after 1 sec of inactivity) -->
+        <div id="player-top-bar" class="absolute top-0 left-0 right-0 p-5 sm:p-7 flex items-center justify-between z-30 transition-opacity duration-300 pointer-events-auto">
+            <button id="player-back-btn" onclick="closePlayer()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/70 hover:bg-black/95 border border-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md shadow-2xl transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-base">arrow_back</span>
+                <span>Back</span>
+            </button>
+        </div>
+
+        <!-- BOTTOM BAR: ONLY Timeline (Auto-hides after 1 sec of inactivity) -->
+        <div id="player-bottom-bar" class="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-5 z-30 transition-opacity duration-300 pointer-events-auto bg-gradient-to-t from-black/90 via-black/40 to-transparent">
             
-            <!-- Top Controls Header -->
-            <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-3.5 bg-gradient-to-b from-black/90 via-black/50 to-transparent pointer-events-auto">
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                    <span id="player-title" class="text-xs sm:text-sm font-bold text-white truncate max-w-[220px]">Playing Video</span>
+            <div class="max-w-4xl mx-auto flex flex-col gap-2">
+                <!-- Timeline Slider Container (Click & Drag anywhere on timeline to skip) -->
+                <div id="timeline-container" class="relative w-full h-8 flex items-center cursor-pointer group">
+                    <!-- Background Track -->
+                    <div class="w-full h-1.5 sm:h-2 bg-white/25 rounded-full overflow-hidden transition-all group-hover:h-3 relative">
+                        <!-- Progress Bar -->
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-amber-400 to-amber-500 w-0 relative transition-none"></div>
+                    </div>
+                    <!-- Scrubber Dot -->
+                    <div id="scrubber-dot" class="absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)] pointer-events-none transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style="left: 0%;"></div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <a id="player-drive-link" href="#" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white text-[11px] font-semibold transition-colors flex items-center gap-1" title="Open in Google Drive">
-                        <span>Drive</span>
-                        <span class="material-symbols-outlined text-[13px]">open_in_new</span>
-                    </a>
-                    <button onclick="closePlayer()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" title="Close (ESC)">
-                        ✕
-                    </button>
-                </div>
-            </div>
 
-            <!-- Iframe Video Player Container -->
-            <div class="relative w-full h-full flex-1 bg-black">
-                <iframe id="player-iframe" 
-                        src="" 
-                        class="w-full h-full border-0" 
-                        allow="autoplay; encrypted-media; fullscreen" 
-                        allowfullscreen>
-                </iframe>
+                <!-- Time display: Current Time / Total Duration -->
+                <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-300 font-mono select-none px-1">
+                    <span id="current-time-display">0:00</span>
+                    <span id="duration-display">0:00</span>
+                </div>
             </div>
 
         </div>
 
-        <!-- Outside Close Button on Desktop -->
-        <button onclick="closePlayer()" class="hidden md:flex absolute top-6 right-8 text-white/70 hover:text-white items-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/15 cursor-pointer z-20">
-            <span>Close (ESC)</span>
-            <span class="text-sm">✕</span>
-        </button>
     </div>
 
-    <!-- SCRIPT FOR VIDEO PLAYER LOGIC -->
+    <!-- SCRIPT FOR CUSTOM 1-CLICK FULLSCREEN & AUTO-HIDE TIMELINE -->
     <script>
-        const modal = document.getElementById('video-lightbox-modal');
-        const iframe = document.getElementById('player-iframe');
-        const titleEl = document.getElementById('player-title');
-        const driveLink = document.getElementById('player-drive-link');
+        const playerOverlay = document.getElementById('fullscreen-video-player');
+        const video = document.getElementById('main-video-element');
+        const topBar = document.getElementById('player-top-bar');
+        const bottomBar = document.getElementById('player-bottom-bar');
+        const progressBar = document.getElementById('progress-bar');
+        const scrubberDot = document.getElementById('scrubber-dot');
+        const timelineContainer = document.getElementById('timeline-container');
+        const currentTimeDisplay = document.getElementById('current-time-display');
+        const durationDisplay = document.getElementById('duration-display');
 
-        function openPlayer(videoId, title) {
-            if (!modal || !iframe) return;
-            titleEl.textContent = title || 'Playing Video';
-            driveLink.href = `https://drive.google.com/file/d/${videoId}/view`;
-            iframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
-            
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            requestAnimationFrame(() => {
-                modal.classList.remove('opacity-0');
-                modal.classList.add('opacity-100');
-            });
+        let hideTimeout = null;
+
+        // Auto-hide controls after 1 second of inactivity
+        function showControls() {
+            if (!topBar || !bottomBar) return;
+            topBar.style.opacity = '1';
+            bottomBar.style.opacity = '1';
+            topBar.style.pointerEvents = 'auto';
+            bottomBar.style.pointerEvents = 'auto';
+            if (playerOverlay) playerOverlay.style.cursor = 'default';
+
+            clearTimeout(hideTimeout);
+            // Hide after 1 second (1000ms)
+            hideTimeout = setTimeout(() => {
+                if (!video.paused) {
+                    topBar.style.opacity = '0';
+                    bottomBar.style.opacity = '0';
+                    topBar.style.pointerEvents = 'none';
+                    bottomBar.style.pointerEvents = 'none';
+                    if (playerOverlay) playerOverlay.style.cursor = 'none';
+                }
+            }, 1000);
         }
 
+        // Listen for mouse / touch movement to show controls
+        playerOverlay.addEventListener('mousemove', showControls);
+        playerOverlay.addEventListener('mousedown', showControls);
+        playerOverlay.addEventListener('touchstart', showControls, { passive: true });
+        playerOverlay.addEventListener('touchmove', showControls, { passive: true });
+
+        // Clicking on video toggles play / pause without clutter
+        video.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            showControls();
+        });
+
+        // Update progress bar
+        video.addEventListener('timeupdate', () => {
+            if (!video.duration) return;
+            const pct = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = pct + '%';
+            scrubberDot.style.left = pct + '%';
+            currentTimeDisplay.textContent = formatTime(video.currentTime);
+        });
+
+        video.addEventListener('loadedmetadata', () => {
+            durationDisplay.textContent = formatTime(video.duration);
+        });
+
+        // Skip / Seek by clicking or dragging on the timeline
+        let isSeeking = false;
+        function seek(e) {
+            const rect = timelineContainer.getBoundingClientRect();
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+            let pos = (clientX - rect.left) / rect.width;
+            pos = Math.max(0, Math.min(1, pos));
+            if (video.duration) {
+                video.currentTime = pos * video.duration;
+            }
+            progressBar.style.width = (pos * 100) + '%';
+            scrubberDot.style.left = (pos * 100) + '%';
+            currentTimeDisplay.textContent = formatTime(video.currentTime);
+        }
+
+        timelineContainer.addEventListener('mousedown', (e) => {
+            isSeeking = true;
+            seek(e);
+            showControls();
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (isSeeking) {
+                seek(e);
+                showControls();
+            }
+        });
+        window.addEventListener('mouseup', () => {
+            if (isSeeking) isSeeking = false;
+        });
+
+        // Touch support for timeline
+        timelineContainer.addEventListener('touchstart', (e) => {
+            isSeeking = true;
+            seek(e);
+            showControls();
+        }, { passive: true });
+        window.addEventListener('touchmove', (e) => {
+            if (isSeeking) {
+                seek(e);
+                showControls();
+            }
+        }, { passive: true });
+        window.addEventListener('touchend', () => {
+            if (isSeeking) isSeeking = false;
+        });
+
+        function formatTime(sec) {
+            if (isNaN(sec)) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        // Open player in full screen on 1 click
+        function openPlayer(id, title) {
+            const streamUrl = `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`;
+            video.src = streamUrl;
+            
+            playerOverlay.classList.remove('hidden');
+            playerOverlay.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            // Trigger full screen
+            if (playerOverlay.requestFullscreen) {
+                playerOverlay.requestFullscreen().catch(() => {});
+            } else if (playerOverlay.webkitRequestFullscreen) {
+                playerOverlay.webkitRequestFullscreen();
+            }
+
+            video.play().catch(e => console.log('Autoplay:', e));
+            showControls();
+        }
+
+        // Close player
         function closePlayer() {
-            if (!modal || !iframe) return;
-            modal.classList.add('opacity-0');
-            modal.classList.remove('opacity-100');
+            video.pause();
+            video.src = '';
+            clearTimeout(hideTimeout);
+            playerOverlay.classList.add('hidden');
+            playerOverlay.classList.remove('flex');
             document.body.style.overflow = '';
-            setTimeout(() => {
-                iframe.src = '';
-                modal.classList.add('hidden');
-            }, 300);
+
+            if (document.fullscreenElement) {
+                document.exitFullscreen().catch(() => {});
+            }
         }
 
         // Close on ESC key
