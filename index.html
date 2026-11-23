@@ -291,189 +291,114 @@
     <!-- ============================================================ -->
     <!-- WELCOME / ENTRY PORTAL SCREEN (4 OPTIONS WITH PORTRAIT HERO) -->
     <!-- ============================================================ -->
-    <div id="welcome-portal" class="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-xl overflow-y-auto transition-all duration-500 opacity-100">
-        <!-- Ambient Studio Glows -->
-        <div class="fixed top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-amber-500/15 rounded-full blur-[100px] pointer-events-none"></div>
-        <div class="fixed bottom-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+    <div id="welcome-portal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-xl overflow-y-auto transition-all duration-500 opacity-100">
+        <!-- Ambient Glow -->
+        <div class="fixed top-1/3 left-1/2 -translate-x-1/2 w-80 h-80 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <!-- Central Portrait Showcase Frame (Hero section in vertical portrait framing) -->
-        <div class="relative w-full max-w-[460px] rounded-[36px] sm:rounded-[42px] overflow-hidden border border-white/20 shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_60px_rgba(251,191,36,0.18)] flex flex-col justify-between p-5 sm:p-7 my-auto select-none transition-transform duration-500 transform scale-100" id="portal-card-box">
+        <!-- Central Portrait Showcase Frame -->
+        <div class="relative w-full max-w-[480px] rounded-[36px] overflow-hidden border border-white/15 shadow-[0_25px_80px_rgba(0,0,0,0.95)] flex flex-col p-6 sm:p-8 my-auto select-none transition-transform duration-500 transform scale-100" id="portal-card-box">
             
             <!-- PORTRAIT BACKGROUND: Hero Video running in vertical portrait mode -->
             <div class="absolute inset-0 z-0 overflow-hidden">
-                <video autoplay loop muted playsinline class="w-full h-full object-cover filter brightness-[0.38] contrast-125 scale-110 pointer-events-none">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover filter brightness-[0.32] contrast-125 scale-105 pointer-events-none">
                     <source src="hero_section/VIDEO_5b061002-9659-49c5-8e39-0d364c46cadd.mp4" type="video/mp4">
                 </video>
-                <!-- Cinematic Portrait Vignette & Gradient Overlays -->
-                <div class="absolute inset-0 bg-gradient-to-b from-[#05070B]/90 via-[#05070B]/70 to-[#05070B]/95 pointer-events-none"></div>
-                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(251,191,36,0.1)_0%,transparent_75%)] pointer-events-none"></div>
-                <!-- Inner Bezel Ring -->
-                <div class="absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-white/15 pointer-events-none"></div>
+                <!-- Clean Dark Vignette Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90 pointer-events-none"></div>
             </div>
 
-            <!-- Content Area inside Portrait Frame -->
-            <div class="relative z-10 flex flex-col h-full gap-3 sm:gap-4">
+            <!-- Content Area: Clean line-by-line curved rectangles -->
+            <div class="relative z-10 flex flex-col gap-3.5 sm:gap-4">
                 
-                <!-- Top Brand Header / Dynamic Island -->
-                <div class="flex items-center justify-between pb-1 border-b border-white/10">
-                    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-[11px] font-bold text-white tracking-widest uppercase font-display">Ved • Creative Portal</span>
-                    </div>
-                    <button id="portal-skip-btn" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/80 hover:text-white transition-all text-xs font-medium flex items-center gap-1 cursor-pointer" title="Direct to Website">
-                        <span>Skip</span>
-                        <span class="text-sm">✕</span>
+                <!-- Simple Header -->
+                <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                    <span class="text-xs uppercase tracking-widest text-slate-300 font-bold font-display">Select an Option</span>
+                    <button id="portal-skip-btn" class="text-xs text-white/70 hover:text-white bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-colors cursor-pointer">
+                        Skip ✕
                     </button>
                 </div>
 
-                <!-- Welcome Title -->
-                <div class="text-left mt-0.5">
-                    <h2 class="text-2xl sm:text-[27px] font-black text-white font-display tracking-tight leading-tight">
-                        What would you like to <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 italic">see first?</span>
-                    </h2>
-                    <p class="text-xs text-slate-300/85 mt-1 leading-relaxed">
-                        Select a focus category below or explore the full portfolio.
-                    </p>
+                <!-- 1. SAB SE UPAR, SAB SE BADA: UGC VIDEOS -->
+                <div id="option-ugc-videos" class="group cursor-pointer rounded-[24px] p-5 sm:p-6 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-black shadow-[0_10px_35px_rgba(245,158,11,0.35)] hover:shadow-[0_15px_45px_rgba(245,158,11,0.55)] hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-black/15 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl sm:text-4xl text-black">smart_display</span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-black font-display tracking-tight leading-none text-black">UGC Videos</h2>
+                            <p class="text-xs font-semibold text-black/85 mt-1.5">Short-form videos & viral brand reels</p>
+                        </div>
+                    </div>
+                    <span class="text-3xl font-black text-black group-hover:translate-x-1.5 transition-transform">→</span>
                 </div>
 
-                <!-- 4 MAIN OPTIONS LIST -->
-                <div class="flex flex-col gap-2.5 sm:gap-3 mt-1" id="portal-options-container">
-                    
-                    <!-- OPTION 1: UGC VIDEOS (⭐ HIGH FOCUS) -->
-                    <div id="option-ugc-videos" class="relative group cursor-pointer rounded-2xl p-3.5 sm:p-4 bg-gradient-to-r from-amber-500/25 via-red-500/15 to-purple-600/15 border-2 border-amber-400/80 shadow-[0_0_30px_rgba(251,191,36,0.3)] hover:shadow-[0_0_45px_rgba(251,191,36,0.5)] hover:border-amber-300 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 backdrop-blur-md">
-                        <!-- High Focus Badge -->
-                        <div class="absolute -top-2.5 right-4 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 text-black text-[9px] font-black tracking-widest uppercase shadow-md flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
-                            ⭐ HIGH FOCUS
+                <!-- 2. PBCA POSTERS (Curved Rectangle) -->
+                <div id="option-pbca-posters" class="group cursor-pointer rounded-[22px] p-4 sm:p-5 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-blue-400/60 shadow-lg hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 backdrop-blur-md flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl text-blue-300">aspect_ratio</span>
                         </div>
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-amber-400/30 to-red-500/30 border border-amber-400/50 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-2xl text-amber-300">video_camera_front</span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-base sm:text-lg font-black text-white font-display tracking-tight group-hover:text-amber-300 transition-colors">UGC Videos</h3>
-                                </div>
-                                <p class="text-[11px] text-slate-200/90 leading-tight mt-0.5">Viral short-form UGC & high-converting brand videos</p>
-                                <span class="inline-block mt-0.5 text-[9px] text-amber-300/95 font-medium tracking-wide">Click to open website (setup in progress) →</span>
-                            </div>
-                            <span class="text-amber-400 text-lg font-bold group-hover:translate-x-1 transition-transform">→</span>
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold font-display text-white group-hover:text-blue-300 transition-colors leading-tight">PBCA Posters</h3>
+                            <p class="text-xs text-slate-300 mt-0.5">Product Benefit Conceptual Ad Posters</p>
                         </div>
                     </div>
+                    <span class="text-xl font-bold text-slate-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
+                </div>
 
-                    <!-- OPTION 2: PBCA POSTERS -->
-                    <div id="option-pbca-posters" class="relative group cursor-pointer rounded-2xl p-3.5 sm:p-4 bg-white/5 border border-blue-400/30 hover:border-blue-400/70 hover:bg-blue-500/10 hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 backdrop-blur-md">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-2xl text-blue-300">aspect_ratio</span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-base font-bold text-white font-display group-hover:text-blue-300 transition-colors">PBCA Posters</h3>
-                                    <span class="px-2 py-0.2 rounded-full text-[9px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/30">Ad Posters</span>
-                                </div>
-                                <p class="text-[11px] text-slate-300 leading-tight mt-0.5">Product Benefit Conceptual Ads (Ultra HD & 300 DPI)</p>
-                                <div class="flex items-center gap-2 mt-1">
-                                    <span class="text-[9px] text-blue-400 font-semibold">Jump to section on site</span>
-                                    <span class="text-white/40 text-[9px]">•</span>
-                                    <a href="all web sections/bcpA/code.html" class="text-[9px] text-amber-400 hover:underline font-semibold flex items-center gap-0.5" onclick="event.stopPropagation()">View Gallery ↗</a>
-                                </div>
-                            </div>
-                            <span class="text-blue-400 text-lg font-bold group-hover:translate-x-1 transition-transform">→</span>
-                        </div>
-                    </div>
-
-                    <!-- OPTION 3: GRAPHIC DESIGN (Click opens 4 Sub-options) -->
-                    <div id="option-graphic-design-wrapper" class="relative rounded-2xl bg-white/5 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-300 backdrop-blur-md overflow-hidden">
-                        <!-- Main Graphic Design Trigger Card -->
-                        <div id="option-graphic-trigger" class="p-3.5 sm:p-4 cursor-pointer flex items-center gap-3.5 group hover:bg-purple-500/10 transition-colors">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform">
+                <!-- 3. GRAPHIC DESIGN (Curved Rectangle with Expandable Sub-Options) -->
+                <div id="option-graphic-design-wrapper" class="rounded-[22px] bg-white/10 border border-white/15 hover:border-purple-400/60 shadow-lg transition-all duration-300 backdrop-blur-md overflow-hidden">
+                    <div id="option-graphic-trigger" class="p-4 sm:p-5 cursor-pointer flex items-center justify-between hover:bg-white/5 transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-2xl text-purple-300">palette</span>
                             </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-base font-bold text-white font-display group-hover:text-purple-300 transition-colors">Graphic Design</h3>
-                                    <span class="px-2 py-0.2 rounded-full text-[9px] font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30">4 Categories</span>
-                                </div>
-                                <p class="text-[11px] text-slate-300 leading-tight mt-0.5">Thumbnails, Logos, Banners & Restaurant Menus</p>
-                                <span class="inline-block mt-0.5 text-[9px] text-purple-300 font-semibold">Click to expand samples & categories ▼</span>
-                            </div>
-                            <span id="graphic-chevron" class="text-purple-400 text-base font-bold transition-transform duration-300">▼</span>
-                        </div>
-
-                        <!-- SUB-OPTIONS ACCORDION (Revealed on click) -->
-                        <div id="graphic-suboptions" class="hidden px-3.5 pb-3.5 pt-1 border-t border-white/10 bg-black/45">
-                            <div class="text-[10px] uppercase tracking-wider font-bold text-purple-300 mb-2 flex items-center justify-between">
-                                <span>Select a Graphic Category:</span>
-                                <span class="text-slate-400 text-[9px] normal-case">Direct sample galleries</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <!-- 1. Thumbnail Design -->
-                                <a href="all web sections/THUMNAIL SAMPLE/code/stitch_editorial_youtube_thumbnail_showcase/code.html" class="p-2.5 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/15 hover:border-purple-400/60 flex flex-col gap-1 transition-all group/sub">
-                                    <div class="flex items-center gap-1.5 text-xs font-bold text-white group-hover/sub:text-purple-300">
-                                        <span class="material-symbols-outlined text-[15px] text-amber-400">smart_display</span>
-                                        Thumbnail
-                                    </div>
-                                    <span class="text-[10px] text-slate-300">YouTube CTR Samples ↗</span>
-                                </a>
-                                <!-- 2. Logo Design -->
-                                <a href="all web sections/logo section/logo code.html" class="p-2.5 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/15 hover:border-purple-400/60 flex flex-col gap-1 transition-all group/sub">
-                                    <div class="flex items-center gap-1.5 text-xs font-bold text-white group-hover/sub:text-purple-300">
-                                        <span class="material-symbols-outlined text-[15px] text-amber-400">draw</span>
-                                        Logo Design
-                                    </div>
-                                    <span class="text-[10px] text-slate-300">Brand Identity ↗</span>
-                                </a>
-                                <!-- 3. Banner Design -->
-                                <a href="all web sections/banner section/baner code.html" class="p-2.5 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/15 hover:border-purple-400/60 flex flex-col gap-1 transition-all group/sub">
-                                    <div class="flex items-center gap-1.5 text-xs font-bold text-white group-hover/sub:text-purple-300">
-                                        <span class="material-symbols-outlined text-[15px] text-amber-400">view_carousel</span>
-                                        Banner
-                                    </div>
-                                    <span class="text-[10px] text-slate-300">Headers & Ads ↗</span>
-                                </a>
-                                <!-- 4. Restaurant Menu -->
-                                <a href="all web sections/manue/new/manue/code.html" class="p-2.5 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/15 hover:border-purple-400/60 flex flex-col gap-1 transition-all group/sub">
-                                    <div class="flex items-center gap-1.5 text-xs font-bold text-white group-hover/sub:text-purple-300">
-                                        <span class="material-symbols-outlined text-[15px] text-amber-400">restaurant_menu</span>
-                                        Menu
-                                    </div>
-                                    <span class="text-[10px] text-slate-300">Food Menus ↗</span>
-                                </a>
-                            </div>
-                            <!-- In-page scroll alternative link -->
-                            <div class="mt-2.5 text-center">
-                                <button id="scroll-graphics-section-btn" class="text-[10px] text-slate-300 hover:text-white underline decoration-slate-500 hover:decoration-white transition-colors cursor-pointer">
-                                    Or view Graphic Design cards on Homepage ↓
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- OPTION 4: EXPLORE WEBSITE (⭐ HIGH FOCUS) -->
-                    <div id="option-explore-website" class="relative group cursor-pointer rounded-2xl p-3.5 sm:p-4 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-black border-2 border-amber-300 shadow-[0_0_35px_rgba(251,191,36,0.45)] hover:shadow-[0_0_55px_rgba(251,191,36,0.7)] hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 flex items-center justify-between mt-0.5">
-                        <!-- Recommended Badge -->
-                        <div class="absolute -top-2.5 right-4 px-2.5 py-0.5 rounded-full bg-black text-amber-400 text-[9px] font-black tracking-widest uppercase shadow-md flex items-center gap-1">
-                            ⭐ FULL EXPERIENCE
-                        </div>
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-black/15 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-2xl text-black">language</span>
-                            </div>
                             <div>
-                                <h3 class="text-base sm:text-lg font-black text-black font-display tracking-tight leading-tight">Explore Website</h3>
-                                <p class="text-[11px] font-semibold text-black/80 font-sans leading-tight mt-0.5">Hero, About, Experience, Pricing & Testimonials</p>
+                                <h3 class="text-lg sm:text-xl font-bold font-display text-white group-hover:text-purple-300 transition-colors leading-tight">Graphic Design</h3>
+                                <p class="text-xs text-slate-300 mt-0.5">Thumbnail, Logo, Banner & Menu</p>
                             </div>
                         </div>
-                        <span class="text-2xl font-black text-black group-hover:translate-x-1.5 transition-transform">→</span>
+                        <span id="graphic-chevron" class="text-lg font-bold text-slate-400 group-hover:text-purple-400 transition-transform duration-300">▼</span>
                     </div>
 
+                    <!-- Sub-Options for Graphic Design -->
+                    <div id="graphic-suboptions" class="hidden px-4 pb-4 pt-1 border-t border-white/10 bg-black/40">
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <a href="all web sections/THUMNAIL SAMPLE/code/stitch_editorial_youtube_thumbnail_showcase/code.html" class="p-3 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/10 hover:border-purple-400/50 text-white text-xs font-bold flex items-center gap-2 transition-all">
+                                <span class="material-symbols-outlined text-base text-amber-400">smart_display</span>
+                                Thumbnail
+                            </a>
+                            <a href="all web sections/logo section/logo code.html" class="p-3 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/10 hover:border-purple-400/50 text-white text-xs font-bold flex items-center gap-2 transition-all">
+                                <span class="material-symbols-outlined text-base text-amber-400">draw</span>
+                                Logo Design
+                            </a>
+                            <a href="all web sections/banner section/baner code.html" class="p-3 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/10 hover:border-purple-400/50 text-white text-xs font-bold flex items-center gap-2 transition-all">
+                                <span class="material-symbols-outlined text-base text-amber-400">view_carousel</span>
+                                Banner
+                            </a>
+                            <a href="all web sections/manue/new/manue/code.html" class="p-3 rounded-xl bg-white/10 hover:bg-purple-600/30 border border-white/10 hover:border-purple-400/50 text-white text-xs font-bold flex items-center gap-2 transition-all">
+                                <span class="material-symbols-outlined text-base text-amber-400">restaurant_menu</span>
+                                Menu
+                            </a>
+                        </div>
+                        <button id="scroll-graphics-section-btn" class="w-full mt-2 text-center text-[11px] text-slate-400 hover:text-white transition-colors cursor-pointer">
+                            View on homepage ↓
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Footer Note inside Portrait Frame -->
-                <div class="text-center pt-2 border-t border-white/10 text-[10px] text-slate-400/90 flex items-center justify-between">
-                    <span>💡 Re-open anytime from <b>Shortcut</b> menu</span>
-                    <button id="portal-enter-direct" class="text-amber-400 hover:underline font-semibold cursor-pointer">Direct Enter ›</button>
+                <!-- 4. SAB SE NICHE: EXPLORE WEBSITE (Big Curved Rectangle) -->
+                <div id="option-explore-website" class="group cursor-pointer rounded-[24px] p-5 sm:p-6 bg-gradient-to-r from-zinc-800 via-zinc-900 to-black hover:from-zinc-700 hover:to-zinc-800 text-white border-2 border-white/20 hover:border-white/50 shadow-xl hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">explore</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-black font-display tracking-tight text-white leading-none">Explore Website</h2>
+                            <p class="text-xs text-slate-300 mt-1">Full portfolio, story, experience & pricing</p>
+                        </div>
+                    </div>
+                    <span class="text-2xl font-bold text-white group-hover:translate-x-1.5 transition-transform">→</span>
                 </div>
 
             </div>
